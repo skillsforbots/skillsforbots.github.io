@@ -7,6 +7,7 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 ## Free skill
 
 - [Bot Safety Rules Starter](https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/bot-safety-rules-starter/SKILL.md): Standing rules that no bot sends email or messages without owner approval, no bot spends money, and a one-time approval is not a standing waiver, plus a blank structured handoff note.
+- Also on Agensi: [Bot Safety Rules Starter](https://www.agensi.io/skills/bot-safety-rules-starter)
 
 ## Premium packs
 
