@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skills for Bots — SKILL.md templates for Grok Bot and AI agents</title>
+  <meta name="description" content="Free and paid SKILL.md templates for Grok Bot and AI agents: a safety-rules starter, plus packs for a fleet coordinator, reminders, and a credit coach.">
+  <link rel="canonical" href="https://skillsforbots.github.io/">
+  <link rel="alternate" type="text/plain" href="https://skillsforbots.github.io/llms.txt" title="llms.txt">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Skills for Bots">
+  <meta property="og:title" content="Skills for Bots — SKILL.md templates for Grok Bot and AI agents">
+  <meta property="og:description" content="Free and paid SKILL.md templates for Grok Bot and AI agents: a safety-rules starter, plus packs for a fleet coordinator, reminders, and a credit coach.">
+  <meta property="og:url" content="https://skillsforbots.github.io/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Skills for Bots — SKILL.md templates for Grok Bot and AI agents">
+  <meta name="twitter:description" content="Free and paid SKILL.md templates for Grok Bot and AI agents: a safety-rules starter, plus packs for a fleet coordinator, reminders, and a credit coach.">
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --fg: #1a1814;
+      --muted: #5c574e;
+      --card: #fffcf7;
+      --border: #e2ddd3;
+      --accent: #154f4a;
+      --accent-hover: #0e3834;
+      --free-bg: #e8f0ee;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-underline-offset: 0.15em; }
+    a:hover { color: var(--accent-hover); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    header, main, footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    header { padding-top: 3.5rem; padding-bottom: 0.5rem; }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .lede { margin: 0 0 1.5rem; color: var(--muted); }
+    h2 {
+      margin: 2.25rem 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+    p { margin: 0 0 1rem; }
+    .free {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+    .free h3, .pack h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.0625rem;
+      font-weight: 650;
+    }
+    .pack {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.85rem;
+    }
+    .pack-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .price {
+      flex-shrink: 0;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+    }
+    .pack p, .free p { margin: 0 0 0.75rem; }
+    .pack p:last-child, .free p:last-child { margin-bottom: 0; }
+    .disclaimer { color: var(--muted); font-size: 0.9375rem; }
+    .buy { font-weight: 550; }
+    footer {
+      margin-top: 2.5rem;
+      padding-bottom: 3rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+    footer p { margin: 0 0 0.5rem; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://skillsforbots.github.io/#organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.github.io/",
+        "sameAs": [
+          "https://github.com/skillsforbots/grok-bot-skills",
+          "https://skillsforbots.gumroad.com"
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Skills for Bots packs",
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "numberOfItems": 4,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Product",
+              "name": "Bot Fleet Coordinator",
+              "description": "One primary bot routes every task to the right specialist, writes a structured handoff, and follows no-send / no-spend rules, with a weekly read-only review of the fleet.",
+              "url": "https://skillsforbots.gumroad.com/l/ergple",
+              "brand": { "@type": "Organization", "name": "Skills for Bots" },
+              "offers": {
+                "@type": "Offer",
+                "price": "19.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://skillsforbots.gumroad.com/l/ergple"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Product",
+              "name": "Nag-Until-Cleared Reminders",
+              "description": "Reminders and routines that keep coming back until you clearly say an item is done — not when a date passes, and not when you mention it in passing.",
+              "url": "https://skillsforbots.gumroad.com/l/hdqoqb",
+              "brand": { "@type": "Organization", "name": "Skills for Bots" },
+              "offers": {
+                "@type": "Offer",
+                "price": "17.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://skillsforbots.gumroad.com/l/hdqoqb"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Product",
+              "name": "Credit Repair Coach",
+              "description": "A daily or on-demand brief with today's top 3 credit moves, impact figures labeled as estimates, and letter drafts you review and send yourself. Educational only. Not financial or legal advice; no results promised.",
+              "url": "https://skillsforbots.gumroad.com/l/ifujn",
+              "brand": { "@type": "Organization", "name": "Skills for Bots" },
+              "offers": {
+                "@type": "Offer",
+                "price": "24.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://skillsforbots.gumroad.com/l/ifujn"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Product",
+              "name": "Bot Owner Starter Bundle",
+              "description": "The Bot Fleet Coordinator, Nag-Until-Cleared Reminders, and Credit Repair Coach in one download.",
+              "url": "https://skillsforbots.gumroad.com/l/vxecie",
+              "brand": { "@type": "Organization", "name": "Skills for Bots" },
+              "offers": {
+                "@type": "Offer",
+                "price": "39.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://skillsforbots.gumroad.com/l/vxecie"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!--
+    STORE_BASE: https://skillsforbots.gumroad.com
+    If the Gumroad subdomain changes, update STORE_BASE here and every pack URL
+    that starts with this base (visible hrefs, Organization sameAs, and schema.org
+    Product/Offer urls). Also update the matching URLs in llms.txt.
+  -->
+  <header>
+    <h1>Skills for Bots</h1>
+    <p class="lede">Ready-to-run skill templates for Grok Bot and similar AI agents.</p>
+  </header>
+  <main>
+    <p>A skill is a <code>SKILL.md</code> file: standing instructions, rules, and copy-paste prompts that a Grok Bot or similar AI assistant follows so it behaves the same way every time. You fill in the placeholders, add the file to your bot, and it uses those instructions on later runs instead of relying on a one-off chat.</p>
+
+    <h2>Free starter skill</h2>
+    <article class="free">
+      <h3><a href="https://github.com/skillsforbots/grok-bot-skills">Bot Safety Rules Starter</a></h3>
+      <p>Standing safety rules for any bot: no sending email or messages without owner approval, no spending money, and a one-time “send this” or “pay this” is approval for that item only, not a standing waiver. Includes a blank structured handoff note so work can move between bots without dropping context. MIT-licensed, with a five-minute install guide, in the <a href="https://github.com/skillsforbots/grok-bot-skills">grok-bot-skills</a> repository.</p>
+    </article>
+
+    <h2>Premium packs</h2>
+    <p>These packs are sold separately on Gumroad. Each is a downloadable <code>.zip</code> with a <code>SKILL.md</code> and a setup README.</p>
+
+    <article class="pack">
+      <div class="pack-head">
+        <h3><a href="https://skillsforbots.gumroad.com/l/ergple">Bot Fleet Coordinator</a></h3>
+        <span class="price">$19</span>
+      </div>
+      <p>One primary bot routes every task to the right specialist, writes a structured handoff, and follows no-send / no-spend rules, with a weekly read-only review of the fleet.</p>
+      <p><a class="buy" href="https://skillsforbots.gumroad.com/l/ergple">Get Bot Fleet Coordinator</a></p>
+    </article>
+
+    <article class="pack">
+      <div class="pack-head">
+        <h3><a href="https://skillsforbots.gumroad.com/l/hdqoqb">Nag-Until-Cleared Reminders</a></h3>
+        <span class="price">$17</span>
+      </div>
+      <p>Reminders and routines that keep coming back until you clearly say an item is done — not when a date passes, and not when you mention it in passing.</p>
+      <p><a class="buy" href="https://skillsforbots.gumroad.com/l/hdqoqb">Get Nag-Until-Cleared Reminders</a></p>
+    </article>
+
+    <article class="pack">
+      <div class="pack-head">
+        <h3><a href="https://skillsforbots.gumroad.com/l/ifujn">Credit Repair Coach</a></h3>
+        <span class="price">$24</span>
+      </div>
+      <p>A daily or on-demand brief with today’s top 3 credit moves, impact figures labeled as estimates, and letter drafts you review and send yourself.</p>
+      <p class="disclaimer">Educational only. Not financial advice, not legal advice, and not credit repair company services. No results are promised.</p>
+      <p><a class="buy" href="https://skillsforbots.gumroad.com/l/ifujn">Get Credit Repair Coach</a></p>
+    </article>
+
+    <article class="pack">
+      <div class="pack-head">
+        <h3><a href="https://skillsforbots.gumroad.com/l/vxecie">Bot Owner Starter Bundle</a></h3>
+        <span class="price">$39</span>
+      </div>
+      <p>The Bot Fleet Coordinator, Nag-Until-Cleared Reminders, and Credit Repair Coach in one download.</p>
+      <p><a class="buy" href="https://skillsforbots.gumroad.com/l/vxecie">Get the Bot Owner Starter Bundle</a></p>
+    </article>
+  </main>
+  <footer>
+    <p><a href="https://github.com/skillsforbots/grok-bot-skills">GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.github.io/llms.txt">llms.txt</a></p>
+    <p>Skills for Bots. Packs are templates, not a managed service and not professional advice.</p>
+  </footer>
+</body>
+</html>

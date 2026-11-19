@@ -1,0 +1,16 @@
+# Grok Bot skills
+
+> Free Grok Bot and AI agent SKILL.md templates with standing safety rules, plus paid skill packs for a multi-bot fleet, reminders, and a credit coach.
+
+A skill is an instruction file a Grok Bot or similar AI assistant follows. The free starter in https://github.com/skillsforbots/grok-bot-skills is MIT-licensed. Paid packs are sold separately on Gumroad under their own terms.
+
+## Free skill
+
+- [Bot Safety Rules Starter](https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/bot-safety-rules-starter/SKILL.md): Standing rules that no bot sends email or messages without owner approval, no bot spends money, and a one-time approval is not a standing waiver, plus a blank structured handoff note.
+
+## Premium packs
+
+- [Bot Fleet Coordinator](https://skillsforbots.gumroad.com/l/ergple): $19. A primary bot that routes each task to the right specialist, writes a handoff note, and follows no-send / no-spend rules.
+- [Nag-Until-Cleared Reminders](https://skillsforbots.gumroad.com/l/hdqoqb): $17. Reminders that keep coming back until you clearly say an item is done.
+- [Credit Repair Coach](https://skillsforbots.gumroad.com/l/ifujn): $24. Educational daily or on-demand credit briefs with today's top 3 actions, labeled estimates, and letter drafts you send yourself. Not financial or legal advice; no results promised.
+- [Bot Owner Starter Bundle](https://skillsforbots.gumroad.com/l/vxecie): $39. All three premium packs in one download.
