@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Coordinate Multiple AI Bots Without Losing Track | Skills for Bots</title>
+  <meta name="description" content="Running several AI agents or Grok Bots? Give each one a lane, route work through one coordinator, and use a handoff note so context and approvals don&#x27;t get lost.">
+  <link rel="canonical" href="https://skillsforbots.github.io/coordinate-multiple-ai-bots/">
+  <link rel="alternate" type="text/plain" href="https://skillsforbots.github.io/llms.txt" title="llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Skills for Bots">
+  <meta property="og:title" content="How to Coordinate Multiple AI Bots Without Losing Track | Skills for Bots">
+  <meta property="og:description" content="Running several AI agents or Grok Bots? Give each one a lane, route work through one coordinator, and use a handoff note so context and approvals don&#x27;t get lost.">
+  <meta property="og:url" content="https://skillsforbots.github.io/coordinate-multiple-ai-bots/">
+  <meta property="og:image" content="https://skillsforbots.github.io/skillsforbots-logo.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Coordinate Multiple AI Bots Without Losing Track | Skills for Bots">
+  <meta name="twitter:description" content="Running several AI agents or Grok Bots? Give each one a lane, route work through one coordinator, and use a handoff note so context and approvals don&#x27;t get lost.">
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --fg: #1a1814;
+      --muted: #5c574e;
+      --card: #fffcf7;
+      --border: #e2ddd3;
+      --accent: #154f4a;
+      --accent-hover: #0e3834;
+      --free-bg: #e8f0ee;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-underline-offset: 0.15em; }
+    a:hover { color: var(--accent-hover); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    header, main, footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    header { padding-top: 3.5rem; padding-bottom: 0.5rem; }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .lede { margin: 0 0 1.5rem; color: var(--muted); }
+    h2 {
+      margin: 2.25rem 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+    p { margin: 0 0 1rem; }
+    .free {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+    .free h3, .pack h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.0625rem;
+      font-weight: 650;
+    }
+    .pack {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.85rem;
+    }
+    .pack-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .price {
+      flex-shrink: 0;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+    }
+    .pack p, .free p { margin: 0 0 0.75rem; }
+    .pack p:last-child, .free p:last-child { margin-bottom: 0; }
+    .disclaimer { color: var(--muted); font-size: 0.9375rem; }
+    .buy { font-weight: 550; }
+    footer {
+      margin-top: 2.5rem;
+      padding-bottom: 3rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+    footer p { margin: 0 0 0.5rem; }
+      .crumb { margin: 0 0 1rem; font-size: 0.9375rem; color: var(--muted); }
+    .tip {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .tip h3 { margin: 0 0 0.4rem; font-size: 1.0625rem; font-weight: 650; }
+    .tip p:last-child { margin-bottom: 0; }
+    pre {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      font-size: 0.9375rem;
+      white-space: pre-wrap;
+    }
+    ul, ol { padding-left: 1.4rem; margin: 0 0 1rem; }
+    li { margin: 0 0 0.35rem; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to coordinate multiple AI bots",
+  "description": "Running several AI agents or Grok Bots? Give each one a lane, route work through one coordinator, and use a handoff note so context and approvals don't get lost.",
+  "url": "https://skillsforbots.github.io/coordinate-multiple-ai-bots/",
+  "mainEntityOfPage": "https://skillsforbots.github.io/coordinate-multiple-ai-bots/",
+  "datePublished": "2026-11-20",
+  "dateModified": "2026-11-20",
+  "image": "https://skillsforbots.github.io/skillsforbots-logo.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "Skills for Bots",
+    "url": "https://skillsforbots.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://skillsforbots.github.io/#organization",
+    "name": "Skills for Bots",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://skillsforbots.github.io/skillsforbots-logo.jpg"
+    }
+  }
+}
+  </script>
+</head>
+<body>
+  <header>
+    <p class="crumb"><a href="/">Skills for Bots</a> › Guides</p>
+    <h1>How to coordinate multiple AI bots</h1>
+    <p class="lede">Two or three bots can do a lot more than one, as long as they don't step on each other. Here's a simple setup that keeps work moving and keeps you in charge.</p>
+  </header>
+  <main>
+    <p>Once you have more than one bot, a new problem shows up. You tell the research bot something, then have to repeat it to the writing bot. Two bots both answer the same email. A task falls between them and nobody does it. The bots aren't the problem. The missing piece is structure.</p>
+
+    <h2>1. Give every bot one lane</h2>
+    <p>A lane is the one kind of work a bot owns: research, writing, inbox triage, reminders, shopping lists. Write it at the top of each bot's instructions, along with what's outside its lane. "You do research. You don't send email or write final drafts." Overlapping lanes are where duplicate work and crossed wires come from.</p>
+    <p>Only add a new bot when you have a real lane for it. More bots isn't better if two of them do the same job.</p>
+
+    <h2>2. Pick one coordinator</h2>
+    <p>Choose one bot as the place you drop requests. Its job is to figure out which bot should handle each one and pass it along, not to do the work itself. This sounds like extra overhead, but it means you stop deciding which bot to ask and you only have to explain things once.</p>
+    <p>If a request covers two lanes, the coordinator splits it: research goes to one bot, the draft that uses the research goes to another, in order.</p>
+
+    <h2>3. Hand off with a written note, every time</h2>
+    <p>Most lost context happens at the handoff. A quick "can you take this?" leaves the next bot guessing. A short, fixed note fixes that. Use the same fields every time and fill all of them, writing "None" where something doesn't apply.</p>
+
+    <div class="tip">
+      <h3>Free tip: a handoff note you can copy</h3>
+<pre>HANDOFF
+From: [bot]
+To: [bot]
+Task: one sentence
+Done so far:
+What's left:
+Files: links or None
+Deadline: date and time, or None
+Needs owner approval: yes/no, and for what</pre>
+      <p>The last field is the important one. It tells the next bot whether anything in the task has to wait for you.</p>
+    </div>
+
+    <h2>4. Keep the same safety rules on every bot</h2>
+    <p>A rule that lives on only one bot can be skipped by handing the job to a different bot. Put the same two rules on all of them: no sending email or messages without your approval of the full text, and no spending money. A one-time "send this" covers that item only. Then any bot that reaches a send or a spend stops and asks, no matter how the work got to it.</p>
+
+    <h2>5. Review the setup once a week</h2>
+    <p>Bots and routines pile up. Once a week, have the coordinator do a read-only check and report back:</p>
+    <ul>
+      <li>Routines that ran but produced nothing useful</li>
+      <li>Handoffs that bounced or stalled</li>
+      <li>Bots whose lanes overlap</li>
+    </ul>
+    <p>It should only recommend changes, not make them. You decide what to pause or merge. This also keeps usage down, since idle routines still run.</p>
+
+    <h2>Common mistakes</h2>
+    <ul>
+      <li>Letting the coordinator do the work "just this once." It's how lanes blur.</li>
+      <li>Skipping the handoff note for small tasks. Small tasks are the ones that get dropped.</li>
+      <li>Giving one bot permission to send because it's "the email bot." Approval should still come from you.</li>
+    </ul>
+
+    <h2>Get the templates</h2>
+    <p>The free <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a> includes the no-send and no-spend rules and the blank handoff note. It's also on <a href="https://www.agensi.io/skills/bot-safety-rules-starter">Agensi</a>.</p>
+    <p>The <a href="https://skillsforbots.gumroad.com/l/ergple">Bot Fleet Coordinator</a> pack ($19) adds the coordinator skill itself: routing rules, copy-paste descriptions for the coordinator and each specialist, and the weekly read-only review routine.</p>
+    <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Provided as is, with no warranty.</p>
+  </main>
+  <footer>
+    <p><a href="/">Home</a> · <a href="https://github.com/skillsforbots/grok-bot-skills">GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.github.io/llms.txt">llms.txt</a></p>
+    <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+  </footer>
+</body>
+</html>
