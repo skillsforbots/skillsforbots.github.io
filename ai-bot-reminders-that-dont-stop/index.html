@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Bot Reminders That Keep Coming Until You&#x27;re Done | Skills for Bots</title>
+  <meta name="description" content="Set up an AI assistant or Grok Bot reminder that repeats until you clearly say a task is done, not when a date passes or you reply ok. Rules, wording, and setup.">
+  <link rel="canonical" href="https://skillsforbots.github.io/ai-bot-reminders-that-dont-stop/">
+  <link rel="alternate" type="text/plain" href="https://skillsforbots.github.io/llms.txt" title="llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Skills for Bots">
+  <meta property="og:title" content="AI Bot Reminders That Keep Coming Until You&#x27;re Done | Skills for Bots">
+  <meta property="og:description" content="Set up an AI assistant or Grok Bot reminder that repeats until you clearly say a task is done, not when a date passes or you reply ok. Rules, wording, and setup.">
+  <meta property="og:url" content="https://skillsforbots.github.io/ai-bot-reminders-that-dont-stop/">
+  <meta property="og:image" content="https://skillsforbots.github.io/skillsforbots-logo.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI Bot Reminders That Keep Coming Until You&#x27;re Done | Skills for Bots">
+  <meta name="twitter:description" content="Set up an AI assistant or Grok Bot reminder that repeats until you clearly say a task is done, not when a date passes or you reply ok. Rules, wording, and setup.">
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --fg: #1a1814;
+      --muted: #5c574e;
+      --card: #fffcf7;
+      --border: #e2ddd3;
+      --accent: #154f4a;
+      --accent-hover: #0e3834;
+      --free-bg: #e8f0ee;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-underline-offset: 0.15em; }
+    a:hover { color: var(--accent-hover); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    header, main, footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    header { padding-top: 3.5rem; padding-bottom: 0.5rem; }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .lede { margin: 0 0 1.5rem; color: var(--muted); }
+    h2 {
+      margin: 2.25rem 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+    p { margin: 0 0 1rem; }
+    .free {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+    .free h3, .pack h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.0625rem;
+      font-weight: 650;
+    }
+    .pack {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.85rem;
+    }
+    .pack-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .price {
+      flex-shrink: 0;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+    }
+    .pack p, .free p { margin: 0 0 0.75rem; }
+    .pack p:last-child, .free p:last-child { margin-bottom: 0; }
+    .disclaimer { color: var(--muted); font-size: 0.9375rem; }
+    .buy { font-weight: 550; }
+    footer {
+      margin-top: 2.5rem;
+      padding-bottom: 3rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+    footer p { margin: 0 0 0.5rem; }
+      .crumb { margin: 0 0 1rem; font-size: 0.9375rem; color: var(--muted); }
+    .tip {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .tip h3 { margin: 0 0 0.4rem; font-size: 1.0625rem; font-weight: 650; }
+    .tip p:last-child { margin-bottom: 0; }
+    pre {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      font-size: 0.9375rem;
+      white-space: pre-wrap;
+    }
+    ul, ol { padding-left: 1.4rem; margin: 0 0 1rem; }
+    li { margin: 0 0 0.35rem; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to make AI bot reminders that don't stop until you're done",
+  "description": "Set up an AI assistant or Grok Bot reminder that repeats until you clearly say a task is done, not when a date passes or you reply ok. Rules, wording, and setup.",
+  "url": "https://skillsforbots.github.io/ai-bot-reminders-that-dont-stop/",
+  "mainEntityOfPage": "https://skillsforbots.github.io/ai-bot-reminders-that-dont-stop/",
+  "datePublished": "2026-11-20",
+  "dateModified": "2026-11-20",
+  "image": "https://skillsforbots.github.io/skillsforbots-logo.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "Skills for Bots",
+    "url": "https://skillsforbots.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://skillsforbots.github.io/#organization",
+    "name": "Skills for Bots",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://skillsforbots.github.io/skillsforbots-logo.jpg"
+    }
+  }
+}
+  </script>
+</head>
+<body>
+  <header>
+    <p class="crumb"><a href="/">Skills for Bots</a> › Guides</p>
+    <h1>How to make AI bot reminders that don&#x27;t stop until you&#x27;re done</h1>
+    <p class="lede">Normal reminders fire once and get swiped away. Here's how to get a bot to keep nudging you about a task until you actually say it's finished.</p>
+  </header>
+  <main>
+    <p>Calendar alerts are built for appointments. They fire at a time and they're done. That works for a meeting. It doesn't work for the stuff that really slips: renewing a registration, sending back a form, calling the insurance company. You swipe the alert, tell yourself you'll do it later, and it's gone.</p>
+    <p>An AI assistant with scheduled routines can do better, but only if you tell it exactly when to stop. Left alone, most bots stop too early.</p>
+
+    <h2>Why bot reminders stop too early</h2>
+    <p>Bots are trained to be agreeable. If you reply "thanks, on it," a lot of assistants take that as the end of the job. Others drop a reminder once its due date passes, or decide a task looks finished because you mentioned it. Each of those feels reasonable to the bot and leaves you with a forgotten to-do.</p>
+
+    <h2>The fix: one clear "done" rule</h2>
+    <p>The whole trick is to define what counts as done, and what doesn't. Write both lists down for the bot.</p>
+    <p><strong>Counts as done:</strong> "done," "clear it," "take it off the list," "stop reminding me about this."</p>
+    <p><strong>Doesn't count:</strong> "I'm working on it," "I'll do it tomorrow," "thanks," "ok," a thumbs-up, talking about the task, finishing part of it, or silence.</p>
+    <p>Add one more line: if a reply is unclear, ask once whether it's done, then keep reminding unless the answer is yes. That single question stops the bot from guessing in either direction.</p>
+
+    <h2>Setting it up</h2>
+    <ol>
+      <li><strong>Pick one bot</strong> to own the reminder so you don't get duplicates.</li>
+      <li><strong>Give it standing instructions</strong> with the task, the time, and the done rule above.</li>
+      <li><strong>Create a daily routine</strong> at the time you want, assigned to that bot. The routine's only job is to send the reminder if the item isn't cleared.</li>
+      <li><strong>Test it.</strong> Reply "ok" to the first reminder and confirm the next one still comes. Then reply "done" and confirm it stops.</li>
+    </ol>
+
+    <div class="tip">
+      <h3>Free tip: the reminder message itself</h3>
+<pre>Reminder: [task]
+This comes back every day at [time] until you tell me it's done.
+Reply "done" to stop it.</pre>
+      <p>Keep it to two lines. Long reminders with tips and pep talks get ignored faster. The second line also reminds you how to make it stop, which makes it easier to clear.</p>
+    </div>
+
+    <h2>Things the bot shouldn't do</h2>
+    <ul>
+      <li><strong>Do the task for you</strong> unless you ask. A reminder bot that starts filling out forms on its own is a different, riskier tool.</li>
+      <li><strong>Scold you.</strong> Repeating the reminder is enough pressure.</li>
+      <li><strong>Change the schedule on its own,</strong> or skip a day because it thinks you're busy.</li>
+    </ul>
+
+    <h2>When one reminder isn't enough</h2>
+    <p>Once this works, you'll probably want several to-dos on one reminder instead of a separate alarm for each, plus a slower schedule for low-priority things. That's where a list helps: one message with every open item, each one staying until you clear it by name.</p>
+
+    <h2>Get the skill</h2>
+    <p>The free <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/reminder-basics">Reminder Basics</a> skill has the done rule, the message, a copy-paste bot description, and a daily routine prompt. It handles one item on one daily time.</p>
+    <p>The full <a href="https://skillsforbots.gumroad.com/l/hdqoqb">Nag-Until-Cleared Reminders</a> pack ($17) keeps a whole list on one reminder, lets you choose every few days, weekly, every other week, or monthly, and adds chat commands to add, edit, clear, pause, or show items.</p>
+    <p class="disclaimer">These are instructions to the bot, not a hard technical block, and there's no guarantee a reminder arrives on time or at all. Test before you rely on it for anything time-sensitive. Provided as is, with no warranty.</p>
+
+  </main>
+  <footer>
+    <p><a href="/">Home</a> · <a href="https://github.com/skillsforbots/grok-bot-skills">GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.github.io/llms.txt">llms.txt</a></p>
+    <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+  </footer>
+</body>
+</html>
