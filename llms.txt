@@ -2,12 +2,13 @@
 
 > Free Grok Bot and AI agent SKILL.md templates with standing safety rules, plus paid skill packs for a multi-bot fleet, reminders, and a credit coach.
 
-A skill is an instruction file a Grok Bot or similar AI assistant follows. The free starter in https://github.com/skillsforbots/grok-bot-skills is MIT-licensed. Paid packs are sold separately on Gumroad under their own terms.
+A skill is an instruction file a Grok Bot or similar AI assistant follows. The free skills in https://github.com/skillsforbots/grok-bot-skills are MIT-licensed. Paid packs are sold separately on Gumroad under their own terms.
 
-## Free skill
+## Free skills
 
 - [Bot Safety Rules Starter](https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/bot-safety-rules-starter/SKILL.md): Standing rules that no bot sends email or messages without owner approval, no bot spends money, and a one-time approval is not a standing waiver, plus a blank structured handoff note.
 - Also on Agensi: [Bot Safety Rules Starter](https://www.agensi.io/skills/bot-safety-rules-starter)
+- [Reminder Basics](https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/reminder-basics/SKILL.md): One reminder that repeats daily until the owner clearly says it is done. Free, limited version of Nag-Until-Cleared Reminders (one item, one daily time).
 
 ## Premium packs
 
@@ -15,3 +16,9 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 - [Nag-Until-Cleared Reminders](https://skillsforbots.gumroad.com/l/hdqoqb): $17. Reminders that keep coming back until you clearly say an item is done.
 - [Credit Repair Coach](https://skillsforbots.gumroad.com/l/ifujn): $24. Educational daily or on-demand credit briefs with today's top 3 actions, labeled estimates, and letter drafts you send yourself. Not financial or legal advice; no results promised.
 - [Bot Owner Starter Bundle](https://skillsforbots.gumroad.com/l/vxecie): $39. All three premium packs in one download.
+
+## Guides
+
+- [How to stop your AI bot from spending money](https://skillsforbots.github.io/how-to-stop-ai-bot-spending-money/): Platform limits, keeping payment details away from bots, a standing no-spend rule, and hidden costs like trials that bill later.
+- [How to make AI bot reminders that don't stop until you're done](https://skillsforbots.github.io/ai-bot-reminders-that-dont-stop/): Defining what counts as done, a two-line reminder message, and a daily routine setup.
+- [How to coordinate multiple AI bots](https://skillsforbots.github.io/coordinate-multiple-ai-bots/): One lane per bot, a single coordinator, a written handoff note, shared safety rules, and a weekly read-only review.

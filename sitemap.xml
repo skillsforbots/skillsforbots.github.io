@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://skillsforbots.github.io/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://skillsforbots.github.io/how-to-stop-ai-bot-spending-money/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://skillsforbots.github.io/ai-bot-reminders-that-dont-stop/</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://skillsforbots.github.io/coordinate-multiple-ai-bots/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://skillsforbots.github.io/llms.txt</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-20</lastmod>
   </url>
 </urlset>
