@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Stop Your AI Bot From Spending Money (Without Breaking It) | Skills for Bots</title>
+  <meta name="description" content="Practical steps to keep an AI agent or Grok Bot from buying, subscribing, or paying without your OK: platform limits, card hygiene, and a no-spend rule it follows.">
+  <link rel="canonical" href="https://skillsforbots.github.io/how-to-stop-ai-bot-spending-money/">
+  <link rel="alternate" type="text/plain" href="https://skillsforbots.github.io/llms.txt" title="llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Skills for Bots">
+  <meta property="og:title" content="How to Stop Your AI Bot From Spending Money (Without Breaking It) | Skills for Bots">
+  <meta property="og:description" content="Practical steps to keep an AI agent or Grok Bot from buying, subscribing, or paying without your OK: platform limits, card hygiene, and a no-spend rule it follows.">
+  <meta property="og:url" content="https://skillsforbots.github.io/how-to-stop-ai-bot-spending-money/">
+  <meta property="og:image" content="https://skillsforbots.github.io/skillsforbots-logo.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Stop Your AI Bot From Spending Money (Without Breaking It) | Skills for Bots">
+  <meta name="twitter:description" content="Practical steps to keep an AI agent or Grok Bot from buying, subscribing, or paying without your OK: platform limits, card hygiene, and a no-spend rule it follows.">
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --fg: #1a1814;
+      --muted: #5c574e;
+      --card: #fffcf7;
+      --border: #e2ddd3;
+      --accent: #154f4a;
+      --accent-hover: #0e3834;
+      --free-bg: #e8f0ee;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-underline-offset: 0.15em; }
+    a:hover { color: var(--accent-hover); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    header, main, footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    header { padding-top: 3.5rem; padding-bottom: 0.5rem; }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .lede { margin: 0 0 1.5rem; color: var(--muted); }
+    h2 {
+      margin: 2.25rem 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+    p { margin: 0 0 1rem; }
+    .free {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+    .free h3, .pack h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.0625rem;
+      font-weight: 650;
+    }
+    .pack {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.85rem;
+    }
+    .pack-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .price {
+      flex-shrink: 0;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+    }
+    .pack p, .free p { margin: 0 0 0.75rem; }
+    .pack p:last-child, .free p:last-child { margin-bottom: 0; }
+    .disclaimer { color: var(--muted); font-size: 0.9375rem; }
+    .buy { font-weight: 550; }
+    footer {
+      margin-top: 2.5rem;
+      padding-bottom: 3rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+    footer p { margin: 0 0 0.5rem; }
+      .crumb { margin: 0 0 1rem; font-size: 0.9375rem; color: var(--muted); }
+    .tip {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .tip h3 { margin: 0 0 0.4rem; font-size: 1.0625rem; font-weight: 650; }
+    .tip p:last-child { margin-bottom: 0; }
+    pre {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      font-size: 0.9375rem;
+      white-space: pre-wrap;
+    }
+    ul, ol { padding-left: 1.4rem; margin: 0 0 1rem; }
+    li { margin: 0 0 0.35rem; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to stop your AI bot from spending money",
+  "description": "Practical steps to keep an AI agent or Grok Bot from buying, subscribing, or paying without your OK: platform limits, card hygiene, and a no-spend rule it follows.",
+  "url": "https://skillsforbots.github.io/how-to-stop-ai-bot-spending-money/",
+  "mainEntityOfPage": "https://skillsforbots.github.io/how-to-stop-ai-bot-spending-money/",
+  "datePublished": "2026-11-20",
+  "dateModified": "2026-11-20",
+  "image": "https://skillsforbots.github.io/skillsforbots-logo.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "Skills for Bots",
+    "url": "https://skillsforbots.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://skillsforbots.github.io/#organization",
+    "name": "Skills for Bots",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://skillsforbots.github.io/skillsforbots-logo.jpg"
+    }
+  }
+}
+  </script>
+</head>
+<body>
+  <header>
+    <p class="crumb"><a href="/">Skills for Bots</a> › Guides</p>
+    <h1>How to stop your AI bot from spending money</h1>
+    <p class="lede">A bot that can shop can also buy the wrong thing. Here's how to keep every purchase in your hands, in layers, starting with the ones that don't depend on the bot behaving.</p>
+  </header>
+  <main>
+    <p>AI assistants can now browse stores, fill carts, book things, and sign up for trials. That's handy right up until one decides a $40 subscription is the fastest way to finish a task. The fix isn't one magic prompt. It's a few layers, and the most important ones sit outside the bot.</p>
+
+    <h2>1. Start with the platform, not the prompt</h2>
+    <p>Instructions can be ignored or misread. Settings can't. Before you write a single rule, check what your bot platform offers:</p>
+    <ul>
+      <li><strong>Approval prompts.</strong> Many assistants can be set to ask before any purchase, payment, or checkout. Turn that on.</li>
+      <li><strong>Spending caps.</strong> If there's a monthly limit or a per-purchase limit, set it low.</li>
+      <li><strong>Connected accounts.</strong> Look at which stores, wallets, and payment apps the bot is connected to. Disconnect anything it doesn't need for the jobs you actually give it.</li>
+    </ul>
+
+    <h2>2. Keep payment details away from bots you don't fully trust</h2>
+    <p>The surest way to stop a bot from spending is to make sure it has nothing to spend with. Don't paste card numbers into chat. Don't save cards in a browser profile the bot uses. Don't give it logins to accounts with one-click checkout. If a bot genuinely needs to buy things, consider a separate card or virtual card with a small limit, so a mistake stays small.</p>
+
+    <h2>3. Give the bot a standing no-spend rule</h2>
+    <p>Once the hard limits are in place, add a clear instruction so the bot stops and asks instead of trying to work around a blocked checkout. Good rules have three parts:</p>
+    <ol>
+      <li><strong>A plain ban.</strong> No paying, buying, tipping, transferring, subscribing, or starting a trial that bills later.</li>
+      <li><strong>What to do instead.</strong> Stop, say what it would cost and why, and wait.</li>
+      <li><strong>A one-time approval stays one-time.</strong> "Buy this" means that item only. It doesn't switch the rule off.</li>
+    </ol>
+    <p>That third part matters more than it looks. Without it, a bot can treat your yes on Tuesday as permission for everything on Wednesday.</p>
+
+    <div class="tip">
+      <h3>Free tip: paste this into your bot's instructions</h3>
+<pre>Do not spend money. That includes purchases, tips, transfers,
+subscriptions, and free trials that bill later. If a step would
+cost money, stop, tell me the amount, what it's for, and why,
+then wait. My "yes" on one purchase is for that purchase only.</pre>
+      <p>Then test it: ask the bot to do something that would cost a few dollars, and check that it stops and asks.</p>
+    </div>
+
+    <h2>4. Watch out for sneaky costs</h2>
+    <p>Most surprise charges aren't a bot buying a TV. They're smaller:</p>
+    <ul>
+      <li>Free trials that convert to paid plans</li>
+      <li>"Upgrade to continue" buttons inside apps the bot is using</li>
+      <li>Rush shipping or add-ons picked by default at checkout</li>
+      <li>Paid API calls or credits inside tools the bot connects to</li>
+    </ul>
+    <p>Name these in your rule if your bot touches any of them, and check your statements for the first few weeks.</p>
+
+    <h2>5. Do the same for sending</h2>
+    <p>Spending and sending go together. A bot that can email a vendor can also agree to a quote. Pair your no-spend rule with a no-send rule: the bot drafts messages and shows you the recipient, channel, and full text, then waits for your OK.</p>
+
+    <h2>Get the full rule set</h2>
+    <p>The free <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a> has both rules (no spending, no sending without approval) as toggles, the one-time-approval wording, and a copy-paste bot description. It's also on <a href="https://www.agensi.io/skills/bot-safety-rules-starter">Agensi</a>.</p>
+    <p>If you run more than one bot, the <a href="https://skillsforbots.gumroad.com/l/ergple">Bot Fleet Coordinator</a> pack ($19) builds the same rules into a primary bot that routes work to the others, plus a weekly read-only review of your bots.</p>
+    <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Provided as is, with no warranty.</p>
+  </main>
+  <footer>
+    <p><a href="/">Home</a> · <a href="https://github.com/skillsforbots/grok-bot-skills">GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.github.io/llms.txt">llms.txt</a></p>
+    <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+  </footer>
+</body>
+</html>
