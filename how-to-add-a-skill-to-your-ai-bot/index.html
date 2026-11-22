@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Add a Skill to Your AI Bot (and Make It Stick) | Skills for Bots</title>
+  <meta name="description" content="A skill is a SKILL.md file of standing instructions a Grok Bot or similar AI assistant follows on later runs. Fill in the placeholders, add it to the bot, and test it.">
+  <link rel="canonical" href="https://skillsforbots.github.io/how-to-add-a-skill-to-your-ai-bot/">
+  <link rel="alternate" type="text/plain" href="https://skillsforbots.github.io/llms.txt" title="llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Skills for Bots">
+  <meta property="og:title" content="How to Add a Skill to Your AI Bot (and Make It Stick) | Skills for Bots">
+  <meta property="og:description" content="A skill is a SKILL.md file of standing instructions a Grok Bot or similar AI assistant follows on later runs. Fill in the placeholders, add it to the bot, and test it.">
+  <meta property="og:url" content="https://skillsforbots.github.io/how-to-add-a-skill-to-your-ai-bot/">
+  <meta property="og:image" content="https://skillsforbots.github.io/skillsforbots-logo.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Add a Skill to Your AI Bot (and Make It Stick) | Skills for Bots">
+  <meta name="twitter:description" content="A skill is a SKILL.md file of standing instructions a Grok Bot or similar AI assistant follows on later runs. Fill in the placeholders, add it to the bot, and test it.">
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --fg: #1a1814;
+      --muted: #5c574e;
+      --card: #fffcf7;
+      --border: #e2ddd3;
+      --accent: #154f4a;
+      --accent-hover: #0e3834;
+      --free-bg: #e8f0ee;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-underline-offset: 0.15em; }
+    a:hover { color: var(--accent-hover); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    header, main, footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    header { padding-top: 3.5rem; padding-bottom: 0.5rem; }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .lede { margin: 0 0 1.5rem; color: var(--muted); }
+    h2 {
+      margin: 2.25rem 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+    p { margin: 0 0 1rem; }
+    .free {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+    .free h3, .pack h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.0625rem;
+      font-weight: 650;
+    }
+    .pack {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.85rem;
+    }
+    .pack-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .price {
+      flex-shrink: 0;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+    }
+    .pack p, .free p { margin: 0 0 0.75rem; }
+    .pack p:last-child, .free p:last-child { margin-bottom: 0; }
+    .disclaimer { color: var(--muted); font-size: 0.9375rem; }
+    .buy { font-weight: 550; }
+    footer {
+      margin-top: 2.5rem;
+      padding-bottom: 3rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+    footer p { margin: 0 0 0.5rem; }
+      .crumb { margin: 0 0 1rem; font-size: 0.9375rem; color: var(--muted); }
+    .tip {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .tip h3 { margin: 0 0 0.4rem; font-size: 1.0625rem; font-weight: 650; }
+    .tip p:last-child { margin-bottom: 0; }
+    pre {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      font-size: 0.9375rem;
+      white-space: pre-wrap;
+    }
+    ul, ol { padding-left: 1.4rem; margin: 0 0 1rem; }
+    li { margin: 0 0 0.35rem; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to add a skill to your AI bot",
+  "description": "A skill is a SKILL.md file of standing instructions a Grok Bot or similar AI assistant follows on later runs. Fill in the placeholders, add it to the bot, and test it.",
+  "url": "https://skillsforbots.github.io/how-to-add-a-skill-to-your-ai-bot/",
+  "mainEntityOfPage": "https://skillsforbots.github.io/how-to-add-a-skill-to-your-ai-bot/",
+  "datePublished": "2026-11-22",
+  "dateModified": "2026-11-22",
+  "image": "https://skillsforbots.github.io/skillsforbots-logo.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "Skills for Bots",
+    "url": "https://skillsforbots.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://skillsforbots.github.io/#organization",
+    "name": "Skills for Bots",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://skillsforbots.github.io/skillsforbots-logo.jpg"
+    }
+  }
+}
+  </script>
+</head>
+<body>
+  <header>
+    <p class="crumb"><a href="/">Skills for Bots</a> › Guides</p>
+    <h1>How to add a skill to your AI bot</h1>
+    <p class="lede">A one-off prompt fades. A skill is a standing instruction file the bot follows on later runs. Here's how to add one in about five minutes.</p>
+  </header>
+  <main>
+    <p>A one-off prompt works until the next new chat, when you have to explain the same rules again. A skill is a standing instruction file the bot keeps and follows on later runs, so the behavior stays the same.</p>
+
+    <h2>What a skill is</h2>
+    <p>A skill is a <code>SKILL.md</code> file: standing instructions, rules, and copy-paste prompts. You fill in the placeholders, add the file to your Grok Bot or a similar assistant, and the bot uses those instructions on later runs instead of relying on one chat.</p>
+    <p>It is still just text the bot is told to follow. It is not a hard technical lock, and it is not a managed service. That's why the last step is always a test.</p>
+
+    <h2>Why a chat prompt isn't enough</h2>
+    <p>You can tell a bot "always ask before you send email," and it may do that in the same thread. Start a new conversation, or give the work to a second bot, and the rule is often gone. Standing instructions, or a skill file the tool loads from a folder, travel with the bot. That's the difference.</p>
+
+    <h2>Add one in about five minutes</h2>
+    <ol>
+      <li><strong>Open the <code>SKILL.md</code> file</strong> for the skill you want to use.</li>
+      <li><strong>Replace every <code>[BRACKET]</code> placeholder</strong> with your details. Don't leave brackets in the text you paste. If a field doesn't apply, follow the file's instructions, which usually means writing None or Unknown rather than inventing something.</li>
+      <li><strong>Add it to the bot.</strong> Paste the bot description block into your Grok Bot or similar assistant as standing instructions, or attach the <code>SKILL.md</code> if your tool loads skills from a folder.</li>
+      <li><strong>Test it</strong> with a request that should trigger the skill, and check that the bot follows the rules.</li>
+    </ol>
+
+    <div class="tip">
+      <h3>Free tip: confirm the skill actually loaded</h3>
+      <p>After you add it, ask:</p>
+<pre>What standing rules are you following right now?
+If I asked you to send an email, what would you do first?</pre>
+      <p>The bot should recap the rules in its own words and, if a no-send rule is in place, say it would draft the message and wait. If it can't recap the rules, the skill didn't take. Paste the description again, or check that you added it to the bot you are chatting with.</p>
+    </div>
+
+    <h2>A few things that go wrong</h2>
+    <ul>
+      <li><strong>Placeholders left in.</strong> A bot that still sees <code>[APPROVAL CHANNEL]</code> may guess, or skip the step. Fill every bracket before you paste.</li>
+      <li><strong>The rule lives in one chat only.</strong> If you pasted it as a message instead of as standing instructions or a loaded skill file, it may not be there next time.</li>
+      <li><strong>Only one bot has the skill.</strong> If you run more than one assistant, add the same safety rules to each, or a handoff can skip them. There's a separate guide on <a href="/coordinate-multiple-ai-bots/">coordinating multiple AI bots</a>.</li>
+    </ul>
+
+    <h2>Where to get skills</h2>
+    <p>Two free skills live in the <a href="https://github.com/skillsforbots/grok-bot-skills">grok-bot-skills</a> repository, with a five-minute install guide in each folder:</p>
+    <ul>
+      <li><a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a>: no sending or spending without your approval, and a blank handoff note. Also on <a href="https://www.agensi.io/skills/bot-safety-rules-starter">Agensi</a>.</li>
+      <li><a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/reminder-basics">Reminder Basics</a>: one daily reminder that keeps coming back until you clearly say it's done. Also on <a href="https://www.agensi.io/skills/reminder-basics">Agensi</a>.</li>
+    </ul>
+    <p>Paid packs for a <a href="https://skillsforbots.gumroad.com/l/ergple">bot fleet coordinator</a> ($19), <a href="https://skillsforbots.gumroad.com/l/hdqoqb">nag-until-cleared reminders</a> ($17), and a <a href="https://skillsforbots.gumroad.com/l/ifujn">credit repair coach</a> ($24) are on Gumroad, or together in the <a href="https://skillsforbots.gumroad.com/l/vxecie">Bot Owner Starter Bundle</a> ($39).</p>
+    <p>Related guides: <a href="/how-to-stop-ai-bot-spending-money/">how to stop your AI bot from spending money</a>, <a href="/ai-bot-reminders-that-dont-stop/">reminders that don't stop until you're done</a>, and <a href="/ai-bot-ask-before-acting/">how to make your AI bot ask before it acts</a>. For a short daily credit brief, see <a href="/ai-bot-daily-credit-action-plan/">how to get a daily credit action plan from an AI bot</a>.</p>
+    <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Provided as is, with no warranty.</p>
+  </main>
+  <footer>
+    <p><a href="/">Home</a> · <a href="https://github.com/skillsforbots/grok-bot-skills">GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.github.io/llms.txt">llms.txt</a></p>
+    <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+  </footer>
+</body>
+</html>
