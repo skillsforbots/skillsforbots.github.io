@@ -9,6 +9,7 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 - [Bot Safety Rules Starter](https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/bot-safety-rules-starter/SKILL.md): Standing rules that no bot sends email or messages without owner approval, no bot spends money, and a one-time approval is not a standing waiver, plus a blank structured handoff note.
 - Also on Agensi: [Bot Safety Rules Starter](https://www.agensi.io/skills/bot-safety-rules-starter)
 - [Reminder Basics](https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/reminder-basics/SKILL.md): One reminder that repeats daily until the owner clearly says it is done. Free, limited version of Nag-Until-Cleared Reminders (one item, one daily time).
+- Also on Agensi: [Reminder Basics](https://www.agensi.io/skills/reminder-basics)
 
 ## Premium packs
 
