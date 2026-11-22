@@ -10,6 +10,8 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 - Also on Agensi: [Bot Safety Rules Starter](https://www.agensi.io/skills/bot-safety-rules-starter)
 - [Reminder Basics](https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/reminder-basics/SKILL.md): One reminder that repeats daily until the owner clearly says it is done. Free, limited version of Nag-Until-Cleared Reminders (one item, one daily time).
 - Also on Agensi: [Reminder Basics](https://www.agensi.io/skills/reminder-basics)
+- [Usage Reset Sprint](https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/usage-reset-sprint/SKILL.md): Use leftover usage on a project right before a usage or token limit resets: check remaining usage and the reset time, finish the highest-value chunk that fits, and leave a handoff so work can resume after the reset. Does not buy credits or spend money to get more usage.
+- Also on Agensi: [Usage Reset Sprint](https://www.agensi.io/skills/usage-reset-sprint)
 
 ## Premium packs
 
@@ -26,3 +28,4 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 - [How to make your AI bot ask before it acts](https://skillsforbots.github.io/ai-bot-ask-before-acting/): A standing approval rule for sending, posting, or spending, with one-time yes staying one-time, plus a test and platform settings.
 - [How to get a daily credit action plan from an AI bot](https://skillsforbots.github.io/ai-bot-daily-credit-action-plan/): A short daily or on-demand brief with today's top 3 actions, figures labeled as estimates, and letter drafts you send yourself. Educational only; not financial or legal advice; no results promised.
 - [How to add a skill to your AI bot](https://skillsforbots.github.io/how-to-add-a-skill-to-your-ai-bot/): What a SKILL.md file is, how to fill placeholders and add it as standing instructions, and how to test that it loaded.
+- [How to make your AI bot use its remaining usage before the limit resets](https://skillsforbots.github.io/ai-bot-use-remaining-usage-before-reset/): Check remaining usage and the reset time, finish the highest-value chunk that fits, leave a handoff, and resume after reset, without buying more credits.
