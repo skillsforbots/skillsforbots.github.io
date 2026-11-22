@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Make Your AI Bot Ask Before It Acts | Skills for Bots</title>
+  <meta name="description" content="Set a standing rule so an AI agent or Grok Bot drafts emails, posts, and purchases, then waits for a clear yes. One-time approval stays one-time.">
+  <link rel="canonical" href="https://skillsforbots.github.io/ai-bot-ask-before-acting/">
+  <link rel="alternate" type="text/plain" href="https://skillsforbots.github.io/llms.txt" title="llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Skills for Bots">
+  <meta property="og:title" content="How to Make Your AI Bot Ask Before It Acts | Skills for Bots">
+  <meta property="og:description" content="Set a standing rule so an AI agent or Grok Bot drafts emails, posts, and purchases, then waits for a clear yes. One-time approval stays one-time.">
+  <meta property="og:url" content="https://skillsforbots.github.io/ai-bot-ask-before-acting/">
+  <meta property="og:image" content="https://skillsforbots.github.io/skillsforbots-logo.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Make Your AI Bot Ask Before It Acts | Skills for Bots">
+  <meta name="twitter:description" content="Set a standing rule so an AI agent or Grok Bot drafts emails, posts, and purchases, then waits for a clear yes. One-time approval stays one-time.">
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --fg: #1a1814;
+      --muted: #5c574e;
+      --card: #fffcf7;
+      --border: #e2ddd3;
+      --accent: #154f4a;
+      --accent-hover: #0e3834;
+      --free-bg: #e8f0ee;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-underline-offset: 0.15em; }
+    a:hover { color: var(--accent-hover); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    header, main, footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    header { padding-top: 3.5rem; padding-bottom: 0.5rem; }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .lede { margin: 0 0 1.5rem; color: var(--muted); }
+    h2 {
+      margin: 2.25rem 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+    p { margin: 0 0 1rem; }
+    .free {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+    .free h3, .pack h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.0625rem;
+      font-weight: 650;
+    }
+    .pack {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.85rem;
+    }
+    .pack-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .price {
+      flex-shrink: 0;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+    }
+    .pack p, .free p { margin: 0 0 0.75rem; }
+    .pack p:last-child, .free p:last-child { margin-bottom: 0; }
+    .disclaimer { color: var(--muted); font-size: 0.9375rem; }
+    .buy { font-weight: 550; }
+    footer {
+      margin-top: 2.5rem;
+      padding-bottom: 3rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+    footer p { margin: 0 0 0.5rem; }
+      .crumb { margin: 0 0 1rem; font-size: 0.9375rem; color: var(--muted); }
+    .tip {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .tip h3 { margin: 0 0 0.4rem; font-size: 1.0625rem; font-weight: 650; }
+    .tip p:last-child { margin-bottom: 0; }
+    pre {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      font-size: 0.9375rem;
+      white-space: pre-wrap;
+    }
+    ul, ol { padding-left: 1.4rem; margin: 0 0 1rem; }
+    li { margin: 0 0 0.35rem; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to make your AI bot ask before it acts",
+  "description": "Set a standing rule so an AI agent or Grok Bot drafts emails, posts, and purchases, then waits for a clear yes. One-time approval stays one-time.",
+  "url": "https://skillsforbots.github.io/ai-bot-ask-before-acting/",
+  "mainEntityOfPage": "https://skillsforbots.github.io/ai-bot-ask-before-acting/",
+  "datePublished": "2026-11-22",
+  "dateModified": "2026-11-22",
+  "image": "https://skillsforbots.github.io/skillsforbots-logo.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "Skills for Bots",
+    "url": "https://skillsforbots.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://skillsforbots.github.io/#organization",
+    "name": "Skills for Bots",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://skillsforbots.github.io/skillsforbots-logo.jpg"
+    }
+  }
+}
+  </script>
+</head>
+<body>
+  <header>
+    <p class="crumb"><a href="/">Skills for Bots</a> › Guides</p>
+    <h1>How to make your AI bot ask before it acts</h1>
+    <p class="lede">Helpful bots try to finish the job. Here's how to make yours draft the email, show the cost, or show the post, then wait for a clear yes.</p>
+  </header>
+  <main>
+    <p>Bots are trained to be useful. If you say "tell them I'll be late" or "go ahead and book it," a lot of assistants will send the message or finish the checkout because that looks like completing the task. A standing rule fixes that: the bot prepares the action, shows you everything you need to decide, and waits.</p>
+
+    <h2>1. Name the actions that need a yes</h2>
+    <p>Start with anything you can't easily undo:</p>
+    <ul>
+      <li>Sending email, chat messages, texts, or posts</li>
+      <li>Paying, buying, tipping, subscribing, or starting a trial that bills later</li>
+      <li>Deleting files, changing account settings, or publishing anything under your name</li>
+    </ul>
+    <p>Write that list into the bot's standing instructions. If you only ban spending, it can still send a messy email. If you only ban sending, it can still click buy. Cover both. There's a separate guide on <a href="/how-to-stop-ai-bot-spending-money/">stopping a bot from spending money</a>; the steps below work for sending and for any other action you want held for approval.</p>
+
+    <h2>2. Write a rule with three parts</h2>
+    <p>Good approval rules are short and specific:</p>
+    <ol>
+      <li><strong>A plain ban.</strong> No sending, posting, or spending unless you clearly approve that item.</li>
+      <li><strong>What to do instead.</strong> Stop. For a send, show the recipient, channel, and full text. For a payment, show the amount, what it's for, and why. Then wait.</li>
+      <li><strong>A one-time yes stays one-time.</strong> "Send this" or "buy this" means that item only. It does not switch the rule off.</li>
+    </ol>
+    <p>Add one more line: a draft is not permission. Without that, a bot can treat "looks good" or the act of drafting as a green light.</p>
+
+    <div class="tip">
+      <h3>Free tip: paste this into your bot's instructions</h3>
+<pre>Do not send email, chat messages, texts, or posts, and do not
+spend money, without my explicit OK. If a step would send or
+cost money, stop, show me the recipient, channel, and full text
+(or the amount, what it's for, and why), then wait. My "yes"
+on one item is for that item only. A draft is not permission.</pre>
+      <p>Then test it: ask the bot to email someone, or to buy something small, and check that it stops and asks.</p>
+    </div>
+
+    <h2>3. Test it on purpose</h2>
+    <p>A rule you have never tested is only a hope. Ask the bot to do something that would send a message or cost a few dollars. Confirm it stops, shows the details, and waits. Then approve that one item and make a second request. The standing rule should still be on. If a single "yes" turns it off, tighten the third part and test again.</p>
+
+    <h2>4. Turn on platform approvals too</h2>
+    <p>Instructions can be ignored or misread. Settings can't. If your bot platform can require an approval prompt before sending a message, posting, or paying, turn that on. The written rule is the backup, not the only layer.</p>
+
+    <h2>Get the full rule set</h2>
+    <p>The free <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a> has the no-send and no-spend rules as toggles, the one-time-approval wording, and a copy-paste bot description. It's also on <a href="https://www.agensi.io/skills/bot-safety-rules-starter">Agensi</a>.</p>
+    <p>If you run more than one bot, the <a href="https://skillsforbots.gumroad.com/l/ergple">Bot Fleet Coordinator</a> pack ($19) builds the same rules into a primary bot that routes work to the others, plus a weekly read-only review of your bots.</p>
+    <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Provided as is, with no warranty.</p>
+  </main>
+  <footer>
+    <p><a href="/">Home</a> · <a href="https://github.com/skillsforbots/grok-bot-skills">GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.github.io/llms.txt">llms.txt</a></p>
+    <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+  </footer>
+</body>
+</html>
