@@ -1,6 +1,6 @@
 # Grok Bot skills
 
-> Free Grok Bot and AI agent SKILL.md templates with standing safety rules, plus paid skill packs for a multi-bot fleet, reminders, and a credit coach.
+> Free Grok Bot and AI agent SKILL.md templates with standing safety rules, plus paid skill packs for a multi-bot fleet, reminders, a credit coach, and a project sprint.
 
 A skill is an instruction file a Grok Bot or similar AI assistant follows. The free skills in https://github.com/skillsforbots/grok-bot-skills are MIT-licensed. Paid packs are sold separately on Gumroad under their own terms.
 
@@ -10,7 +10,7 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 - Also on Agensi: [Bot Safety Rules Starter](https://www.agensi.io/skills/bot-safety-rules-starter)
 - [Reminder Basics](https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/reminder-basics/SKILL.md): One reminder that repeats daily until the owner clearly says it is done. Free, limited version of Nag-Until-Cleared Reminders (one item, one daily time).
 - Also on Agensi: [Reminder Basics](https://www.agensi.io/skills/reminder-basics)
-- [Usage Reset Sprint](https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/usage-reset-sprint/SKILL.md): Use leftover usage on a project right before a usage or token limit resets: check remaining usage and the reset time, finish the highest-value chunk that fits, and leave a handoff so work can resume after the reset. Does not buy credits or spend money to get more usage.
+- [Usage Reset Sprint](https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/usage-reset-sprint/SKILL.md): Use leftover usage on a project right before a usage or token limit resets: check remaining usage and the reset time, finish the highest-value chunk that fits, and leave a handoff so work can resume after the reset. Does not buy credits or spend money to get more usage. Free, limited version of Project Sprint (one window, one handoff).
 - Also on Agensi: [Usage Reset Sprint](https://www.agensi.io/skills/usage-reset-sprint)
 
 ## Premium packs
@@ -18,6 +18,7 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 - [Bot Fleet Coordinator](https://skillsforbots.gumroad.com/l/ergple): $19. A primary bot that routes each task to the right specialist, writes a handoff note, and follows no-send / no-spend rules.
 - [Nag-Until-Cleared Reminders](https://skillsforbots.gumroad.com/l/hdqoqb): $17. Reminders that keep coming back until you clearly say an item is done.
 - [Credit Repair Coach](https://skillsforbots.gumroad.com/l/ifujn): $24. Educational daily or on-demand credit briefs with today's top 3 actions, labeled estimates, and letter drafts you send yourself. Not financial or legal advice; no results promised.
+- [Project Sprint](https://skillsforbots.gumroad.com/l/project-sprint): $24. Plan a project across several usage windows, finish a high-value chunk before each reset, and pick up from a handoff after, without buying more credits.
 - [Bot Owner Starter Bundle](https://skillsforbots.gumroad.com/l/vxecie): $39. All three premium packs in one download.
 
 ## Guides
