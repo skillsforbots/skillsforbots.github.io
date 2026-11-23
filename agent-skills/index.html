@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Are Agent Skills? A Plain-English Guide for Bot Owners | Skills for Bots</title>
+  <meta name="description" content="Agent skills are SKILL.md files of standing instructions an AI bot loads when a task matches. What&#x27;s in one, how bots use them, how they differ from prompts and MCP, and how to check one is safe.">
+  <link rel="canonical" href="https://skillsforbots.com/agent-skills/">
+  <link rel="alternate" type="text/plain" href="https://skillsforbots.com/llms.txt" title="llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Skills for Bots">
+  <meta property="og:title" content="What Are Agent Skills? A Plain-English Guide for Bot Owners | Skills for Bots">
+  <meta property="og:description" content="Agent skills are SKILL.md files of standing instructions an AI bot loads when a task matches. What&#x27;s in one, how bots use them, how they differ from prompts and MCP, and how to check one is safe.">
+  <meta property="og:url" content="https://skillsforbots.com/agent-skills/">
+  <meta property="og:image" content="https://skillsforbots.com/skillsforbots-logo.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What Are Agent Skills? A Plain-English Guide for Bot Owners | Skills for Bots">
+  <meta name="twitter:description" content="Agent skills are SKILL.md files of standing instructions an AI bot loads when a task matches. What&#x27;s in one, how bots use them, how they differ from prompts and MCP, and how to check one is safe.">
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --fg: #1a1814;
+      --muted: #5c574e;
+      --card: #fffcf7;
+      --border: #e2ddd3;
+      --accent: #154f4a;
+      --accent-hover: #0e3834;
+      --free-bg: #e8f0ee;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-underline-offset: 0.15em; }
+    a:hover { color: var(--accent-hover); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    header, main, footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    header { padding-top: 3.5rem; padding-bottom: 0.5rem; }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .lede { margin: 0 0 1.5rem; color: var(--muted); }
+    h2 {
+      margin: 2.25rem 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+    p { margin: 0 0 1rem; }
+    .free {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+    .free h3, .pack h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.0625rem;
+      font-weight: 650;
+    }
+    .pack {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.85rem;
+    }
+    .pack-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .price {
+      flex-shrink: 0;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+    }
+    .pack p, .free p { margin: 0 0 0.75rem; }
+    .pack p:last-child, .free p:last-child { margin-bottom: 0; }
+    .disclaimer { color: var(--muted); font-size: 0.9375rem; }
+    .buy { font-weight: 550; }
+    footer {
+      margin-top: 2.5rem;
+      padding-bottom: 3rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+    footer p { margin: 0 0 0.5rem; }
+      .crumb { margin: 0 0 1rem; font-size: 0.9375rem; color: var(--muted); }
+    .tip {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .tip h3 { margin: 0 0 0.4rem; font-size: 1.0625rem; font-weight: 650; }
+    .tip p:last-child { margin-bottom: 0; }
+    pre {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      font-size: 0.9375rem;
+      white-space: pre-wrap;
+    }
+    ul, ol { padding-left: 1.4rem; margin: 0 0 1rem; }
+    li { margin: 0 0 0.35rem; }
+    .brand { margin: 0 0 0.5rem; font-weight: 650; color: var(--accent); letter-spacing: 0.02em; }
+    .repo { font-weight: 550; }
+    .updated { margin: 0 0 1.25rem; font-size: 0.9375rem; color: var(--muted); }
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 0.9rem 1.25rem;
+      margin: 0 0 1.5rem;
+    }
+    .toc h2 { margin: 0 0 0.4rem; font-size: 1rem; }
+    .toc ol { margin: 0; }
+    h3 { margin: 1.5rem 0 0.5rem; font-size: 1.0625rem; font-weight: 650; }
+    code { font-size: 0.9em; }
+    .table-wrap { overflow-x: auto; margin: 0 0 1rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; background: var(--card); }
+    th, td { border: 1px solid var(--border); padding: 0.5rem 0.65rem; text-align: left; vertical-align: top; }
+    th { background: var(--free-bg); font-weight: 650; }
+    .sources { font-size: 0.9375rem; }
+    .sources li { overflow-wrap: anywhere; }
+    button {
+      font: inherit;
+      font-size: 0.9375rem;
+      font-weight: 550;
+      color: #fff;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 0.5rem;
+      padding: 0.45rem 0.9rem;
+      cursor: pointer;
+    }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { color: var(--accent); background: var(--card); }
+    button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://skillsforbots.com/agent-skills/#article",
+      "headline": "What are agent skills? A plain-English guide for bot owners",
+      "description": "Agent skills are SKILL.md files of standing instructions an AI bot loads when a task matches. What's in one, how bots use them, how they differ from prompts and MCP, and how to check one is safe.",
+      "url": "https://skillsforbots.com/agent-skills/",
+      "mainEntityOfPage": "https://skillsforbots.com/agent-skills/",
+      "datePublished": "2026-11-23",
+      "dateModified": "2026-11-23",
+      "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://skillsforbots.com/#organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://skillsforbots.com/skillsforbots-logo.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Skills for Bots",
+          "item": "https://skillsforbots.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Agent skills",
+          "item": "https://skillsforbots.com/agent-skills/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are agent skills the same as prompts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A prompt is something you type once in a chat. A skill is a saved file the bot can load again on later runs, whenever a request matches its description. That makes skills better for anything you want done the same way every time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to know how to code to use a skill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Most everyday skills are plain English instructions. Some skills include scripts, which is where coding knowledge helps, mainly so you can check what a script does before a bot runs it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a skill make my bot do something I didn't ask for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can try. A skill is instructions the bot follows, so a badly written or malicious skill can push a bot to send, spend, or share things. Read a skill before you install it, run it through a checker, and keep your platform's own approval settings on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will a skill I write for one AI tool work in another?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often, yes, if it sticks to the name and description fields and plain instructions. The file format is shared. Where the file goes and how you switch it on differ by tool."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are your skills free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some are. My starter skills for safety rules, reminders, and usage resets are free on GitHub under the MIT license. Bigger packs are paid and sold on Gumroad and Agensi."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <p class="crumb"><a href="/">Skills for Bots</a> › Agent skills</p>
+    <h1>What are agent skills? A plain-English guide for bot owners</h1>
+    <p class="lede">An agent skill is a small file that teaches an AI bot how to do one job your way, every time. Here is what’s inside one, how bots use them, which tools read them, and how I check a skill before I trust it.</p>
+    <p class="updated">Last updated: <time datetime="2026-11-23">November 23, 2026</time></p>
+  </header>
+  <main>
+    <nav class="toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">On this page</h2>
+      <ol>
+        <li><a href="#short">What is an agent skill, in one paragraph?</a></li>
+        <li><a href="#inside">What’s inside a skill?</a></li>
+        <li><a href="#how">How does a bot use a skill?</a></li>
+        <li><a href="#vs">How are skills different from prompts, instructions, and MCP?</a></li>
+        <li><a href="#which">Which AI tools read agent skills?</a></li>
+        <li><a href="#safe">Are agent skills safe?</a></li>
+        <li><a href="#everyday">What can skills do for everyday life?</a></li>
+        <li><a href="#start">How do I start?</a></li>
+        <li><a href="#guides">Guides and skills on this site</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="short">What is an agent skill, in one paragraph?</h2>
+    <p>An agent skill is a folder with a <code>SKILL.md</code> file in it. The file has a short header with a <code>name</code> and a <code>description</code>, then plain instructions: when to use the skill, the steps, and the rules. An AI bot keeps the descriptions of all its skills in mind. When your request matches one, it loads the full file and follows it. You write the instructions once, and the bot reuses them in every later chat.</p>
+    <p>The format was published by Anthropic in October 2025, made an open standard that December, and in October 2026 handed to the Agentic AI Foundation under the Linux Foundation. Anthropic says more than 70 agent platforms have built it in. That shared format is why one skill can work across many bots, and it’s why I write every skill I publish to it.</p>
+
+    <h2 id="inside">What’s inside a skill?</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Part</th><th scope="col">Required?</th><th scope="col">What it’s for</th></tr></thead>
+        <tbody>
+          <tr><td><code>SKILL.md</code> header: <code>name</code></td><td>Yes</td><td>The skill’s ID, in lowercase with hyphens, matching the folder name</td></tr>
+          <tr><td><code>SKILL.md</code> header: <code>description</code></td><td>Yes</td><td>What it does and when to use it. The bot uses this to decide when to load the skill.</td></tr>
+          <tr><td><code>SKILL.md</code> body</td><td>Yes, in practice</td><td>Steps, examples, output format, and rules</td></tr>
+          <tr><td><code>scripts/</code></td><td>No</td><td>Code the bot can run. Read it before you allow that.</td></tr>
+          <tr><td><code>references/</code></td><td>No</td><td>Longer documents the bot reads only when needed</td></tr>
+          <tr><td><code>assets/</code></td><td>No</td><td>Templates, images, or data files</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Everyday skills usually need only the <code>SKILL.md</code>. If you want to write one, start with my <a href="/skill-md/template/">annotated SKILL.md template</a>.</p>
+
+    <h2 id="how">How does a bot use a skill?</h2>
+    <ol>
+      <li><strong>At the start,</strong> the bot reads only the name and description of each skill it has. That’s cheap, so a bot can carry many skills.</li>
+      <li><strong>When a request matches</strong> a description, the bot loads the full <code>SKILL.md</code> and follows it.</li>
+      <li><strong>If the skill points to other files,</strong> the bot opens them only when the task needs them.</li>
+    </ol>
+    <p>This is why a vague description is the most common reason a skill “doesn’t work.” If the description doesn’t contain the words you actually use, the bot never loads the rest.</p>
+
+    <h2 id="vs">How are skills different from prompts, instructions, and MCP?</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Thing</th><th scope="col">What it is</th><th scope="col">When it applies</th></tr></thead>
+        <tbody>
+          <tr><td>Prompt</td><td>A message you type</td><td>That one chat</td></tr>
+          <tr><td>Custom or standing instructions</td><td>A block of text saved in the bot’s settings</td><td>Every chat, always</td></tr>
+          <tr><td>Agent skill (<code>SKILL.md</code>)</td><td>A file of instructions for one job</td><td>When a request matches its description</td></tr>
+          <tr><td>Routine or scheduled task</td><td>A saved job that runs at a set time</td><td>On a schedule, often using a skill for the “how”</td></tr>
+          <tr><td>MCP server or connector</td><td>A bridge that gives the bot access to another app or data source</td><td>Whenever the bot needs that app</td></tr>
+          <tr><td><code>AGENTS.md</code> or <code>CLAUDE.md</code></td><td>A file of project instructions for coding agents</td><td>When the agent works in that project</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>A simple way to remember it: a connector gives a bot <em>access</em>, a skill gives it <em>know-how</em>, and a routine gives it a <em>schedule</em>. They work together. A daily reminder, for example, is a routine that runs a reminder skill.</p>
+
+    <h2 id="which">Which AI tools read agent skills?</h2>
+    <p>Tools whose own documentation, as of November 23, 2026, says they read <code>SKILL.md</code> skills include Claude Code, the Claude apps and API, Codex, Cursor, GitHub Copilot, VS Code, Gemini CLI, OpenCode, goose, and Amp. ChatGPT has a skills feature, with access depending on your plan. Grok Bot saves skills in the app and stores them as <code>SKILL.md</code> files. OpenClaw has its own skill registry.</p>
+    <p>The shared part is the file: the two header fields and the instructions. The parts that differ are where the folder goes (many tools scan <code>.agents/skills</code>, and Claude Code uses <code>.claude/skills</code>), how you switch a skill on, and what permissions a skill gets. Support changes often, so check your tool’s current docs. My <a href="/skill-md/template/#works-in">compatibility table</a> sums up the main kinds of tool.</p>
+
+    <h2 id="safe">Are agent skills safe?</h2>
+    <p>A skill is safe as long as its instructions are, and you can’t tell that from the name. Skills are instructions a bot follows, so a careless or malicious one can tell a bot to send messages, spend money, run code from the internet, or follow orders hidden in a web page. In an early-2026 study, Snyk scanned 3,984 skills from two public skill directories and found at least one critical security issue in 13.4% of them.</p>
+    <p>Before I install any skill, mine included, I check five things:</p>
+    <ol>
+      <li><strong>Read it all.</strong> If you can’t follow what it tells the bot to do, don’t install it.</li>
+      <li><strong>Look for an ask-before-acting section.</strong> Anything that sends, spends, deletes, or handles passwords should need your OK first.</li>
+      <li><strong>Look for hidden text.</strong> Invisible characters, comments, or lines like “don’t tell the user” are red flags.</li>
+      <li><strong>Check scripts and links.</strong> Know what any script does and where every link goes.</li>
+      <li><strong>Keep your platform’s controls on.</strong> Approval prompts and spending limits in your AI tool are the real safeguard. A skill only adds to them.</li>
+    </ol>
+    <p>My free <a href="/tools/skill-md-checker/">SKILL.md checker</a> automates the pattern-based parts of this in your browser. It’s a helper, not a guarantee. My guides on <a href="/ai-bot-ask-before-acting/">making a bot ask before it acts</a> and <a href="/how-to-stop-ai-bot-spending-money/">stopping a bot from spending money</a> cover the rules in more depth.</p>
+
+    <h2 id="everyday">What can skills do for everyday life?</h2>
+    <p>Most skill directories are built for programmers. I write skills for people who run a bot to handle life admin. Some examples:</p>
+    <ul>
+      <li><strong>Safety rules for every bot:</strong> no sending or spending without approval, and outside content treated as information, not orders. Free: <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a>.</li>
+      <li><strong>Reminders that don’t stop until you’re done:</strong> free <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/reminder-basics">Reminder Basics</a>, or the full <a href="/grok-bot-reminder-skill/">Nag-Until-Cleared Reminders</a> pack.</li>
+      <li><strong>Using leftover usage before a limit resets:</strong> free <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/usage-reset-sprint">Usage Reset Sprint</a>, or the multi-day <a href="/grok-bot-project-sprint-skill/">Project Sprint</a> pack.</li>
+      <li><strong>Running more than one bot:</strong> the <a href="/grok-bot-fleet-coordinator-skill/">Bot Fleet Coordinator</a> pack routes tasks and writes handoff notes.</li>
+      <li><strong>A daily credit to-do list:</strong> the <a href="/grok-bot-credit-coach-skill/">Credit Repair Coach</a> pack is educational only, not financial or legal advice, with no results promised.</li>
+    </ul>
+    <p>Three of those packs come together in the <a href="/grok-bot-skills-bundle/">Bot Owner Starter Bundle</a>. My packs were written and tested in Grok Bot first. They use the plain <code>SKILL.md</code> format, but test them in your own tool before you rely on them.</p>
+
+    <h2 id="start">How do I start?</h2>
+    <ol>
+      <li><strong>Pick one job</strong> you explain to your bot over and over.</li>
+      <li><strong>Copy the <a href="/skill-md/template/">SKILL.md template</a></strong> and fill it in for that job, including the ask-before-acting rules.</li>
+      <li><strong>Run it through the <a href="/tools/skill-md-checker/">checker</a>,</strong> fix any warnings that matter, and add it to your bot.</li>
+      <li><strong>Test it</strong> with a request that should trigger it. My guide <a href="/how-to-add-a-skill-to-your-ai-bot/">How to add a skill to your AI bot</a> shows how.</li>
+    </ol>
+
+    <h2 id="guides">Guides and skills on this site</h2>
+    <h3>Tools and templates</h3>
+    <ul>
+      <li><a href="/skill-md/template/">SKILL.md template you can copy, with notes on every part</a></li>
+      <li><a href="/tools/skill-md-checker/">Free SKILL.md checker: format and safety, in your browser</a></li>
+      <li><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> (MIT-licensed)</li>
+    </ul>
+    <h3>Guides</h3>
+    <ul>
+      <li><a href="/how-to-add-a-skill-to-your-ai-bot/">How to add a skill to your AI bot</a></li>
+      <li><a href="/ai-bot-ask-before-acting/">How to make your AI bot ask before it acts</a></li>
+      <li><a href="/how-to-stop-ai-bot-spending-money/">How to stop your AI bot from spending money</a></li>
+      <li><a href="/ai-bot-reminders-that-dont-stop/">How to make AI bot reminders that don’t stop until you’re done</a></li>
+      <li><a href="/coordinate-multiple-ai-bots/">How to coordinate multiple AI bots</a></li>
+      <li><a href="/ai-bot-use-remaining-usage-before-reset/">How to make your AI bot use its remaining usage before the limit resets</a></li>
+      <li><a href="/ai-bot-daily-credit-action-plan/">How to get a daily credit action plan from an AI bot</a></li>
+    </ul>
+    <h3>Skill packs</h3>
+    <ul>
+      <li><a href="/grok-bot-reminder-skill/">Nag-Until-Cleared Reminders</a> ($9)</li>
+      <li><a href="/grok-bot-fleet-coordinator-skill/">Bot Fleet Coordinator</a> ($12)</li>
+      <li><a href="/grok-bot-credit-coach-skill/">Credit Repair Coach</a> ($12)</li>
+      <li><a href="/grok-bot-project-sprint-skill/">Project Sprint</a> ($19)</li>
+      <li><a href="/grok-bot-skills-bundle/">Bot Owner Starter Bundle</a> ($19)</li>
+    </ul>
+
+    <h2 id="faq">FAQ</h2>
+    <h3>Are agent skills the same as prompts?</h3>
+    <p>No. A prompt is something you type once in a chat. A skill is a saved file the bot can load again on later runs, whenever a request matches its description. That makes skills better for anything you want done the same way every time.</p>
+    <h3>Do I need to know how to code to use a skill?</h3>
+    <p>No. Most everyday skills are plain English instructions. Some skills include scripts, which is where coding knowledge helps, mainly so you can check what a script does before a bot runs it.</p>
+    <h3>Can a skill make my bot do something I didn&#x27;t ask for?</h3>
+    <p>It can try. A skill is instructions the bot follows, so a badly written or malicious skill can push a bot to send, spend, or share things. Read a skill before you install it, run it through a <a href="/tools/skill-md-checker/">checker</a>, and keep your platform’s own approval settings on.</p>
+    <h3>Will a skill I write for one AI tool work in another?</h3>
+    <p>Often, yes, if it sticks to the <code>name</code> and <code>description</code> fields and plain instructions. The file format is shared. Where the file goes and how you switch it on differ by tool.</p>
+    <h3>Are your skills free?</h3>
+    <p>Some are. My starter skills for safety rules, reminders, and usage resets are <a href="https://github.com/skillsforbots/grok-bot-skills">free on GitHub</a> under the MIT license. Bigger packs are paid and sold on Gumroad and Agensi.</p>
+
+    <h2 id="sources">Sources</h2>
+    <ul class="sources">
+      <li>Agent Skills specification: <a href="https://agentskills.io/specification">agentskills.io/specification</a></li>
+      <li>Anthropic, donating Agent Skills to the Agentic AI Foundation (the “more than 70 agent platforms” figure): <a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation">anthropic.com</a></li>
+      <li>Which tools document SKILL.md support, and their folders: <a href="https://www.skillsboard.sh/agent-skills-support">skillsboard.sh/agent-skills-support</a></li>
+      <li>Skills in ChatGPT: <a href="https://help.openai.com/en/articles/20001066-skills-in-chatgpt">help.openai.com</a></li>
+      <li>Grok Bot skills and routines: <a href="https://docs.x.ai/grok-bot/skills-routines-and-automations">docs.x.ai</a></li>
+      <li>Snyk, ToxicSkills study of published agent skills (3,984 skills, 13.4% with critical issues): <a href="https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/">snyk.io</a></li>
+    </ul>
+    <p class="disclaimer">Skills are instructions to a bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Nothing on this page is legal, financial, or professional advice. Provided as is, with no warranty.</p>
+  </main>
+  <footer>
+    <p><a href="/">Home</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
+    <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
+    <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
+  </footer>
+</body>
+</html>
