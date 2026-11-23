@@ -127,35 +127,95 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How to make AI bot reminders that don't stop until you're done",
-  "description": "Set up an AI assistant or Grok Bot reminder that repeats until you clearly say a task is done, not when a date passes or you reply ok. Rules, wording, and setup.",
-  "url": "https://skillsforbots.com/ai-bot-reminders-that-dont-stop/",
-  "mainEntityOfPage": "https://skillsforbots.com/ai-bot-reminders-that-dont-stop/",
-  "datePublished": "2026-11-20",
-  "dateModified": "2026-11-20",
-  "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
-  "author": {
-    "@type": "Organization",
-    "name": "Skills for Bots",
-    "url": "https://skillsforbots.com/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://skillsforbots.com/#organization",
-    "name": "Skills for Bots",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://skillsforbots.com/skillsforbots-logo.jpg"
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to make AI bot reminders that don't stop until you're done",
+      "description": "Set up an AI assistant or Grok Bot reminder that repeats until you clearly say a task is done, not when a date passes or you reply ok. Rules, wording, and setup.",
+      "url": "https://skillsforbots.com/ai-bot-reminders-that-dont-stop/",
+      "mainEntityOfPage": "https://skillsforbots.com/ai-bot-reminders-that-dont-stop/",
+      "datePublished": "2026-11-20",
+      "dateModified": "2026-11-23",
+      "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://skillsforbots.com/#organization",
+        "name": "Skills for Bots",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://skillsforbots.com/skillsforbots-logo.jpg"
+        }
+      },
+      "@id": "https://skillsforbots.com/ai-bot-reminders-that-dont-stop/#article",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Skills for Bots",
+          "item": "https://skillsforbots.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://skillsforbots.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to make AI bot reminders that don't stop until you're done",
+          "item": "https://skillsforbots.com/ai-bot-reminders-that-dont-stop/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to make AI bot reminders that don't stop until you're done",
+      "description": "Set up an AI assistant or Grok Bot reminder that repeats until you clearly say a task is done, not when a date passes or you reply ok. Rules, wording, and setup.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Pick one bot",
+          "text": "Pick one bot to own the reminder so you don't get duplicates."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Give it standing instructions",
+          "text": "Give it standing instructions with the task, the time, and the done rule above."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Create a daily routine",
+          "text": "Create a daily routine at the time you want, assigned to that bot. The routine's only job is to send the reminder if the item isn't cleared."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Test it",
+          "text": "Test it. Reply \"ok\" to the first reminder and confirm the next one still comes. Then reply \"done\" and confirm it stops."
+        }
+      ]
     }
-  }
+  ]
 }
   </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d142a0413ccb4758a2ffe4985924efc3"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
   <header>
-    <p class="crumb"><a href="/">Skills for Bots</a> › Guides</p>
+    <p class="crumb"><a href="/">Skills for Bots</a> › <a href="/guides/">Guides</a></p>
     <h1>How to make AI bot reminders that don&#x27;t stop until you&#x27;re done</h1>
     <p class="lede">Normal reminders fire once and get swiped away. Here's how to get a bot to keep nudging you about a task until you actually say it's finished.</p>
   </header>
@@ -201,12 +261,22 @@ Reply "done" to stop it.</pre>
     <h2>Get the skill</h2>
     <p>The free <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/reminder-basics">Reminder Basics</a> skill has the done rule, the message, a copy-paste bot description, and a daily routine prompt. It handles one item on one daily time.</p>
     <p>The full <a href="https://skillsforbots.gumroad.com/l/hdqoqb">Nag-Until-Cleared Reminders</a> pack ($9) keeps a whole list on one reminder, lets you choose every few days, weekly, every other week, or monthly, and adds chat commands to add, edit, clear, pause, or show items.</p>
+    <h2>Related guides</h2>
+    <ul>
+      <li><a href="/routines/skills-vs-scheduled-tasks/">Skills vs scheduled tasks: the how and the when</a></li>
+      <li><a href="/install/grok-bot/">How to install Grok Bot skills from GitHub</a></li>
+      <li><a href="/skills/everyday/">Best agent skills for everyday life admin</a></li>
+      <li>Free skill: <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/reminder-basics">Reminder Basics</a>, on GitHub</li>
+      <li>Pack: <a href="/grok-bot-reminder-skill/">Nag-Until-Cleared Reminders</a> ($9, a whole list on one reminder)</li>
+      <li><a href="/guides/">All guides</a></li>
+    </ul>
     <p class="disclaimer">These are instructions to the bot, not a hard technical block, and there's no guarantee a reminder arrives on time or at all. Test before you rely on it for anything time-sensitive. Provided as is, with no warranty.</p>
 
   </main>
   <footer>
-    <p><a href="/">Home</a> · <a href="https://github.com/skillsforbots/grok-bot-skills">GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
+    <p><a href="/">Home</a> · <a href="/guides/">Guides</a> · <a href="https://github.com/skillsforbots/grok-bot-skills">GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
   </footer>
 </body>
 </html>
