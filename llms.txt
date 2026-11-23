@@ -30,6 +30,7 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 - [Project Sprint](https://skillsforbots.gumroad.com/l/project-sprint): $19. Plan a project across several usage windows, finish a high-value chunk before each reset, and pick up from a handoff after, without buying more credits.
 - Also on Agensi: [Project Sprint](https://www.agensi.io/skills/project-sprint)
 - [Domain + SEO Launch Playbook](https://skillsforbots.gumroad.com/l/domain-seo-launch): $19. One skill that walks your bot through moving a static site to a custom domain and launching it for search, in 8 phases, with a check after each one.
+- Also on Agensi: [Domain + SEO Launch Playbook](https://www.agensi.io/skills/domain-seo-launch-playbook)
 - [Bot Owner Starter Bundle](https://skillsforbots.gumroad.com/l/vxecie): $19. The Bot Fleet Coordinator, Nag-Until-Cleared Reminders, and Credit Repair Coach in one download (saves $14 vs $33 separately).
 - Also on Agensi: [Bot Owner Starter Bundle](https://www.agensi.io/bundles/bot-owner-starter-bundle)
 
