@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Agent Skills for Everyday Life Admin (Free and Paid) | Skills for Bots</title>
+  <meta name="description" content="Agent skills for everyday life admin, not code: safety rules, reminders, daily plans, usage resets, and shopping decisions. Free and paid, mine and others’.">
+  <link rel="canonical" href="https://skillsforbots.com/skills/everyday/">
+  <link rel="alternate" type="text/plain" href="https://skillsforbots.com/llms.txt" title="llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Skills for Bots">
+  <meta property="og:title" content="Best Agent Skills for Everyday Life Admin (Free and Paid) | Skills for Bots">
+  <meta property="og:description" content="Agent skills for everyday life admin, not code: safety rules, reminders, daily plans, usage resets, and shopping decisions. Free and paid, mine and others’.">
+  <meta property="og:url" content="https://skillsforbots.com/skills/everyday/">
+  <meta property="og:image" content="https://skillsforbots.com/skillsforbots-logo.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Best Agent Skills for Everyday Life Admin (Free and Paid) | Skills for Bots">
+  <meta name="twitter:description" content="Agent skills for everyday life admin, not code: safety rules, reminders, daily plans, usage resets, and shopping decisions. Free and paid, mine and others’.">
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --fg: #1a1814;
+      --muted: #5c574e;
+      --card: #fffcf7;
+      --border: #e2ddd3;
+      --accent: #154f4a;
+      --accent-hover: #0e3834;
+      --free-bg: #e8f0ee;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-underline-offset: 0.15em; }
+    a:hover { color: var(--accent-hover); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    header, main, footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    header { padding-top: 3.5rem; padding-bottom: 0.5rem; }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .lede { margin: 0 0 1.5rem; color: var(--muted); }
+    h2 {
+      margin: 2.25rem 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+    p { margin: 0 0 1rem; }
+    .free {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+    .free h3, .pack h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.0625rem;
+      font-weight: 650;
+    }
+    .pack {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.85rem;
+    }
+    .pack-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .price {
+      flex-shrink: 0;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+    }
+    .pack p, .free p { margin: 0 0 0.75rem; }
+    .pack p:last-child, .free p:last-child { margin-bottom: 0; }
+    .disclaimer { color: var(--muted); font-size: 0.9375rem; }
+    .buy { font-weight: 550; }
+    footer {
+      margin-top: 2.5rem;
+      padding-bottom: 3rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+    footer p { margin: 0 0 0.5rem; }
+      .crumb { margin: 0 0 1rem; font-size: 0.9375rem; color: var(--muted); }
+    .tip {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .tip h3 { margin: 0 0 0.4rem; font-size: 1.0625rem; font-weight: 650; }
+    .tip p:last-child { margin-bottom: 0; }
+    pre {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      font-size: 0.9375rem;
+      white-space: pre-wrap;
+    }
+    ul, ol { padding-left: 1.4rem; margin: 0 0 1rem; }
+    li { margin: 0 0 0.35rem; }
+    .brand { margin: 0 0 0.5rem; font-weight: 650; color: var(--accent); letter-spacing: 0.02em; }
+    .repo { font-weight: 550; }
+    .updated { margin: 0 0 1.25rem; font-size: 0.9375rem; color: var(--muted); }
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 0.9rem 1.25rem;
+      margin: 0 0 1.5rem;
+    }
+    .toc h2 { margin: 0 0 0.4rem; font-size: 1rem; }
+    .toc ol { margin: 0; }
+    h3 { margin: 1.5rem 0 0.5rem; font-size: 1.0625rem; font-weight: 650; }
+    code { font-size: 0.9em; }
+    .table-wrap { overflow-x: auto; margin: 0 0 1rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; background: var(--card); }
+    th, td { border: 1px solid var(--border); padding: 0.5rem 0.65rem; text-align: left; vertical-align: top; }
+    th { background: var(--free-bg); font-weight: 650; }
+    .sources { font-size: 0.9375rem; }
+    .sources li { overflow-wrap: anywhere; }
+    button {
+      font: inherit;
+      font-size: 0.9375rem;
+      font-weight: 550;
+      color: #fff;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 0.5rem;
+      padding: 0.45rem 0.9rem;
+      cursor: pointer;
+    }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { color: var(--accent); background: var(--card); }
+    button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://skillsforbots.com/skills/everyday/#article",
+      "headline": "Best agent skills for everyday life admin (free and paid)",
+      "description": "Agent skills for everyday life admin, not code: safety rules, reminders, daily plans, usage resets, and shopping decisions. Free and paid, mine and others’.",
+      "url": "https://skillsforbots.com/skills/everyday/",
+      "mainEntityOfPage": "https://skillsforbots.com/skills/everyday/",
+      "datePublished": "2026-11-23",
+      "dateModified": "2026-11-23",
+      "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://skillsforbots.com/#organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://skillsforbots.com/skillsforbots-logo.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Skills for Bots",
+          "item": "https://skillsforbots.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://skillsforbots.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Everyday skills",
+          "item": "https://skillsforbots.com/skills/everyday/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the best agent skills for everyday life?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with a safety skill that stops the bot sending or spending without you, a reminder that repeats until you say done, and one skill for the chore you repeat most, such as a daily plan or a weekly review."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are these skills free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most are. My Bot Safety Rules Starter, Reminder Basics, and Usage Reset Sprint are free and MIT-licensed, as are the ofershap and botkits skills listed. My larger packs are paid, with prices shown."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to code to use them?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. They’re plain instructions. You paste or upload the file, or copy it into a folder, depending on your tool."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do everyday skills work in ChatGPT and Claude, not just Grok Bot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They use the shared SKILL.md format, so they can be added to ChatGPT, Claude, and other tools. Reminders and daily plans also need a scheduler in that tool. Test before you rely on one."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d142a0413ccb4758a2ffe4985924efc3"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+  <header>
+    <p class="crumb"><a href="/">Skills for Bots</a> › <a href="/guides/">Guides</a> › Everyday skills</p>
+    <h1>Best agent skills for everyday life admin (free and paid)</h1>
+    <p class="lede">Most “best skills” lists are about coding and marketing. This one is for the rest of life: reminders that stick, a bot that won’t spend money on its own, a plan for the day. It includes other people’s free skills next to mine, with notes on who each one is for.</p>
+    <p class="updated">Last updated: <time datetime="2026-11-23">November 23, 2026</time></p>
+  </header>
+  <main>
+    <nav class="toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">On this page</h2>
+      <ol>
+        <li><a href="#how">How I chose these</a></li>
+        <li><a href="#list">The list, by job</a></li>
+        <li><a href="#start">If you only install three</a></li>
+        <li><a href="#write">Write your own in ten minutes</a></li>
+        <li><a href="#works">Which bots these work in</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#sources">Sources</a></li>
+        <li><a href="#related">Related</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="how">How I chose these</h2>
+    <p>I looked for skills that help with life admin rather than work output: things you’d otherwise track in your head, a sticky note, or a calendar alert you swipe away. Each one had to be readable in a few minutes, keep risky steps behind your approval or not take them at all, and be public so you can check it before installing.</p>
+    <p>There are no scores or rankings here, because I haven’t run every skill on every platform. Where a skill is mine, I say so, and where it’s paid, I give the price. Others’ skills are described from their repos as I read them on November 23, 2026. If you’re looking for a wider list of Grok Bot repos, see <a href="/skills/grok-bot-skills-github/">Grok Bot skills on GitHub</a>.</p>
+
+    <h2 id="list">The list, by job</h2>
+    <h3>Safety rules for every bot</h3>
+    <ul>
+      <li><strong><a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a></strong> (Free, mine). No sending or spending without your yes, a one-time yes stays one-time, and outside content is treated as information. Start here if your bot can reach email or a card.</li>
+      <li><strong><a href="/safety/approval-rules/">Approval rules template</a></strong> (Free, mine). The same rules as a longer copy-paste block, covering publishing, deleting, and access changes too.</li>
+    </ul>
+    <h3>Reminders that don’t give up</h3>
+    <ul>
+      <li><strong><a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/reminder-basics">Reminder Basics</a></strong> (Free, mine). One reminder that repeats daily until you clearly say it’s done. “Ok” and “later” don’t count.</li>
+      <li><strong><a href="/grok-bot-reminder-skill/">Nag-Until-Cleared Reminders</a></strong> ($9, mine). A whole list on one reminder, weekly or monthly schedules, and commands to add, clear, pause, or show items.</li>
+    </ul>
+    <h3>Daily planning and check-ins</h3>
+    <ul>
+      <li><strong><a href="https://github.com/ofershap/grok-bot-skills/tree/main/skills/morning-brief">morning-brief</a></strong> (Free, ofershap/grok-bot-skills (MIT)). Turns today’s calendar and task notes into a plan that keeps commitments, deadlines, and missing data separate.</li>
+      <li><strong><a href="https://github.com/ofershap/grok-bot-skills/tree/main/skills/monthly-checkpoint">monthly-checkpoint</a></strong> (Free, ofershap/grok-bot-skills (MIT)). About 30 days after you start a new habit or tool, sends a short keep, change, or stop summary.</li>
+    </ul>
+    <h3>Using your plan’s usage well</h3>
+    <ul>
+      <li><strong><a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/usage-reset-sprint">Usage Reset Sprint</a></strong> (Free, mine). Before a usage limit resets, finishes the most valuable chunk of a project that fits and leaves a handoff note. Never buys more usage.</li>
+      <li><strong><a href="/grok-bot-project-sprint-skill/">Project Sprint</a></strong> ($19, mine). Plans a bigger project across several usage windows, with a handoff before each reset.</li>
+    </ul>
+    <h3>Shopping and decisions</h3>
+    <ul>
+      <li><strong><a href="https://github.com/ofershap/grok-bot-skills/tree/main/skills/competitor-compare">competitor-compare</a></strong> (Free, ofershap/grok-bot-skills (MIT)). Compares a short list of products or vendors against criteria you set, checking whether each option qualifies before comparing costs.</li>
+      <li><strong><a href="https://github.com/ofershap/grok-bot-skills/tree/main/skills/claim-check">claim-check</a></strong> (Free, ofershap/grok-bot-skills (MIT)). Checks a claim, viral post, or announcement against dated evidence. Handy before acting on something you read.</li>
+    </ul>
+    <h3>Paperwork and documents</h3>
+    <ul>
+      <li><strong><a href="/install/claude/">Claude’s built-in document skills</a></strong> (Included with Claude). Anthropic ships skills for Word, Excel, PowerPoint, and PDF files, which Claude uses on its own when code execution is on.</li>
+      <li><strong><a href="/install/chatgpt/">A receipt-log skill you write in ChatGPT</a></strong> (Free, write your own). My ChatGPT guide has a short description you can paste to create one with chat.</li>
+    </ul>
+    <h3>Running more than one bot</h3>
+    <ul>
+      <li><strong><a href="/grok-bot-fleet-coordinator-skill/">Bot Fleet Coordinator</a></strong> ($12, mine). One primary bot routes tasks to the right specialist, writes a handoff note, and keeps no-send and no-spend rules on every bot.</li>
+      <li><strong><a href="https://github.com/d-gangz/grokbot-skills">bot-audit and bot-retro</a></strong> (Free, d-gangz/grokbot-skills (no license shown)). Reviews your bots’ descriptions and memory, or a day of transcripts, and proposes fixes for you to approve.</li>
+      <li><strong><a href="https://github.com/botkitsdev/botkits">routine-healthcheck</a></strong> (Free, botkitsdev/botkits (MIT)). Looks for wasted usage and noise in scheduled routines.</li>
+    </ul>
+    <p>Before installing any of these, read the file. My <a href="/safety/check-a-skill-before-installing/">five-minute safety check</a> applies to my skills as much as anyone’s.</p>
+
+    <h2 id="start">If you only install three</h2>
+    <ol>
+      <li><strong>A safety skill.</strong> Everything else is safer once the bot knows it can’t send or spend without you. The <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a> is free.</li>
+      <li><strong>A reminder that repeats.</strong> It’s the skill people notice working first, because the reminder keeps coming back. <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/reminder-basics">Reminder Basics</a> is free, and my guide to <a href="/ai-bot-reminders-that-dont-stop/">reminders that don’t stop until you’re done</a> covers the setup.</li>
+      <li><strong>One skill for your most repeated chore.</strong> A daily plan, a weekly review, or a shopping comparison. Pick whichever you explain to your bot most often.</li>
+    </ol>
+    <p>The <a href="/grok-bot-skills-bundle/">Bot Owner Starter Bundle</a> ($19) packs three of my paid skills together: the Bot Fleet Coordinator, Nag-Until-Cleared Reminders, and Credit Repair Coach. The Credit Repair Coach is a daily credit to-do list. Educational only. Not financial advice, not legal advice, and not credit repair company services. No results are promised.</p>
+
+    <h2 id="write">Write your own in ten minutes</h2>
+    <p>Everyday skills are short. Most of mine are a description, five to ten steps, and an “ask before acting” section. The pattern:</p>
+<pre>---
+name: weekly-review
+description: Every Sunday, summarize what got done this week, what slipped, and the three priorities for next week. Use when I ask for my weekly review.
+---
+1. Read this week's notes and calendar.
+2. List done, slipped, and next week's top three.
+3. Keep it under 200 words.
+
+Ask before acting: don't send, post, or book anything.
+Show me the summary only.</pre>
+    <p>My <a href="/skill-md/template/">SKILL.md template</a> explains each part, and the <a href="/tools/skill-md-checker/">SKILL.md checker</a> flags missing pieces. To run it every Sunday, pair it with a routine or scheduled task. See <a href="/routines/skills-vs-scheduled-tasks/">skills vs scheduled tasks</a>.</p>
+
+    <h2 id="works">Which bots these work in</h2>
+    <p>All the skills above use the shared <code>SKILL.md</code> format, so they can be added to Grok Bot, Claude, ChatGPT, Codex, Cursor, and other tools that read it. My skills were written and tested in Grok Bot first. Reminders and daily plans also need a scheduler in your tool, and some skills assume access to a calendar or notes. My <a href="/install/">install hub</a> has the steps for each tool, and <a href="/skill-md/which-bots-support-it/">which AI bots read SKILL.md</a> lists the folders.</p>
+    <h2 id="faq">FAQ</h2>
+    <h3>What are the best agent skills for everyday life?</h3>
+    <p>Start with a safety skill that stops the bot sending or spending without you, a reminder that repeats until you say done, and one skill for the chore you repeat most, such as a daily plan or a weekly review.</p>
+    <h3>Are these skills free?</h3>
+    <p>Most are. My Bot Safety Rules Starter, Reminder Basics, and Usage Reset Sprint are free and MIT-licensed, as are the ofershap and botkits skills listed. My larger packs are paid, with prices shown.</p>
+    <h3>Do I need to code to use them?</h3>
+    <p>No. They’re plain instructions. You paste or upload the file, or copy it into a folder, depending on your tool.</p>
+    <h3>Do everyday skills work in ChatGPT and Claude, not just Grok Bot?</h3>
+    <p>They use the shared SKILL.md format, so they can be added to ChatGPT, Claude, and other tools. Reminders and daily plans also need a scheduler in that tool. Test before you rely on one.</p>
+
+    <h2 id="sources">Sources</h2>
+    <p>I read each source on November 23, 2026. Products change often, so check the vendor page before you rely on a detail.</p>
+    <ul class="sources">
+      <li>ofershap/grok-bot-skills (catalog): <a href="https://github.com/ofershap/grok-bot-skills">github.com/ofershap/grok-bot-skills</a></li>
+      <li>d-gangz/grokbot-skills (bot-audit, bot-retro): <a href="https://github.com/d-gangz/grokbot-skills">github.com/d-gangz/grokbot-skills</a></li>
+      <li>botkitsdev/botkits (routine-healthcheck): <a href="https://github.com/botkitsdev/botkits">github.com/botkitsdev/botkits</a></li>
+      <li>Claude Help Center, use skills in Claude (built-in document skills): <a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude">support.claude.com</a></li>
+      <li>Agent Skills specification: <a href="https://agentskills.io/specification">agentskills.io/specification</a></li>
+    </ul>
+
+    <h2 id="related">Related</h2>
+    <ul>
+      <li><a href="/skills/grok-bot-skills-github/">Grok Bot skills on GitHub: the free repos worth knowing</a></li>
+      <li><a href="/ai-bot-reminders-that-dont-stop/">Reminders that don’t stop until you’re done</a></li>
+      <li><a href="/how-to-stop-ai-bot-spending-money/">How to stop your AI bot from spending money</a></li>
+      <li><a href="/install/">How to add a skill to any AI bot</a></li>
+      <li><a href="/grok-bot-skills-bundle/">Bot Owner Starter Bundle</a> ($19)</li>
+    </ul>
+    <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Nothing on this page is legal, financial, or professional advice. Provided as is, with no warranty.</p>
+  </main>
+  <footer>
+    <p><a href="/">Home</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
+    <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
+    <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
+  </footer>
+</body>
+</html>
