@@ -127,35 +127,95 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How to add a skill to your AI bot",
-  "description": "A skill is a SKILL.md file of standing instructions a Grok Bot or similar AI assistant follows on later runs. Fill in the placeholders, add it to the bot, and test it.",
-  "url": "https://skillsforbots.com/how-to-add-a-skill-to-your-ai-bot/",
-  "mainEntityOfPage": "https://skillsforbots.com/how-to-add-a-skill-to-your-ai-bot/",
-  "datePublished": "2026-11-22",
-  "dateModified": "2026-11-22",
-  "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
-  "author": {
-    "@type": "Organization",
-    "name": "Skills for Bots",
-    "url": "https://skillsforbots.com/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://skillsforbots.com/#organization",
-    "name": "Skills for Bots",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://skillsforbots.com/skillsforbots-logo.jpg"
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to add a skill to your AI bot",
+      "description": "A skill is a SKILL.md file of standing instructions a Grok Bot or similar AI assistant follows on later runs. Fill in the placeholders, add it to the bot, and test it.",
+      "url": "https://skillsforbots.com/how-to-add-a-skill-to-your-ai-bot/",
+      "mainEntityOfPage": "https://skillsforbots.com/how-to-add-a-skill-to-your-ai-bot/",
+      "datePublished": "2026-11-22",
+      "dateModified": "2026-11-23",
+      "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://skillsforbots.com/#organization",
+        "name": "Skills for Bots",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://skillsforbots.com/skillsforbots-logo.jpg"
+        }
+      },
+      "@id": "https://skillsforbots.com/how-to-add-a-skill-to-your-ai-bot/#article",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Skills for Bots",
+          "item": "https://skillsforbots.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://skillsforbots.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to add a skill to your AI bot",
+          "item": "https://skillsforbots.com/how-to-add-a-skill-to-your-ai-bot/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to add a skill to your AI bot",
+      "description": "A skill is a SKILL.md file of standing instructions a Grok Bot or similar AI assistant follows on later runs. Fill in the placeholders, add it to the bot, and test it.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Open the SKILL.md file",
+          "text": "Open the SKILL.md file for the skill you want to use."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Replace every [BRACKET] placeholder",
+          "text": "Replace every [BRACKET] placeholder with your details. Don't leave brackets in the text you paste. If a field doesn't apply, follow the file's instructions, which usually means writing None or Unknown rather than inventing something."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Add it to the bot",
+          "text": "Add it to the bot. Paste the bot description block into your Grok Bot or similar assistant as standing instructions, or attach the SKILL.md if your tool loads skills from a folder."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Test it",
+          "text": "Test it with a request that should trigger the skill, and check that the bot follows the rules."
+        }
+      ]
     }
-  }
+  ]
 }
   </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d142a0413ccb4758a2ffe4985924efc3"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
   <header>
-    <p class="crumb"><a href="/">Skills for Bots</a> › Guides</p>
+    <p class="crumb"><a href="/">Skills for Bots</a> › <a href="/guides/">Guides</a></p>
     <h1>How to add a skill to your AI bot</h1>
     <p class="lede">A one-off prompt fades. A skill is a standing instruction file the bot follows on later runs. Here's how to add one in about five minutes.</p>
   </header>
@@ -193,18 +253,29 @@ If I asked you to send an email, what would you do first?</pre>
     </ul>
 
     <h2>Where to get skills</h2>
-    <p>Two free skills live in the <a href="https://github.com/skillsforbots/grok-bot-skills">grok-bot-skills</a> repository, with a five-minute install guide in each folder:</p>
+    <p>Three free skills live in the <a href="https://github.com/skillsforbots/grok-bot-skills">grok-bot-skills</a> repository, with a five-minute install guide in each folder:</p>
     <ul>
       <li><a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a>: no sending or spending without your approval, and a blank handoff note. Also on <a href="https://www.agensi.io/skills/bot-safety-rules-starter">Agensi</a>.</li>
       <li><a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/reminder-basics">Reminder Basics</a>: one daily reminder that keeps coming back until you clearly say it's done. Also on <a href="https://www.agensi.io/skills/reminder-basics">Agensi</a>.</li>
+      <li><a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/usage-reset-sprint">Usage Reset Sprint</a>: use leftover usage on a project before a limit resets, and leave a handoff. It never buys more usage. Also on <a href="https://www.agensi.io/skills/usage-reset-sprint">Agensi</a>.</li>
     </ul>
     <p>Paid packs for a <a href="https://skillsforbots.gumroad.com/l/ergple">bot fleet coordinator</a> ($12), <a href="https://skillsforbots.gumroad.com/l/hdqoqb">nag-until-cleared reminders</a> ($9), and a <a href="https://skillsforbots.gumroad.com/l/ifujn">credit repair coach</a> ($12) are on Gumroad, or together in the <a href="https://skillsforbots.gumroad.com/l/vxecie">Bot Owner Starter Bundle</a> ($19, which saves $14 vs $33 separately).</p>
     <p>Related guides: <a href="/how-to-stop-ai-bot-spending-money/">how to stop your AI bot from spending money</a>, <a href="/ai-bot-reminders-that-dont-stop/">reminders that don't stop until you're done</a>, and <a href="/ai-bot-ask-before-acting/">how to make your AI bot ask before it acts</a>. For a short daily credit brief, see <a href="/ai-bot-daily-credit-action-plan/">how to get a daily credit action plan from an AI bot</a>.</p>
+    <h2>Related guides</h2>
+    <ul>
+      <li><a href="/install/">How to add a skill to any AI bot, tool by tool</a></li>
+      <li><a href="/install/grok-bot/">How to install Grok Bot skills from GitHub (3 ways)</a></li>
+      <li><a href="/safety/check-a-skill-before-installing/">How to check a skill is safe before you install it</a></li>
+      <li>Free skill: <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a>, on GitHub</li>
+      <li>Pack: <a href="/grok-bot-skills-bundle/">Bot Owner Starter Bundle</a> ($19 for three packs)</li>
+      <li><a href="/guides/">All guides</a></li>
+    </ul>
     <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Provided as is, with no warranty.</p>
   </main>
   <footer>
-    <p><a href="/">Home</a> · <a href="https://github.com/skillsforbots/grok-bot-skills">GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
+    <p><a href="/">Home</a> · <a href="/guides/">Guides</a> · <a href="https://github.com/skillsforbots/grok-bot-skills">GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
   </footer>
 </body>
 </html>
