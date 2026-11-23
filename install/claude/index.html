@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Add a Skill to Claude and Claude Code | Skills for Bots</title>
+  <meta name="description" content="Add a custom skill to Claude: upload a ZIP in Customize, Skills on claude.ai, or put a SKILL.md folder in ~/.claude/skills for Claude Code. Plus fixes.">
+  <link rel="canonical" href="https://skillsforbots.com/install/claude/">
+  <link rel="alternate" type="text/plain" href="https://skillsforbots.com/llms.txt" title="llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Skills for Bots">
+  <meta property="og:title" content="How to Add a Skill to Claude and Claude Code | Skills for Bots">
+  <meta property="og:description" content="Add a custom skill to Claude: upload a ZIP in Customize, Skills on claude.ai, or put a SKILL.md folder in ~/.claude/skills for Claude Code. Plus fixes.">
+  <meta property="og:url" content="https://skillsforbots.com/install/claude/">
+  <meta property="og:image" content="https://skillsforbots.com/skillsforbots-logo.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Add a Skill to Claude and Claude Code | Skills for Bots">
+  <meta name="twitter:description" content="Add a custom skill to Claude: upload a ZIP in Customize, Skills on claude.ai, or put a SKILL.md folder in ~/.claude/skills for Claude Code. Plus fixes.">
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --fg: #1a1814;
+      --muted: #5c574e;
+      --card: #fffcf7;
+      --border: #e2ddd3;
+      --accent: #154f4a;
+      --accent-hover: #0e3834;
+      --free-bg: #e8f0ee;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-underline-offset: 0.15em; }
+    a:hover { color: var(--accent-hover); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    header, main, footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    header { padding-top: 3.5rem; padding-bottom: 0.5rem; }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .lede { margin: 0 0 1.5rem; color: var(--muted); }
+    h2 {
+      margin: 2.25rem 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+    p { margin: 0 0 1rem; }
+    .free {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+    .free h3, .pack h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.0625rem;
+      font-weight: 650;
+    }
+    .pack {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.85rem;
+    }
+    .pack-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .price {
+      flex-shrink: 0;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+    }
+    .pack p, .free p { margin: 0 0 0.75rem; }
+    .pack p:last-child, .free p:last-child { margin-bottom: 0; }
+    .disclaimer { color: var(--muted); font-size: 0.9375rem; }
+    .buy { font-weight: 550; }
+    footer {
+      margin-top: 2.5rem;
+      padding-bottom: 3rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+    footer p { margin: 0 0 0.5rem; }
+      .crumb { margin: 0 0 1rem; font-size: 0.9375rem; color: var(--muted); }
+    .tip {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .tip h3 { margin: 0 0 0.4rem; font-size: 1.0625rem; font-weight: 650; }
+    .tip p:last-child { margin-bottom: 0; }
+    pre {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      font-size: 0.9375rem;
+      white-space: pre-wrap;
+    }
+    ul, ol { padding-left: 1.4rem; margin: 0 0 1rem; }
+    li { margin: 0 0 0.35rem; }
+    .brand { margin: 0 0 0.5rem; font-weight: 650; color: var(--accent); letter-spacing: 0.02em; }
+    .repo { font-weight: 550; }
+    .updated { margin: 0 0 1.25rem; font-size: 0.9375rem; color: var(--muted); }
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 0.9rem 1.25rem;
+      margin: 0 0 1.5rem;
+    }
+    .toc h2 { margin: 0 0 0.4rem; font-size: 1rem; }
+    .toc ol { margin: 0; }
+    h3 { margin: 1.5rem 0 0.5rem; font-size: 1.0625rem; font-weight: 650; }
+    code { font-size: 0.9em; }
+    .table-wrap { overflow-x: auto; margin: 0 0 1rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; background: var(--card); }
+    th, td { border: 1px solid var(--border); padding: 0.5rem 0.65rem; text-align: left; vertical-align: top; }
+    th { background: var(--free-bg); font-weight: 650; }
+    .sources { font-size: 0.9375rem; }
+    .sources li { overflow-wrap: anywhere; }
+    button {
+      font: inherit;
+      font-size: 0.9375rem;
+      font-weight: 550;
+      color: #fff;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 0.5rem;
+      padding: 0.45rem 0.9rem;
+      cursor: pointer;
+    }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { color: var(--accent); background: var(--card); }
+    button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://skillsforbots.com/install/claude/#article",
+      "headline": "How to add a skill to Claude and Claude Code",
+      "description": "Add a custom skill to Claude: upload a ZIP in Customize, Skills on claude.ai, or put a SKILL.md folder in ~/.claude/skills for Claude Code. Plus fixes.",
+      "url": "https://skillsforbots.com/install/claude/",
+      "mainEntityOfPage": "https://skillsforbots.com/install/claude/",
+      "datePublished": "2026-11-23",
+      "dateModified": "2026-11-23",
+      "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://skillsforbots.com/#organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://skillsforbots.com/skillsforbots-logo.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Skills for Bots",
+          "item": "https://skillsforbots.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Install",
+          "item": "https://skillsforbots.com/install/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Claude",
+          "item": "https://skillsforbots.com/install/claude/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "Add a custom skill to Claude",
+      "description": "Turn on code execution, zip the skill folder, upload it in Customize, Skills, turn it on, and test it.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Turn on code execution",
+          "text": "On claude.ai, go to Settings, Capabilities, and make sure code execution and file creation is on. In the updated layout it’s called Create and edit files. On Team and Enterprise plans, an owner enables skills in Organization settings first.",
+          "url": "https://skillsforbots.com/install/claude/#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Zip the skill folder",
+          "text": "Put the folder that holds SKILL.md into a ZIP file. The folder name should match the skill’s name.",
+          "url": "https://skillsforbots.com/install/claude/#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Upload it",
+          "text": "Go to Customize, Skills. Click the + button, then Create skill, then Upload a skill, and choose the ZIP.",
+          "url": "https://skillsforbots.com/install/claude/#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Turn it on",
+          "text": "The skill appears in your list with a toggle. Make sure it’s on.",
+          "url": "https://skillsforbots.com/install/claude/#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Test it",
+          "text": "Start a new chat and make a request that matches the skill’s description. Try a few phrasings.",
+          "url": "https://skillsforbots.com/install/claude/#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where do Claude Code skills go?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Personal skills go in ~/.claude/skills//SKILL.md and work in all your projects on that machine. Project skills go in .claude/skills//SKILL.md inside the repository."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I upload a skill to claude.ai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zip the skill folder, then go to Customize, Skills, click +, choose Create skill, then Upload a skill. Code execution must be on in Settings, Capabilities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do my Claude Code skills show up on claude.ai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Custom skills don’t sync across Claude surfaces. Upload the skill to claude.ai separately if you want it there, in Cowork, or in cloud scheduled tasks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use a skill made for another tool in Claude?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often, yes. Claude Code follows the Agent Skills standard, so a SKILL.md with a name, a description, and plain instructions usually works. Put it in a .claude/skills folder, since Claude Code doesn’t list the neutral .agents/skills folder."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d142a0413ccb4758a2ffe4985924efc3"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+  <header>
+    <p class="crumb"><a href="/">Skills for Bots</a> › <a href="/install/">Install</a> › Claude</p>
+    <h1>How to add a skill to Claude and Claude Code</h1>
+    <p class="lede">Claude reads skills in two different places that don’t sync: the Claude apps, where you upload a ZIP, and Claude Code, which reads folders on your computer. Here are the steps for each, checked against Anthropic’s docs.</p>
+    <p class="updated">Last updated: <time datetime="2026-11-23">November 23, 2026</time></p>
+  </header>
+  <main>
+    <nav class="toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">On this page</h2>
+      <ol>
+        <li><a href="#which">Which Claude are you using?</a></li>
+        <li><a href="#steps">Add a skill in the Claude apps</a></li>
+        <li><a href="#code">Add a skill in Claude Code</a></li>
+        <li><a href="#where">Claude Code skill folders</a></li>
+        <li><a href="#cowork">Cowork and cloud sessions</a></li>
+        <li><a href="#trouble">When a skill won’t trigger</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#sources">Sources</a></li>
+        <li><a href="#related">Related</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="which">Which Claude are you using?</h2>
+    <p>Anthropic documents skills on three surfaces: the Claude apps (claude.ai, desktop, and mobile), Claude Code, and the Claude API. A third-party survey of vendor docs notes an important detail from Anthropic’s overview: custom skills don’t sync across surfaces. A skill you upload on claude.ai won’t appear in Claude Code on your laptop, and the reverse is also true.</p>
+    <p>Per Anthropic’s help center, skills are available on Free, Pro, Max, Ultra, Team, and Enterprise plans, and they need code execution turned on. Anthropic also ships built-in skills for Word, Excel, PowerPoint, and PDF files that Claude uses on its own when relevant.</p>
+
+    <h2 id="steps">Add a skill in the Claude apps</h2>
+    <ol>
+      <li><strong>Turn on code execution.</strong> On claude.ai, go to Settings, Capabilities, and make sure code execution and file creation is on. In the updated layout it’s called Create and edit files. On Team and Enterprise plans, an owner enables skills in Organization settings first.</li>
+      <li><strong>Zip the skill folder.</strong> Put the folder that holds <code>SKILL.md</code> into a ZIP file. The folder name should match the skill’s <code>name</code>.</li>
+      <li><strong>Upload it.</strong> Go to Customize, Skills. Click the + button, then Create skill, then Upload a skill, and choose the ZIP.</li>
+      <li><strong>Turn it on.</strong> The skill appears in your list with a toggle. Make sure it’s on.</li>
+      <li><strong>Test it.</strong> Start a new chat and make a request that matches the skill’s description. Try a few phrasings.</li>
+    </ol>
+    <p>Uploaded skills are private until you share them. On Team and Enterprise plans you can share a skill with people or groups if your organization allows it.</p>
+    <p>If the upload fails, the help center lists the usual causes: the folder name doesn’t match the skill name, the <code>SKILL.md</code> file is missing, or the name or description has invalid characters. My free <a href="/tools/skill-md-checker/">SKILL.md checker</a> catches the name and description problems before you upload.</p>
+
+    <h2 id="code">Add a skill in Claude Code</h2>
+    <p>Claude Code reads skills from folders. Its docs say Claude Code skills follow the Agent Skills open standard, with extra Claude Code features such as invocation control and running in a subagent.</p>
+    <ol>
+      <li>Make a folder for the skill in your personal skills folder, for example <code>~/.claude/skills/reminder-basics/</code>.</li>
+      <li>Save the skill as <code>SKILL.md</code> inside it.</li>
+      <li>Start Claude Code with <code>claude</code>. It picks up changes to skill files on its own.</li>
+      <li>Ask “What skills are available?” and check the new skill is listed.</li>
+      <li>Use it by asking for something that matches its description, or type <code>/reminder-basics</code> to run it directly.</li>
+    </ol>
+<pre>mkdir -p ~/.claude/skills/reminder-basics
+cp SKILL.md ~/.claude/skills/reminder-basics/SKILL.md</pre>
+
+    <h2 id="where">Claude Code skill folders</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Where</th><th scope="col">Path</th><th scope="col">Who gets it</th></tr></thead>
+        <tbody>
+          <tr><td>Personal</td><td><code>~/.claude/skills/&lt;name&gt;/SKILL.md</code></td><td>All your projects on this machine, but not Cowork or cloud sessions</td></tr>
+          <tr><td>Project</td><td><code>.claude/skills/&lt;name&gt;/SKILL.md</code></td><td>Sessions in that repository. Commit it to share with your team</td></tr>
+          <tr><td>Nested</td><td><code>&lt;subfolder&gt;/.claude/skills/&lt;name&gt;/SKILL.md</code></td><td>Loads when Claude works on files in that folder</td></tr>
+          <tr><td>Plugin</td><td><code>&lt;plugin&gt;/skills/&lt;name&gt;/SKILL.md</code></td><td>Wherever the plugin is on, as <code>/plugin-name:skill-name</code></td></tr>
+          <tr><td>Enterprise</td><td>The managed settings folder</td><td>Everyone on machines where your organization deploys it</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>When two locations have a skill with the same name, the docs say enterprise beats personal, and personal beats project. Two quirks: don’t name a skill folder <code>synced</code>, which Claude Code uses for skills downloaded from claude.ai, and note that Claude Code lists only its own <code>.claude/skills</code> folders, not the neutral <code>.agents/skills</code> folder that many other tools read.</p>
+    <p>If you use several tools, keep one copy of each skill and symlink it. The docs say a skill folder can be a symlink, and Claude Code loads it once even if several locations point to it.</p>
+
+    <h2 id="cowork">Cowork and cloud sessions</h2>
+    <p>Cowork sessions and cloud sessions, including cloud scheduled tasks, don’t read <code>~/.claude/skills/</code> on your computer. Per the Claude Code docs, both load the skills enabled for your claude.ai account, synced at session start. So if a skill should run in a scheduled cloud task, upload it to your claude.ai account too. For more on pairing skills with schedules, see <a href="/routines/skills-vs-scheduled-tasks/">skills vs scheduled tasks</a>.</p>
+
+    <h2 id="trouble">When a skill won’t trigger</h2>
+    <p>Claude Code’s troubleshooting list, in short:</p>
+    <ol>
+      <li>Check that the description uses words people would naturally say.</li>
+      <li>Check that the skill shows up when you ask “What skills are available?”</li>
+      <li>Rephrase your request to match the description more closely.</li>
+      <li>Invoke it directly with <code>/skill-name</code>.</li>
+      <li>If the YAML header is broken, Claude Code still loads the body but can’t match your description. Run with <code>--debug</code> to see the parse error.</li>
+    </ol>
+    <p>In the Claude apps, check the toggle is on, start a fresh chat, and test a few phrasings, as Anthropic suggests. Most “it never triggers” problems come down to a vague description. The description is what Claude matches on, so say what the skill does and when to use it, in plain words.</p>
+    <div class="tip">
+      <h3>Free tip: add approval rules to any skill that can act</h3>
+      <p>Claude’s docs describe instruction files as context, not enforced settings. If a skill can send, post, or spend, add an “ask before acting” section, and for Claude Code consider a hook that blocks the action outright. My <a href="/safety/approval-rules/">approval rules template</a> is ready to paste.</p>
+    </div>
+    <h2 id="faq">FAQ</h2>
+    <h3>Where do Claude Code skills go?</h3>
+    <p>Personal skills go in ~/.claude/skills/<name>/SKILL.md and work in all your projects on that machine. Project skills go in .claude/skills/<name>/SKILL.md inside the repository.</p>
+    <h3>How do I upload a skill to claude.ai?</h3>
+    <p>Zip the skill folder, then go to Customize, Skills, click +, choose Create skill, then Upload a skill. Code execution must be on in Settings, Capabilities.</p>
+    <h3>Do my Claude Code skills show up on claude.ai?</h3>
+    <p>No. Custom skills don’t sync across Claude surfaces. Upload the skill to claude.ai separately if you want it there, in Cowork, or in cloud scheduled tasks.</p>
+    <h3>Can I use a skill made for another tool in Claude?</h3>
+    <p>Often, yes. Claude Code follows the Agent Skills standard, so a SKILL.md with a name, a description, and plain instructions usually works. Put it in a .claude/skills folder, since Claude Code doesn’t list the neutral .agents/skills folder.</p>
+
+    <h2 id="sources">Sources</h2>
+    <p>I read each source on November 23, 2026. Products change often, so check the vendor page before you rely on a detail.</p>
+    <ul class="sources">
+      <li>Claude Code docs, skills: <a href="https://code.claude.com/docs/en/skills">code.claude.com/docs/en/skills</a></li>
+      <li>Claude Help Center, use skills in Claude: <a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude">support.claude.com</a></li>
+      <li>Claude Code docs, memory and instruction files: <a href="https://code.claude.com/docs/en/memory">code.claude.com/docs/en/memory</a></li>
+      <li>Agent Skills support survey (custom skills don’t sync across Claude surfaces): <a href="https://www.skillsboard.sh/agent-skills-support">skillsboard.sh</a></li>
+    </ul>
+
+    <h2 id="related">Related</h2>
+    <ul>
+      <li><a href="/install/">How to add a skill to any AI bot</a></li>
+      <li><a href="/install/cursor/">Cursor skills folder: where skills go</a></li>
+      <li><a href="/install/codex/">Codex skills location: where to put SKILL.md</a></li>
+      <li><a href="/skill-md/template/">SKILL.md template you can copy</a></li>
+      <li><a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/reminder-basics">Reminder Basics</a>: a free skill to try it with</li>
+      <li><a href="/grok-bot-reminder-skill/">Nag-Until-Cleared Reminders</a> ($9), written in the same portable format</li>
+    </ul>
+    <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Nothing on this page is legal, financial, or professional advice. Provided as is, with no warranty.</p>
+  </main>
+  <footer>
+    <p><a href="/">Home</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
+    <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
+    <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
+  </footer>
+</body>
+</html>
