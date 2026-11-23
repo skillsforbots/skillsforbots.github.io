@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grok Bot Skills on GitHub: The Free Repos Worth Knowing | Skills for Bots</title>
+  <meta name="description" content="An honest list of free Grok Bot skill repos on GitHub: what each one is for, how it installs, and its license, read from each repo on Nov 23, 2026.">
+  <link rel="canonical" href="https://skillsforbots.com/skills/grok-bot-skills-github/">
+  <link rel="alternate" type="text/plain" href="https://skillsforbots.com/llms.txt" title="llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Skills for Bots">
+  <meta property="og:title" content="Grok Bot Skills on GitHub: The Free Repos Worth Knowing | Skills for Bots">
+  <meta property="og:description" content="An honest list of free Grok Bot skill repos on GitHub: what each one is for, how it installs, and its license, read from each repo on Nov 23, 2026.">
+  <meta property="og:url" content="https://skillsforbots.com/skills/grok-bot-skills-github/">
+  <meta property="og:image" content="https://skillsforbots.com/skillsforbots-logo.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Grok Bot Skills on GitHub: The Free Repos Worth Knowing | Skills for Bots">
+  <meta name="twitter:description" content="An honest list of free Grok Bot skill repos on GitHub: what each one is for, how it installs, and its license, read from each repo on Nov 23, 2026.">
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --fg: #1a1814;
+      --muted: #5c574e;
+      --card: #fffcf7;
+      --border: #e2ddd3;
+      --accent: #154f4a;
+      --accent-hover: #0e3834;
+      --free-bg: #e8f0ee;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-underline-offset: 0.15em; }
+    a:hover { color: var(--accent-hover); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    header, main, footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    header { padding-top: 3.5rem; padding-bottom: 0.5rem; }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .lede { margin: 0 0 1.5rem; color: var(--muted); }
+    h2 {
+      margin: 2.25rem 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+    p { margin: 0 0 1rem; }
+    .free {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+    .free h3, .pack h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.0625rem;
+      font-weight: 650;
+    }
+    .pack {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.85rem;
+    }
+    .pack-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .price {
+      flex-shrink: 0;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+    }
+    .pack p, .free p { margin: 0 0 0.75rem; }
+    .pack p:last-child, .free p:last-child { margin-bottom: 0; }
+    .disclaimer { color: var(--muted); font-size: 0.9375rem; }
+    .buy { font-weight: 550; }
+    footer {
+      margin-top: 2.5rem;
+      padding-bottom: 3rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+    footer p { margin: 0 0 0.5rem; }
+      .crumb { margin: 0 0 1rem; font-size: 0.9375rem; color: var(--muted); }
+    .tip {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .tip h3 { margin: 0 0 0.4rem; font-size: 1.0625rem; font-weight: 650; }
+    .tip p:last-child { margin-bottom: 0; }
+    pre {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      font-size: 0.9375rem;
+      white-space: pre-wrap;
+    }
+    ul, ol { padding-left: 1.4rem; margin: 0 0 1rem; }
+    li { margin: 0 0 0.35rem; }
+    .brand { margin: 0 0 0.5rem; font-weight: 650; color: var(--accent); letter-spacing: 0.02em; }
+    .repo { font-weight: 550; }
+    .updated { margin: 0 0 1.25rem; font-size: 0.9375rem; color: var(--muted); }
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 0.9rem 1.25rem;
+      margin: 0 0 1.5rem;
+    }
+    .toc h2 { margin: 0 0 0.4rem; font-size: 1rem; }
+    .toc ol { margin: 0; }
+    h3 { margin: 1.5rem 0 0.5rem; font-size: 1.0625rem; font-weight: 650; }
+    code { font-size: 0.9em; }
+    .table-wrap { overflow-x: auto; margin: 0 0 1rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; background: var(--card); }
+    th, td { border: 1px solid var(--border); padding: 0.5rem 0.65rem; text-align: left; vertical-align: top; }
+    th { background: var(--free-bg); font-weight: 650; }
+    .sources { font-size: 0.9375rem; }
+    .sources li { overflow-wrap: anywhere; }
+    button {
+      font: inherit;
+      font-size: 0.9375rem;
+      font-weight: 550;
+      color: #fff;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 0.5rem;
+      padding: 0.45rem 0.9rem;
+      cursor: pointer;
+    }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { color: var(--accent); background: var(--card); }
+    button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://skillsforbots.com/skills/grok-bot-skills-github/#article",
+      "headline": "Grok Bot skills on GitHub: the free repos worth knowing",
+      "description": "An honest list of free Grok Bot skill repos on GitHub: what each one is for, how it installs, and its license, read from each repo on Nov 23, 2026.",
+      "url": "https://skillsforbots.com/skills/grok-bot-skills-github/",
+      "mainEntityOfPage": "https://skillsforbots.com/skills/grok-bot-skills-github/",
+      "datePublished": "2026-11-23",
+      "dateModified": "2026-11-23",
+      "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://skillsforbots.com/#organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://skillsforbots.com/skillsforbots-logo.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Skills for Bots",
+          "item": "https://skillsforbots.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://skillsforbots.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Grok Bot skills on GitHub",
+          "item": "https://skillsforbots.com/skills/grok-bot-skills-github/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are Grok Bot skills on GitHub free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The repos on this page are free to read. Whether you may copy and reuse a skill depends on its license. Most here use MIT or CC0. A few have no license shown, so ask the author before reusing those."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do skills from GitHub work in Grok Bot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most use the open Agent Skills format, a folder with a SKILL.md file, which Grok Bot can save as a private skill. Some repos say their skills haven’t been tested in Grok Bot, so test one on a harmless task first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Grok Bot skill repo is the best?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There isn’t one best repo. Pick by job: a safety skill first if your bot can send or spend, team skills if you run several bots, and a big catalog when you want to browse ideas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why don’t you list star counts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stars change every day and don’t show whether a skill is safe or useful. I list what each repo is for, how it installs, and its license, as I read them on the day I checked."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d142a0413ccb4758a2ffe4985924efc3"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+  <header>
+    <p class="crumb"><a href="/">Skills for Bots</a> › <a href="/guides/">Guides</a> › Grok Bot skills on GitHub</p>
+    <h1>Grok Bot skills on GitHub: the free repos worth knowing</h1>
+    <p class="lede">Searching GitHub for Grok Bot skills turns up dozens of repos. These are the ones I’d look at first, with what each is for, how it installs, and its license. Mine is on the list, and I’ve tried to describe it the same way as the others.</p>
+    <p class="updated">Last updated: <time datetime="2026-11-23">November 23, 2026</time></p>
+  </header>
+  <main>
+    <nav class="toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">On this page</h2>
+      <ol>
+        <li><a href="#how">How I picked and checked these</a></li>
+        <li><a href="#table">The repos at a glance</a></li>
+        <li><a href="#repos">Each repo, in a few lines</a></li>
+        <li><a href="#choose">Which one should I start with?</a></li>
+        <li><a href="#before">Before you install anything from a repo</a></li>
+        <li><a href="#missing">Repos I left out, and how to suggest one</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#sources">Sources</a></li>
+        <li><a href="#related">Related</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="how">How I picked and checked these</h2>
+    <p>I searched GitHub for “grok bot skills” and “grokbot skills” on November 23, 2026 and kept repos that hold skills or skill-like templates for Grok Bot and are public. For each one I read the README and the license GitHub reports. I didn’t install every skill, so treat this as a map, not a review.</p>
+    <p>I left out star counts and rankings on purpose. Stars change daily and say little about whether a skill is safe or useful for you. The order below is loosely from everyday-use skills to developer and catalog repos, not a score.</p>
+    <p>If you’re new to all this, two pages help first: <a href="/agent-skills/">what agent skills are</a>, and <a href="/install/grok-bot/">how to install a Grok Bot skill from GitHub</a>.</p>
+
+    <h2 id="table">The repos at a glance</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Repo</th><th scope="col">License</th><th scope="col">Good for</th></tr></thead>
+        <tbody>
+          <tr><td><a href="https://github.com/skillsforbots/grok-bot-skills">skillsforbots/grok-bot-skills</a></td><td>MIT</td><td>Non-coders who want safety rules and simple routines first.</td></tr>
+          <tr><td><a href="https://github.com/ofershap/grok-bot-skills">ofershap/grok-bot-skills</a></td><td>MIT</td><td>People who want reply-style, research, and review skills.</td></tr>
+          <tr><td><a href="https://github.com/d-gangz/grokbot-skills">d-gangz/grokbot-skills</a></td><td>None shown by GitHub</td><td>People running several bots who want reviews and cleanup.</td></tr>
+          <tr><td><a href="https://github.com/bostonaholic/grokbot-skills">bostonaholic/grokbot-skills</a></td><td>None shown by GitHub</td><td>People comfortable letting the bot run a script they’ve read.</td></tr>
+          <tr><td><a href="https://github.com/stealth-factory/grok-bot-skills">stealth-factory/grok-bot-skills</a></td><td>MIT</td><td>Developers building their own interface for bots.</td></tr>
+          <tr><td><a href="https://github.com/jaskirat1616/grok-skills">jaskirat1616/grok-skills</a></td><td>MIT for the repo; each skill keeps its own license</td><td>Browsing many skills at once. Check each skill’s own license and contents.</td></tr>
+          <tr><td><a href="https://github.com/botkitsdev/botkits">botkitsdev/botkits</a></td><td>MIT</td><td>Content and marketing work, plus bot maintenance.</td></tr>
+          <tr><td><a href="https://github.com/cobusgreyling/grok-bot-templates">cobusgreyling/grok-bot-templates</a></td><td>MIT</td><td>Setting up a new bot from a template.</td></tr>
+          <tr><td><a href="https://github.com/mergisi/awesome-grokbot">mergisi/awesome-grokbot</a></td><td>CC0-1.0</td><td>Finding ready-made profiles.</td></tr>
+          <tr><td><a href="https://github.com/Bigibyte/awesome-grok-bot">Bigibyte/awesome-grok-bot</a></td><td>CC0-1.0</td><td>Learning the app before installing anything.</td></tr>
+          <tr><td><a href="https://github.com/jeremybrasher/grokbot-skills">jeremybrasher/grokbot-skills</a></td><td>None shown at repo level; each skill keeps its original license</td><td>People who already know which upstream skill they want.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>“None shown by GitHub” means GitHub didn’t detect a license file for the repo when I checked. Without a license, the default is that you can read the code but don’t have clear permission to copy or reuse it. Ask the author if that matters to you.</p>
+
+    <h2 id="repos">Each repo, in a few lines</h2>
+    <h3><a href="https://github.com/skillsforbots/grok-bot-skills">skillsforbots/grok-bot-skills</a></h3>
+    <p>Mine. Three instruction-only everyday skills: the Bot Safety Rules Starter (no sending or spending without approval, outside content treated as information), Reminder Basics (one reminder that repeats until you say done), and Usage Reset Sprint (use leftover usage before a limit resets).</p>
+    <p><strong>Install:</strong> Paste the <code>SKILL.md</code> and ask the bot to save it, or add it as standing instructions. <strong>License:</strong> MIT.</p>
+    <h3><a href="https://github.com/ofershap/grok-bot-skills">ofershap/grok-bot-skills</a></h3>
+    <p>A community library where each skill is one <code>SKILL.md</code>. The catalog includes writing and thinking skills such as short-answers, morning-brief, monthly-checkpoint, claim-check, and source-audit. The README says Grok bot skill loaders haven’t been tested in that repo.</p>
+    <p><strong>Install:</strong> A copy-paste install prompt for the bot, or <code>npx skills add</code> for other agents. <strong>License:</strong> MIT.</p>
+    <h3><a href="https://github.com/d-gangz/grokbot-skills">d-gangz/grokbot-skills</a></h3>
+    <p>Skills for running a team of bots: design-bots, bot-audit, and bot-retro, plus a glossary and people store, a grilling interview skill, and skill-porter, which copies skills from other repos.</p>
+    <p><strong>Install:</strong> A one-line message asking the bot to install a folder into your private skill library. <strong>License:</strong> None shown by GitHub.</p>
+    <h3><a href="https://github.com/bostonaholic/grokbot-skills">bostonaholic/grokbot-skills</a></h3>
+    <p>Skills for Cursor and Grok Bot agents covering routines, workflows, and agent practices, one folder per skill.</p>
+    <p><strong>Install:</strong> A message asking the bot to install from the repo using its <code>AGENTS.md</code>, or a shell script that copies the folders. <strong>License:</strong> None shown by GitHub.</p>
+    <h3><a href="https://github.com/stealth-factory/grok-bot-skills">stealth-factory/grok-bot-skills</a></h3>
+    <p>Two developer skills: grok-bot-platform (how bots, groups, and webhook wakes work) and grok-bot-ui (a custom interface that talks to a host bot).</p>
+    <p><strong>Install:</strong> <code>npx skills add</code>. <strong>License:</strong> MIT.</p>
+    <h3><a href="https://github.com/jaskirat1616/grok-skills">jaskirat1616/grok-skills</a></h3>
+    <p>A large catalog. The README says 195 <code>SKILL.md</code> playbooks, gathered from open-source skill repos and contributions, with a browsable site.</p>
+    <p><strong>Install:</strong> A marketplace command or a folder copy, as the README describes. <strong>License:</strong> MIT for the repo; each skill keeps its own license.</p>
+    <h3><a href="https://github.com/botkitsdev/botkits">botkitsdev/botkits</a></h3>
+    <p>The README lists 32 skills for writing, design, search, video, and bot upkeep, such as a routine health check and a transcript health check.</p>
+    <p><strong>Install:</strong> <code>npx skills add</code>, or for Grok Bot, paste the <code>SKILL.md</code> and ask the bot to save it. <strong>License:</strong> MIT.</p>
+    <h3><a href="https://github.com/cobusgreyling/grok-bot-templates">cobusgreyling/grok-bot-templates</a></h3>
+    <p>Mostly bot templates (profiles) rather than single skills, with a spec, teams, skills, and routines.</p>
+    <p><strong>Install:</strong> Paste a profile into the bot’s profile editor, per the README. <strong>License:</strong> MIT.</p>
+    <h3><a href="https://github.com/mergisi/awesome-grokbot">mergisi/awesome-grokbot</a></h3>
+    <p>A curated list of copy-paste bot profiles, skills, and team templates.</p>
+    <p><strong>Install:</strong> Copy and paste, per the README. <strong>License:</strong> CC0-1.0.</p>
+    <h3><a href="https://github.com/Bigibyte/awesome-grok-bot">Bigibyte/awesome-grok-bot</a></h3>
+    <p>A beginner guide and curated links for the Grok Bot app: bots, routines, skills, the cloud computer, and apps.</p>
+    <p><strong>Install:</strong> It’s a reading list, not an installer. <strong>License:</strong> CC0-1.0.</p>
+    <h3><a href="https://github.com/jeremybrasher/grokbot-skills">jeremybrasher/grokbot-skills</a></h3>
+    <p>A collection reshaped for Grok Bot from a public Claude skills directory, with a source file pointing to each original.</p>
+    <p><strong>Install:</strong> Copy one skill folder at a time, per the README. <strong>License:</strong> None shown at repo level; each skill keeps its original license.</p>
+
+    <h2 id="choose">Which one should I start with?</h2>
+    <ul>
+      <li><strong>You want your bot to stop sending or spending on its own:</strong> start with a safety skill. Mine is the <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a>, and my <a href="/safety/approval-rules/">approval rules template</a> explains the rules line by line.</li>
+      <li><strong>You run several bots:</strong> look at the team skills in d-gangz/grokbot-skills, and my guide to <a href="/coordinate-multiple-ai-bots/">coordinating multiple AI bots</a>.</li>
+      <li><strong>You want better replies and research:</strong> ofershap/grok-bot-skills has short-answer, claim-check, and source-audit skills.</li>
+      <li><strong>You want to browse a lot:</strong> the big catalogs, jaskirat1616/grok-skills and botkitsdev/botkits, are good for ideas. Read each skill before you install it, since they gather from many authors.</li>
+      <li><strong>You build tools:</strong> stealth-factory/grok-bot-skills covers how bots and webhooks fit together.</li>
+    </ul>
+    <p>For everyday life admin specifically, such as reminders, money guardrails, and usage resets, I keep a separate list: <a href="/skills/everyday/">best agent skills for everyday life admin</a>.</p>
+
+    <h2 id="before">Before you install anything from a repo</h2>
+    <p>A skill is text your bot follows, so a careless or hostile one can push a bot to send, spend, or share things. A security study by Snyk scanned 3,984 published agent skills from two big skill directories and reported that 13.4% had at least one critical-level issue. That study wasn’t about the repos above, but the lesson carries over. My routine takes about five minutes:</p>
+    <ol>
+      <li>Read the whole <code>SKILL.md</code>, not just the README.</li>
+      <li>Search it for send, post, buy, pay, delete, password, and key. Each one should come with an “ask me first” rule.</li>
+      <li>Open every script before letting the bot run it.</li>
+      <li>Paste the file into my free <a href="/tools/skill-md-checker/">SKILL.md checker</a>. It runs in your browser and flags risky wording and hidden text.</li>
+      <li>Test the skill on something harmless first.</li>
+    </ol>
+    <p>The full checklist is in <a href="/safety/check-a-skill-before-installing/">how to check a skill is safe before you install it</a>.</p>
+
+    <h2 id="missing">Repos I left out, and how to suggest one</h2>
+    <p>I skipped repos that are single-purpose tools rather than skill collections, forks with no changes of their own, and repos built around trading or acting without approval. Plenty of good single-skill repos exist too, and I’ll add the useful ones as I find them.</p>
+    <p>If you maintain a Grok Bot skill repo and think it belongs here, open an issue on my <a href="https://github.com/skillsforbots/grok-bot-skills">grok-bot-skills repo</a> with a link. I check each suggestion the same way, and I don’t accept payment for placement.</p>
+    <h2 id="faq">FAQ</h2>
+    <h3>Are Grok Bot skills on GitHub free?</h3>
+    <p>The repos on this page are free to read. Whether you may copy and reuse a skill depends on its license. Most here use MIT or CC0. A few have no license shown, so ask the author before reusing those.</p>
+    <h3>Do skills from GitHub work in Grok Bot?</h3>
+    <p>Most use the open Agent Skills format, a folder with a SKILL.md file, which Grok Bot can save as a private skill. Some repos say their skills haven’t been tested in Grok Bot, so test one on a harmless task first.</p>
+    <h3>Which Grok Bot skill repo is the best?</h3>
+    <p>There isn’t one best repo. Pick by job: a safety skill first if your bot can send or spend, team skills if you run several bots, and a big catalog when you want to browse ideas.</p>
+    <h3>Why don’t you list star counts?</h3>
+    <p>Stars change every day and don’t show whether a skill is safe or useful. I list what each repo is for, how it installs, and its license, as I read them on the day I checked.</p>
+
+    <h2 id="sources">Sources</h2>
+    <p>I read each source on November 23, 2026. Products change often, so check the vendor page before you rely on a detail.</p>
+    <ul class="sources">
+      <li>GitHub search for Grok Bot skill repos: <a href="https://github.com/search?q=grok+bot+skills&type=repositories">github.com/search</a></li>
+      <li>Grok Bot docs, skills and routines: <a href="https://docs.x.ai/grok-bot/skills-routines-and-automations">docs.x.ai</a></li>
+      <li>Snyk, ToxicSkills study of published agent skills (3,984 skills, 13.4% with critical issues): <a href="https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/">snyk.io</a></li>
+      <li>GitHub, licensing a repository (what no license means): <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository">docs.github.com</a></li>
+    </ul>
+
+    <h2 id="related">Related</h2>
+    <ul>
+      <li><a href="/install/grok-bot/">How to install Grok Bot skills from GitHub (3 ways)</a></li>
+      <li><a href="/skills/everyday/">Best agent skills for everyday life admin</a></li>
+      <li><a href="/safety/check-a-skill-before-installing/">How to check a skill is safe before you install it</a></li>
+      <li><a href="https://github.com/skillsforbots/grok-bot-skills">My free Grok Bot skills on GitHub</a> (MIT-licensed)</li>
+      <li><a href="/grok-bot-skills-bundle/">Bot Owner Starter Bundle</a>: three of my paid packs for $19</li>
+    </ul>
+    <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Nothing on this page is legal, financial, or professional advice. Provided as is, with no warranty.</p>
+  </main>
+  <footer>
+    <p><a href="/">Home</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
+    <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
+    <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
+  </footer>
+</body>
+</html>
