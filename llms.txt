@@ -28,18 +28,18 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 
 ## Pack pages
 
-- [Nag-Until-Cleared Reminders](https://skillsforbots.github.io/grok-bot-reminder-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
-- [Bot Fleet Coordinator](https://skillsforbots.github.io/grok-bot-fleet-coordinator-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
-- [Credit Repair Coach](https://skillsforbots.github.io/grok-bot-credit-coach-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
-- [Project Sprint](https://skillsforbots.github.io/grok-bot-project-sprint-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
-- [Bot Owner Starter Bundle](https://skillsforbots.github.io/grok-bot-skills-bundle/): What's included, who it's for, price, FAQ, and the disclaimer.
+- [Nag-Until-Cleared Reminders](https://skillsforbots.com/grok-bot-reminder-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
+- [Bot Fleet Coordinator](https://skillsforbots.com/grok-bot-fleet-coordinator-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
+- [Credit Repair Coach](https://skillsforbots.com/grok-bot-credit-coach-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
+- [Project Sprint](https://skillsforbots.com/grok-bot-project-sprint-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
+- [Bot Owner Starter Bundle](https://skillsforbots.com/grok-bot-skills-bundle/): What's included, who it's for, price, FAQ, and the disclaimer.
 
 ## Guides
 
-- [How to stop your AI bot from spending money](https://skillsforbots.github.io/how-to-stop-ai-bot-spending-money/): Platform limits, keeping payment details away from bots, a standing no-spend rule, and hidden costs like trials that bill later.
-- [How to make AI bot reminders that don't stop until you're done](https://skillsforbots.github.io/ai-bot-reminders-that-dont-stop/): Defining what counts as done, a two-line reminder message, and a daily routine setup.
-- [How to coordinate multiple AI bots](https://skillsforbots.github.io/coordinate-multiple-ai-bots/): One lane per bot, a single coordinator, a written handoff note, shared safety rules, and a weekly read-only review.
-- [How to make your AI bot ask before it acts](https://skillsforbots.github.io/ai-bot-ask-before-acting/): A standing approval rule for sending, posting, or spending, with one-time yes staying one-time, plus a test and platform settings.
-- [How to get a daily credit action plan from an AI bot](https://skillsforbots.github.io/ai-bot-daily-credit-action-plan/): A short daily or on-demand brief with today's top 3 actions, figures labeled as estimates, and letter drafts you send yourself. Educational only; not financial or legal advice; no results promised.
-- [How to add a skill to your AI bot](https://skillsforbots.github.io/how-to-add-a-skill-to-your-ai-bot/): What a SKILL.md file is, how to fill placeholders and add it as standing instructions, and how to test that it loaded.
-- [How to make your AI bot use its remaining usage before the limit resets](https://skillsforbots.github.io/ai-bot-use-remaining-usage-before-reset/): Check remaining usage and the reset time, finish the highest-value chunk that fits, leave a handoff, and resume after reset, without buying more credits.
+- [How to stop your AI bot from spending money](https://skillsforbots.com/how-to-stop-ai-bot-spending-money/): Platform limits, keeping payment details away from bots, a standing no-spend rule, and hidden costs like trials that bill later.
+- [How to make AI bot reminders that don't stop until you're done](https://skillsforbots.com/ai-bot-reminders-that-dont-stop/): Defining what counts as done, a two-line reminder message, and a daily routine setup.
+- [How to coordinate multiple AI bots](https://skillsforbots.com/coordinate-multiple-ai-bots/): One lane per bot, a single coordinator, a written handoff note, shared safety rules, and a weekly read-only review.
+- [How to make your AI bot ask before it acts](https://skillsforbots.com/ai-bot-ask-before-acting/): A standing approval rule for sending, posting, or spending, with one-time yes staying one-time, plus a test and platform settings.
+- [How to get a daily credit action plan from an AI bot](https://skillsforbots.com/ai-bot-daily-credit-action-plan/): A short daily or on-demand brief with today's top 3 actions, figures labeled as estimates, and letter drafts you send yourself. Educational only; not financial or legal advice; no results promised.
+- [How to add a skill to your AI bot](https://skillsforbots.com/how-to-add-a-skill-to-your-ai-bot/): What a SKILL.md file is, how to fill placeholders and add it as standing instructions, and how to test that it loaded.
+- [How to make your AI bot use its remaining usage before the limit resets](https://skillsforbots.com/ai-bot-use-remaining-usage-before-reset/): Check remaining usage and the reset time, finish the highest-value chunk that fits, leave a handoff, and resume after reset, without buying more credits.
