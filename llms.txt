@@ -1,6 +1,6 @@
 # Grok Bot skills
 
-> Free Grok Bot and AI agent SKILL.md templates with standing safety rules, plus paid skill packs for a multi-bot fleet, reminders, a credit coach, and a project sprint.
+> Free Grok Bot and AI agent SKILL.md templates with standing safety rules, plus paid skill packs for a multi-bot fleet, reminders, a credit coach, a project sprint, and a domain and SEO launch.
 
 A skill is an instruction file a Grok Bot or similar AI assistant follows. The free skills in https://github.com/skillsforbots/grok-bot-skills are MIT-licensed. Paid packs are sold separately on Gumroad under their own terms.
 
@@ -29,6 +29,7 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 - Also on Agensi: [Credit Repair Coach](https://www.agensi.io/skills/credit-repair-coach)
 - [Project Sprint](https://skillsforbots.gumroad.com/l/project-sprint): $19. Plan a project across several usage windows, finish a high-value chunk before each reset, and pick up from a handoff after, without buying more credits.
 - Also on Agensi: [Project Sprint](https://www.agensi.io/skills/project-sprint)
+- [Domain + SEO Launch Playbook](https://skillsforbots.gumroad.com/l/domain-seo-launch): $19. One skill that walks your bot through moving a static site to a custom domain and launching it for search, in 8 phases, with a check after each one.
 - [Bot Owner Starter Bundle](https://skillsforbots.gumroad.com/l/vxecie): $19. The Bot Fleet Coordinator, Nag-Until-Cleared Reminders, and Credit Repair Coach in one download (saves $14 vs $33 separately).
 - Also on Agensi: [Bot Owner Starter Bundle](https://www.agensi.io/bundles/bot-owner-starter-bundle)
 
@@ -38,6 +39,7 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 - [Bot Fleet Coordinator](https://skillsforbots.com/grok-bot-fleet-coordinator-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
 - [Credit Repair Coach](https://skillsforbots.com/grok-bot-credit-coach-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
 - [Project Sprint](https://skillsforbots.com/grok-bot-project-sprint-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
+- [Domain + SEO Launch Playbook](https://skillsforbots.com/grok-bot-domain-seo-launch-skill/): What's included, who it's for, the 8 phases, price, FAQ, and the disclaimer.
 - [Bot Owner Starter Bundle](https://skillsforbots.com/grok-bot-skills-bundle/): What's included, who it's for, price, FAQ, and the disclaimer.
 
 ## Guides
