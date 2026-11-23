@@ -26,6 +26,14 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 - [Bot Owner Starter Bundle](https://skillsforbots.gumroad.com/l/vxecie): $19. The Bot Fleet Coordinator, Nag-Until-Cleared Reminders, and Credit Repair Coach in one download (saves $14 vs $33 separately).
 - Also on Agensi: [Bot Owner Starter Bundle](https://www.agensi.io/bundles/bot-owner-starter-bundle)
 
+## Pack pages
+
+- [Nag-Until-Cleared Reminders](https://skillsforbots.github.io/grok-bot-reminder-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
+- [Bot Fleet Coordinator](https://skillsforbots.github.io/grok-bot-fleet-coordinator-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
+- [Credit Repair Coach](https://skillsforbots.github.io/grok-bot-credit-coach-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
+- [Project Sprint](https://skillsforbots.github.io/grok-bot-project-sprint-skill/): What's included, who it's for, price, FAQ, and the disclaimer.
+- [Bot Owner Starter Bundle](https://skillsforbots.github.io/grok-bot-skills-bundle/): What's included, who it's for, price, FAQ, and the disclaimer.
+
 ## Guides
 
 - [How to stop your AI bot from spending money](https://skillsforbots.github.io/how-to-stop-ai-bot-spending-money/): Platform limits, keeping payment details away from bots, a standing no-spend rule, and hidden costs like trials that bill later.
