@@ -4,6 +4,12 @@
 
 A skill is an instruction file a Grok Bot or similar AI assistant follows. The free skills in https://github.com/skillsforbots/grok-bot-skills are MIT-licensed. Paid packs are sold separately on Gumroad under their own terms.
 
+## Skills for any AI bot
+
+- [What are agent skills? A plain-English guide for bot owners](https://skillsforbots.com/agent-skills/): What a SKILL.md skill is, what's inside one, how bots load skills, how skills differ from prompts, routines, MCP and AGENTS.md, which tools read them, and a five-step safety check before installing one.
+- [SKILL.md template you can copy](https://skillsforbots.com/skill-md/template/): An annotated SKILL.md template with frontmatter name and description, when to use it, steps, output format, an ask-before-acting section, and a disclaimer, plus a filled-in example and a compatibility table by kind of tool.
+- [Free SKILL.md checker](https://skillsforbots.com/tools/skill-md-checker/): Paste a SKILL.md to check frontmatter, name and description rules, length, a safety or approval section, a disclaimer, risky actions (send, spend, delete, payments, passwords, API keys), hidden text, remote code, and links. Runs in the browser; nothing is uploaded. A helper, not a guarantee.
+
 ## Free skills
 
 - [Bot Safety Rules Starter](https://github.com/skillsforbots/grok-bot-skills/blob/main/skills/bot-safety-rules-starter/SKILL.md): Standing rules that no bot sends email or messages without owner approval, no bot spends money, and a one-time approval is not a standing waiver, plus a blank structured handoff note.
