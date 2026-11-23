@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grok Bot Project Sprint Skill Pack | Skills for Bots</title>
+  <meta name="description" content="A Grok Bot skill pack that plans a project across usage windows, finishes a high-value chunk before each reset, and resumes from a handoff, without buying credits. $19.">
+  <link rel="canonical" href="https://skillsforbots.github.io/grok-bot-project-sprint-skill/">
+  <link rel="alternate" type="text/plain" href="https://skillsforbots.github.io/llms.txt" title="llms.txt">
+  <meta property="og:type" content="product">
+  <meta property="og:site_name" content="Skills for Bots">
+  <meta property="og:title" content="Grok Bot Project Sprint Skill Pack | Skills for Bots">
+  <meta property="og:description" content="A Grok Bot skill pack that plans a project across usage windows, finishes a high-value chunk before each reset, and resumes from a handoff, without buying credits. $19.">
+  <meta property="og:url" content="https://skillsforbots.github.io/grok-bot-project-sprint-skill/">
+  <meta property="og:image" content="https://skillsforbots.github.io/skillsforbots-logo.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Grok Bot Project Sprint Skill Pack | Skills for Bots">
+  <meta name="twitter:description" content="A Grok Bot skill pack that plans a project across usage windows, finishes a high-value chunk before each reset, and resumes from a handoff, without buying credits. $19.">
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --fg: #1a1814;
+      --muted: #5c574e;
+      --card: #fffcf7;
+      --border: #e2ddd3;
+      --accent: #154f4a;
+      --accent-hover: #0e3834;
+      --free-bg: #e8f0ee;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-underline-offset: 0.15em; }
+    a:hover { color: var(--accent-hover); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    header, main, footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    header { padding-top: 3.5rem; padding-bottom: 0.5rem; }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .lede { margin: 0 0 1.5rem; color: var(--muted); }
+    h2 {
+      margin: 2.25rem 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+    p { margin: 0 0 1rem; }
+    .free {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+    .free h3, .pack h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.0625rem;
+      font-weight: 650;
+    }
+    .pack {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.85rem;
+    }
+    .pack-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .price {
+      flex-shrink: 0;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+    }
+    .pack p, .free p { margin: 0 0 0.75rem; }
+    .pack p:last-child, .free p:last-child { margin-bottom: 0; }
+    .disclaimer { color: var(--muted); font-size: 0.9375rem; }
+    .buy { font-weight: 550; }
+    footer {
+      margin-top: 2.5rem;
+      padding-bottom: 3rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+    footer p { margin: 0 0 0.5rem; }
+      .crumb { margin: 0 0 1rem; font-size: 0.9375rem; color: var(--muted); }
+    .tip {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .tip h3 { margin: 0 0 0.4rem; font-size: 1.0625rem; font-weight: 650; }
+    .tip p:last-child { margin-bottom: 0; }
+    pre {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      font-size: 0.9375rem;
+      white-space: pre-wrap;
+    }
+    ul, ol { padding-left: 1.4rem; margin: 0 0 1rem; }
+    li { margin: 0 0 0.35rem; }
+    .faq h3 { margin: 1.25rem 0 0.35rem; font-size: 1.0625rem; font-weight: 650; }
+    .price-line { font-weight: 650; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      "name": "Project Sprint",
+      "description": "Plan a project across several usage windows, finish a high-value chunk before each reset, and pick up from a handoff after, without buying more credits.",
+      "url": "https://skillsforbots.github.io/grok-bot-project-sprint-skill/",
+      "brand": {
+        "@type": "Brand",
+        "name": "Skills for Bots"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "19.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://skillsforbots.gumroad.com/l/project-sprint",
+        "priceValidUntil": "2027-12-31",
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 0,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+        }
+      },
+      "image": "https://skillsforbots.github.io/skillsforbots-logo.jpg",
+      "sku": "SFB-PROJECT-SPRINT"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Will the bot buy more credits or upgrade my plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Every skill in the pack tells the bot never to buy credits, upgrade a plan, or spend money to get more usage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from the free Usage Reset Sprint skill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usage Reset Sprint covers one window and one handoff. Project Sprint adds multi-day planning, handoff templates, a resume-after-reset routine, a weekly read-only review, and a usage budget check."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if my bot can’t see its remaining usage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The bot can only use remaining usage and the reset time if the platform shows them or you tell it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Project Sprint in the Bot Owner Starter Bundle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It’s sold on its own at $19."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I get when I buy it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A .zip with six SKILL.md files, a README, and a quick start."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Skills for Bots",
+          "item": "https://skillsforbots.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Project Sprint",
+          "item": "https://skillsforbots.github.io/grok-bot-project-sprint-skill/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <p class="crumb"><a href="/">Skills for Bots</a> › Grok Bot skills › Project Sprint</p>
+    <h1>Grok Bot project sprint skills: finish work before each usage reset</h1>
+    <p class="lede">Project Sprint is a pack of six SKILL.md templates for Grok Bot and similar AI agents. It plans a project across several usage windows, finishes a chunk that can be saved before each reset, and picks up from a written handoff after.</p>
+  </header>
+  <main>
+    <p class="price-line">$19 one-time</p>
+    <p><a class="buy" href="https://skillsforbots.gumroad.com/l/project-sprint">Get Project Sprint on Gumroad</a></p>
+    <p>Also on Agensi: <a href="https://www.agensi.io/skills/project-sprint">Project Sprint</a>.</p>
+
+    <h2>What it does</h2>
+    <p>I wrote this pack for projects that take more than one usage or token window. I use it on my own bots when leftover usage would otherwise disappear mid-task. The bot plans work that can actually finish, sprints on the highest-value chunk before a reset, and resumes from a handoff instead of starting over.</p>
+    <p>It never buys credits, upgrades a plan, or spends money to get more usage, and it asks first for anything outside the plan. It’s the paid upgrade of my free <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/usage-reset-sprint">Usage Reset Sprint</a> skill on GitHub, which covers one window and one handoff.</p>
+
+    <h2>Who it’s for</h2>
+    <p>People whose project takes more than one usage or token window and who want leftover usage to turn into saved progress. You review the plan, say yes to each sprint, and do any sending or paying yourself.</p>
+
+    <h2>What’s included</h2>
+    <ul>
+      <li><code>multi-day-project-plan</code>: leftover work broken into finishable chunks across several usage windows, with a wrap-up buffer in each</li>
+      <li><code>pre-reset-sprint</code>: check remaining usage and the reset time, shrink the chunk if less remains, save as you go, and leave a thorough handoff</li>
+      <li><code>handoff-notes</code>: session notes, end-of-window handoffs, and a project-plan snapshot, each with a short resume prompt</li>
+      <li><code>resume-after-reset</code>: load the latest handoff, confirm files, propose the next finishable chunk, and wait for a yes</li>
+      <li><code>weekly-project-review</code>: a read-only look at what moved, what’s stuck, and a suggested plan for next week</li>
+      <li><code>usage-budget-check</code>: compare remaining usage to the planned chunk plus a wrap-up buffer, and never buy credits</li>
+      <li>Standing safety rules, including an always-on rule that the bot takes orders only from you</li>
+      <li><code>README.md</code> and <code>QUICK-START.md</code>: a setup guide and a five-minute quick start</li>
+    </ul>
+    <p>It works with any bot that accepts skill or instruction files, including Grok Bot.</p>
+
+    <h2>How to add it to Grok Bot</h2>
+    <ol>
+      <li>Buy and download the <code>.zip</code>, then unzip it.</li>
+      <li>Open each <code>SKILL.md</code> and replace the <code>[BRACKET]</code> placeholders with your own details.</li>
+      <li>Paste the skill into a Grok Bot chat and ask the bot to save it as a private skill, or add it as standing instructions in any assistant that accepts skill or instruction files.</li>
+      <li>Follow the README to set up the routine, then test it on something low-stakes.</li>
+    </ol>
+    <p>My guide on <a href="/how-to-add-a-skill-to-your-ai-bot/">how to add a skill to your AI bot</a> walks through this step by step.</p>
+
+    <h2>FAQ</h2>
+    <div class="faq">
+      <h3>Will the bot buy more credits or upgrade my plan?</h3>
+      <p>No. Every skill in the pack tells the bot never to buy credits, upgrade a plan, or spend money to get more usage.</p>
+      <h3>How is this different from the free Usage Reset Sprint skill?</h3>
+      <p>Usage Reset Sprint covers one window and one handoff. Project Sprint adds multi-day planning, handoff templates, a resume-after-reset routine, a weekly read-only review, and a usage budget check.</p>
+      <h3>What if my bot can’t see its remaining usage?</h3>
+      <p>The bot can only use remaining usage and the reset time if the platform shows them or you tell it.</p>
+      <h3>Is Project Sprint in the Bot Owner Starter Bundle?</h3>
+      <p>No. It’s sold on its own at $19.</p>
+      <h3>What do I get when I buy it?</h3>
+      <p>A .zip with six SKILL.md files, a README, and a quick start.</p>
+    </div>
+
+    <h2>Get it</h2>
+    <p class="price-line">$19 one-time</p>
+    <p><a class="buy" href="https://skillsforbots.gumroad.com/l/project-sprint">Get Project Sprint on Gumroad</a></p>
+    <p>Also on Agensi: <a href="https://www.agensi.io/skills/project-sprint">Project Sprint</a>.</p>
+    <p class="disclaimer">These are instructions to the bot, not a hard technical block. A bot can still misread remaining usage, start a job that does not finish, or get cut off mid-reply, so test them before you rely on them for anything time-sensitive. They are not a usage dashboard and not a way to add credits or extend a limit. Keep cards, wallets and payment logins out of any bot you don’t fully trust, and use your platform’s own approval and spending controls as the real safeguard. You’re responsible for your own bot’s actions. This product does not offer professional advice about the underlying project. Provided as is, with no warranty.</p>
+
+    <h2>Related</h2>
+    <ul>
+      <li><a href="/">All Grok Bot skills from Skills for Bots</a></li>
+      <li><a href="https://github.com/skillsforbots/grok-bot-skills">Free Grok Bot skills on GitHub</a></li>
+      <li><a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/usage-reset-sprint">Usage Reset Sprint</a> (free, on GitHub)</li>
+      <li><a href="/ai-bot-use-remaining-usage-before-reset/">How to make your AI bot use its remaining usage before the limit resets</a></li>
+      <li><a href="/how-to-add-a-skill-to-your-ai-bot/">How to add a skill to your AI bot</a></li>
+      <li><a href="/how-to-stop-ai-bot-spending-money/">How to stop your AI bot from spending money</a></li>
+    </ul>
+  </main>
+  <footer>
+    <p><a href="/">Home</a> · <a href="https://github.com/skillsforbots/grok-bot-skills">Grok Bot skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.github.io/llms.txt">llms.txt</a></p>
+    <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+  </footer>
+</body>
+</html>
