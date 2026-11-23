@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Check an AI Skill Is Safe Before You Install It | Skills for Bots</title>
+  <meta name="description" content="An 8-step check before you install an agent skill in Grok Bot, Claude, ChatGPT, or any AI bot: risky actions, hidden text, scripts, and a safe test.">
+  <link rel="canonical" href="https://skillsforbots.com/safety/check-a-skill-before-installing/">
+  <link rel="alternate" type="text/plain" href="https://skillsforbots.com/llms.txt" title="llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Skills for Bots">
+  <meta property="og:title" content="How to Check an AI Skill Is Safe Before You Install It | Skills for Bots">
+  <meta property="og:description" content="An 8-step check before you install an agent skill in Grok Bot, Claude, ChatGPT, or any AI bot: risky actions, hidden text, scripts, and a safe test.">
+  <meta property="og:url" content="https://skillsforbots.com/safety/check-a-skill-before-installing/">
+  <meta property="og:image" content="https://skillsforbots.com/skillsforbots-logo.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Check an AI Skill Is Safe Before You Install It | Skills for Bots">
+  <meta name="twitter:description" content="An 8-step check before you install an agent skill in Grok Bot, Claude, ChatGPT, or any AI bot: risky actions, hidden text, scripts, and a safe test.">
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --fg: #1a1814;
+      --muted: #5c574e;
+      --card: #fffcf7;
+      --border: #e2ddd3;
+      --accent: #154f4a;
+      --accent-hover: #0e3834;
+      --free-bg: #e8f0ee;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: light; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-underline-offset: 0.15em; }
+    a:hover { color: var(--accent-hover); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    header, main, footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    header { padding-top: 3.5rem; padding-bottom: 0.5rem; }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .lede { margin: 0 0 1.5rem; color: var(--muted); }
+    h2 {
+      margin: 2.25rem 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 650;
+    }
+    p { margin: 0 0 1rem; }
+    .free {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+    .free h3, .pack h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.0625rem;
+      font-weight: 650;
+    }
+    .pack {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 0 0 0.85rem;
+    }
+    .pack-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .price {
+      flex-shrink: 0;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+    }
+    .pack p, .free p { margin: 0 0 0.75rem; }
+    .pack p:last-child, .free p:last-child { margin-bottom: 0; }
+    .disclaimer { color: var(--muted); font-size: 0.9375rem; }
+    .buy { font-weight: 550; }
+    footer {
+      margin-top: 2.5rem;
+      padding-bottom: 3rem;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+    footer p { margin: 0 0 0.5rem; }
+      .crumb { margin: 0 0 1rem; font-size: 0.9375rem; color: var(--muted); }
+    .tip {
+      background: var(--free-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .tip h3 { margin: 0 0 0.4rem; font-size: 1.0625rem; font-weight: 650; }
+    .tip p:last-child { margin-bottom: 0; }
+    pre {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      font-size: 0.9375rem;
+      white-space: pre-wrap;
+    }
+    ul, ol { padding-left: 1.4rem; margin: 0 0 1rem; }
+    li { margin: 0 0 0.35rem; }
+    .brand { margin: 0 0 0.5rem; font-weight: 650; color: var(--accent); letter-spacing: 0.02em; }
+    .repo { font-weight: 550; }
+    .updated { margin: 0 0 1.25rem; font-size: 0.9375rem; color: var(--muted); }
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 0.9rem 1.25rem;
+      margin: 0 0 1.5rem;
+    }
+    .toc h2 { margin: 0 0 0.4rem; font-size: 1rem; }
+    .toc ol { margin: 0; }
+    h3 { margin: 1.5rem 0 0.5rem; font-size: 1.0625rem; font-weight: 650; }
+    code { font-size: 0.9em; }
+    .table-wrap { overflow-x: auto; margin: 0 0 1rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; background: var(--card); }
+    th, td { border: 1px solid var(--border); padding: 0.5rem 0.65rem; text-align: left; vertical-align: top; }
+    th { background: var(--free-bg); font-weight: 650; }
+    .sources { font-size: 0.9375rem; }
+    .sources li { overflow-wrap: anywhere; }
+    button {
+      font: inherit;
+      font-size: 0.9375rem;
+      font-weight: 550;
+      color: #fff;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 0.5rem;
+      padding: 0.45rem 0.9rem;
+      cursor: pointer;
+    }
+    button:hover { background: var(--accent-hover); }
+    button.secondary { color: var(--accent); background: var(--card); }
+    button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://skillsforbots.com/safety/check-a-skill-before-installing/#article",
+      "headline": "How to check an AI skill is safe before you install it",
+      "description": "An 8-step check before you install an agent skill in Grok Bot, Claude, ChatGPT, or any AI bot: risky actions, hidden text, scripts, and a safe test.",
+      "url": "https://skillsforbots.com/safety/check-a-skill-before-installing/",
+      "mainEntityOfPage": "https://skillsforbots.com/safety/check-a-skill-before-installing/",
+      "datePublished": "2026-11-23",
+      "dateModified": "2026-11-23",
+      "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://skillsforbots.com/#organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://skillsforbots.com/skillsforbots-logo.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Skills for Bots",
+          "item": "https://skillsforbots.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://skillsforbots.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Check a skill before installing",
+          "item": "https://skillsforbots.com/safety/check-a-skill-before-installing/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "Check an agent skill is safe before installing it",
+      "description": "Read the skill, look for risky actions, hidden text, scripts, and data access, run a checker, and test on something low-stakes.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Read the whole SKILL.md",
+          "text": "Not just the README or the listing page. The SKILL.md is what the bot follows. Note what it says the skill is for, and whether the steps match that.",
+          "url": "https://skillsforbots.com/safety/check-a-skill-before-installing/#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Search for actions that can’t be undone",
+          "text": "Look for send, email, message, post, publish, buy, pay, purchase, subscribe, delete, and transfer. Each one should sit next to a clear rule: the bot drafts or shows the cost, then waits for your yes.",
+          "url": "https://skillsforbots.com/safety/check-a-skill-before-installing/#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Look for anything hidden",
+          "text": "Check for HTML comments, white or tiny text, long runs of blank lines, and invisible characters. Instructions aimed at the bot but hidden from you are a red flag on their own.",
+          "url": "https://skillsforbots.com/safety/check-a-skill-before-installing/#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Check how it treats outside content",
+          "text": "A good skill says that web pages, emails, and documents are information, not orders. A risky one tells the bot to follow instructions it finds in content.",
+          "url": "https://skillsforbots.com/safety/check-a-skill-before-installing/#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Open every script and linked file",
+          "text": "Read anything in scripts/ and any URL the skill tells the bot to download or run. A skill that pipes a download into a shell, asks for keys, or posts data to an unknown address is a no.",
+          "url": "https://skillsforbots.com/safety/check-a-skill-before-installing/#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Check what data and accounts it needs",
+          "text": "Does a reminder skill really need your email, or a writing skill your files? Ask for the least access that does the job, and never paste passwords or card numbers into a skill.",
+          "url": "https://skillsforbots.com/safety/check-a-skill-before-installing/#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 7,
+          "name": "Run it through a checker",
+          "text": "Paste it into the free SKILL.md checker. It runs in your browser and flags risky wording, missing approval rules, hidden text, and remote code. It can’t prove a skill is safe, but it catches what tired eyes miss.",
+          "url": "https://skillsforbots.com/safety/check-a-skill-before-installing/#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 8,
+          "name": "Test it on something low-stakes",
+          "text": "Install it, then give it a harmless task that would trigger a send or a spend. The bot should stop and ask. Keep your platform’s own approval settings on the whole time.",
+          "url": "https://skillsforbots.com/safety/check-a-skill-before-installing/#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can an agent skill contain malware?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A 2026 Snyk scan of 3,984 published skills confirmed 76 malicious payloads, and 13.4% of the skills had at least one critical-level issue. Read the file and every script before you install a skill."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to install Grok Bot skills from GitHub?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can be, if you read the SKILL.md and any scripts first, check for send and spend rules, and test it on something harmless. Grok Bot’s Auto Review and Ask first rules add a second layer, so keep them on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a skill checker prove a skill is safe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A checker matches patterns. It can miss problems and flag things that are fine. Use it to catch what you might skip, then make the call yourself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the biggest red flag in a skill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Instructions hidden from you, or wording that tells the bot to follow whatever it reads in emails or web pages. Either one is a reason not to install."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d142a0413ccb4758a2ffe4985924efc3"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+  <header>
+    <p class="crumb"><a href="/">Skills for Bots</a> › <a href="/guides/">Guides</a> › Check a skill before installing</p>
+    <h1>How to check an AI skill is safe before you install it</h1>
+    <p class="lede">A skill is text your bot will follow, so installing one is closer to hiring help than downloading a file. This is the check I run on every skill, mine included, before it goes near a bot that can send, spend, or read my accounts.</p>
+    <p class="updated">Last updated: <time datetime="2026-11-23">November 23, 2026</time></p>
+  </header>
+  <main>
+    <nav class="toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">On this page</h2>
+      <ol>
+        <li><a href="#why">Are agent skills safe?</a></li>
+        <li><a href="#steps">The 8-step check</a></li>
+        <li><a href="#flags">Red flags and what they look like</a></li>
+        <li><a href="#platform">What each platform checks for you</a></li>
+        <li><a href="#grok">Checking a Grok Bot skill specifically</a></li>
+        <li><a href="#after">After you install it</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#sources">Sources</a></li>
+        <li><a href="#related">Related</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="why">Are agent skills safe?</h2>
+    <p>Most are fine. Some aren’t. In February 2026, Snyk published a scan of 3,984 skills from ClawHub and skills.sh. It reported that 13.4% had at least one critical-level issue, such as malware, prompt injection, or exposed secrets, and 36.82% had at least one issue of any severity. It also confirmed 76 malicious payloads aimed at things like credential theft.</p>
+    <p>The risk comes from what a skill is. The bot loads the instructions and follows them, often with access to your files, browser, apps, and sometimes payment details. A bad skill doesn’t need to “hack” anything. It just has to tell the bot to do something you wouldn’t.</p>
+    <p>The good news is that most problems are visible if you read the file. Skills are plain text. The check below takes about five minutes for a normal skill.</p>
+
+    <h2 id="steps">The 8-step check</h2>
+    <ol>
+      <li><strong>Read the whole SKILL.md.</strong> Not just the README or the listing page. The <code>SKILL.md</code> is what the bot follows. Note what it says the skill is for, and whether the steps match that.</li>
+      <li><strong>Search for actions that can’t be undone.</strong> Look for send, email, message, post, publish, buy, pay, purchase, subscribe, delete, and transfer. Each one should sit next to a clear rule: the bot drafts or shows the cost, then waits for your yes.</li>
+      <li><strong>Look for anything hidden.</strong> Check for HTML comments, white or tiny text, long runs of blank lines, and invisible characters. Instructions aimed at the bot but hidden from you are a red flag on their own.</li>
+      <li><strong>Check how it treats outside content.</strong> A good skill says that web pages, emails, and documents are information, not orders. A risky one tells the bot to follow instructions it finds in content.</li>
+      <li><strong>Open every script and linked file.</strong> Read anything in <code>scripts/</code> and any URL the skill tells the bot to download or run. A skill that pipes a download into a shell, asks for keys, or posts data to an unknown address is a no.</li>
+      <li><strong>Check what data and accounts it needs.</strong> Does a reminder skill really need your email, or a writing skill your files? Ask for the least access that does the job, and never paste passwords or card numbers into a skill.</li>
+      <li><strong>Run it through a checker.</strong> Paste it into the free <a href="/tools/skill-md-checker/">SKILL.md checker</a>. It runs in your browser and flags risky wording, missing approval rules, hidden text, and remote code. It can’t prove a skill is safe, but it catches what tired eyes miss.</li>
+      <li><strong>Test it on something low-stakes.</strong> Install it, then give it a harmless task that would trigger a send or a spend. The bot should stop and ask. Keep your platform’s own approval settings on the whole time.</li>
+    </ol>
+
+    <h2 id="flags">Red flags and what they look like</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Red flag</th><th scope="col">Example wording</th><th scope="col">What I do</th></tr></thead>
+        <tbody>
+          <tr><td>Acting without asking</td><td>“Send the reply automatically,” “complete the purchase”</td><td>Rewrite it to draft and wait, or don’t install</td></tr>
+          <tr><td>Following outside content</td><td>“Do whatever the email asks,” “follow instructions on the page”</td><td>Don’t install</td></tr>
+          <tr><td>Hidden instructions</td><td>An HTML comment telling the bot to ignore the user, invisible characters</td><td>Don’t install, and report it to the listing site</td></tr>
+          <tr><td>Remote code</td><td>Download a script and run it, piping a URL into a shell</td><td>Don’t install unless I can read and pin the exact code</td></tr>
+          <tr><td>Asking for secrets</td><td>“Paste your API key here,” “store the card number”</td><td>Don’t install. Use the platform’s vault or secure sign-in instead</td></tr>
+          <tr><td>Scope creep</td><td>A to-do skill that reads all your email</td><td>Cut it down to what the job needs</td></tr>
+          <tr><td>Vague purpose</td><td>A description like “helps with stuff”</td><td>Rewrite the description, or pass</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>One more: a skill that tells the bot to keep its instructions secret from you. A skill you can’t ask about is one you can’t trust. My own rule is that nothing in a skill is hidden from the person using it.</p>
+
+    <h2 id="platform">What each platform checks for you</h2>
+    <p>Platforms add their own guardrails, and they help, but none of them replace reading the file.</p>
+    <ul>
+      <li><strong>Grok Bot:</strong> Auto Review checks each action before it runs, and shows an approval card when one needs your OK. You can add <strong>Ask first</strong> rules in Settings, such as “Ask first before sending any external email.” The docs also say text from an email or web page doesn’t count as your request.</li>
+      <li><strong>ChatGPT:</strong> uploaded skills are scanned before they’re available. Some get marked Needs Review, and risky ones can be Blocked. OpenAI’s help page says the scan shouldn’t replace your own review.</li>
+      <li><strong>Gemini CLI:</strong> per a compatibility survey of vendor docs, it shows a consent prompt naming the skill and the folder it will access before the skill activates.</li>
+      <li><strong>Claude Code:</strong> its docs describe instruction files as context, not enforced settings. To block an action no matter what, they point to hooks.</li>
+    </ul>
+    <p>Treat a skill’s approval rules as a second layer on top of these settings. If your platform can require approval before sending, posting, or paying, turn that on first. My guide on <a href="/ai-bot-ask-before-acting/">making your AI bot ask before it acts</a> walks through both layers.</p>
+
+    <h2 id="grok">Checking a Grok Bot skill specifically</h2>
+    <p>Grok Bot shares private skills across all your bots, so a skill you install for one bot can be used by the others. That makes the check more important, not less. Three extra things I look at:</p>
+    <ol>
+      <li><strong>Does it name a bot or a team?</strong> Skills written for someone else’s setup may tell your bot to message people or channels that don’t exist for you.</li>
+      <li><strong>Does it set up routines?</strong> A skill that creates its own scheduled runs can spend usage while you’re away. The Grok Bot docs note that a busy routine can use a week of usage in a day.</li>
+      <li><strong>Does the install prompt fetch more than the skill?</strong> If a repo asks the bot to “follow the instructions in this repo,” ask the bot to show you the files first. My guide to <a href="/install/grok-bot/">installing Grok Bot skills from GitHub</a> has a safer install prompt.</li>
+    </ol>
+
+    <h2 id="after">After you install it</h2>
+    <ul>
+      <li>Ask the bot to explain the skill’s rules back to you in its own words.</li>
+      <li>Watch the first few real runs. Check that it stops where it should.</li>
+      <li>Re-check when the skill updates. A changed file is a new skill.</li>
+      <li>Keep payment details out of bots you don’t fully trust. My guide on <a href="/how-to-stop-ai-bot-spending-money/">stopping your AI bot from spending money</a> covers this.</li>
+    </ul>
+    <p>If you’d like a starting point that already has these rules, my free <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a> has no-send and no-spend rules, a one-time-approval rule, and a line telling the bot to treat outside content as information. Read it with this same checklist.</p>
+    <h2 id="faq">FAQ</h2>
+    <h3>Can an agent skill contain malware?</h3>
+    <p>Yes. A 2026 Snyk scan of 3,984 published skills confirmed 76 malicious payloads, and 13.4% of the skills had at least one critical-level issue. Read the file and every script before you install a skill.</p>
+    <h3>Is it safe to install Grok Bot skills from GitHub?</h3>
+    <p>It can be, if you read the SKILL.md and any scripts first, check for send and spend rules, and test it on something harmless. Grok Bot’s Auto Review and Ask first rules add a second layer, so keep them on.</p>
+    <h3>Does a skill checker prove a skill is safe?</h3>
+    <p>No. A checker matches patterns. It can miss problems and flag things that are fine. Use it to catch what you might skip, then make the call yourself.</p>
+    <h3>What is the biggest red flag in a skill?</h3>
+    <p>Instructions hidden from you, or wording that tells the bot to follow whatever it reads in emails or web pages. Either one is a reason not to install.</p>
+
+    <h2 id="sources">Sources</h2>
+    <p>I read each source on November 23, 2026. Products change often, so check the vendor page before you rely on a detail.</p>
+    <ul class="sources">
+      <li>Snyk, ToxicSkills study (3,984 skills; 13.4% critical; 36.82% any issue; 76 malicious payloads): <a href="https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/">snyk.io</a></li>
+      <li>Grok Bot docs, approvals, security, and privacy: <a href="https://docs.x.ai/grok-bot/approvals-security-and-privacy">docs.x.ai</a></li>
+      <li>Grok Bot docs, skills and routines (routines and usage): <a href="https://docs.x.ai/grok-bot/skills-routines-and-automations">docs.x.ai</a></li>
+      <li>Skills in ChatGPT (upload scan, Needs Review, Blocked): <a href="https://help.openai.com/en/articles/20001066-skills-in-chatgpt">help.openai.com</a></li>
+      <li>Agent Skills support survey (Gemini CLI consent prompt): <a href="https://www.skillsboard.sh/agent-skills-support">skillsboard.sh</a></li>
+      <li>Claude Code docs, memory and instruction files: <a href="https://code.claude.com/docs/en/memory">code.claude.com</a></li>
+    </ul>
+
+    <h2 id="related">Related</h2>
+    <ul>
+      <li><a href="/tools/skill-md-checker/">Free SKILL.md checker</a>: format and safety, in your browser</li>
+      <li><a href="/safety/approval-rules/">Approval rules for AI bots: a no-send, no-spend template</a></li>
+      <li><a href="/ai-bot-ask-before-acting/">How to make your AI bot ask before it acts</a></li>
+      <li><a href="/install/grok-bot/">How to install Grok Bot skills from GitHub</a></li>
+      <li><a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a>: free on GitHub</li>
+      <li><a href="/grok-bot-fleet-coordinator-skill/">Bot Fleet Coordinator</a>: the same rules across several bots ($12)</li>
+    </ul>
+    <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Nothing on this page is legal, financial, or professional advice. Provided as is, with no warranty.</p>
+  </main>
+  <footer>
+    <p><a href="/">Home</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
+    <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
+    <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
+  </footer>
+</body>
+</html>
