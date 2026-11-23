@@ -127,35 +127,101 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How to stop your AI bot from spending money",
-  "description": "Practical steps to keep an AI agent or Grok Bot from buying, subscribing, or paying without your OK: platform limits, card hygiene, and a no-spend rule it follows.",
-  "url": "https://skillsforbots.com/how-to-stop-ai-bot-spending-money/",
-  "mainEntityOfPage": "https://skillsforbots.com/how-to-stop-ai-bot-spending-money/",
-  "datePublished": "2026-11-20",
-  "dateModified": "2026-11-20",
-  "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
-  "author": {
-    "@type": "Organization",
-    "name": "Skills for Bots",
-    "url": "https://skillsforbots.com/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://skillsforbots.com/#organization",
-    "name": "Skills for Bots",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://skillsforbots.com/skillsforbots-logo.jpg"
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to stop your AI bot from spending money",
+      "description": "Practical steps to keep an AI agent or Grok Bot from buying, subscribing, or paying without your OK: platform limits, card hygiene, and a no-spend rule it follows.",
+      "url": "https://skillsforbots.com/how-to-stop-ai-bot-spending-money/",
+      "mainEntityOfPage": "https://skillsforbots.com/how-to-stop-ai-bot-spending-money/",
+      "datePublished": "2026-11-20",
+      "dateModified": "2026-11-23",
+      "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://skillsforbots.com/#organization",
+        "name": "Skills for Bots",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://skillsforbots.com/skillsforbots-logo.jpg"
+        }
+      },
+      "@id": "https://skillsforbots.com/how-to-stop-ai-bot-spending-money/#article",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Skills for Bots",
+          "item": "https://skillsforbots.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://skillsforbots.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to stop your AI bot from spending money",
+          "item": "https://skillsforbots.com/how-to-stop-ai-bot-spending-money/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to stop your AI bot from spending money",
+      "description": "Practical steps to keep an AI agent or Grok Bot from buying, subscribing, or paying without your OK: platform limits, card hygiene, and a no-spend rule it follows.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Start with the platform, not the prompt",
+          "text": "Instructions can be ignored or misread. Settings can't. Before you write a single rule, check what your bot platform offers: Approval prompts. Many assistants can be set to ask before any purchase, payment, or checkout. Turn that on.; Spending caps. If there's a monthly limit or a per-purchase limit, set it low.; Connected accounts. Look at which stores, wallets, and payment apps the bot is connected to. Disconnect anything it doesn't need for the jobs you actually give it.."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Keep payment details away from bots you don't fully trust",
+          "text": "The surest way to stop a bot from spending is to make sure it has nothing to spend with. Don't paste card numbers into chat. Don't save cards in a browser profile the bot uses. Don't give it logins to accounts with one-click checkout. If a bot genuinely needs to buy things, consider a separate card or virtual card with a small limit, so a mistake stays small."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Give the bot a standing no-spend rule",
+          "text": "Once the hard limits are in place, add a clear instruction so the bot stops and asks instead of trying to work around a blocked checkout. Good rules have three parts: A plain ban. No paying, buying, tipping, transferring, subscribing, or starting a trial that bills later.; What to do instead. Stop, say what it would cost and why, and wait.; A one-time approval stays one-time. \"Buy this\" means that item only. It doesn't switch the rule off.."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Watch out for sneaky costs",
+          "text": "Most surprise charges aren't a bot buying a TV. They're smaller: Free trials that convert to paid plans; \"Upgrade to continue\" buttons inside apps the bot is using; Rush shipping or add-ons picked by default at checkout; Paid API calls or credits inside tools the bot connects to."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Do the same for sending",
+          "text": "Spending and sending go together. A bot that can email a vendor can also agree to a quote. Pair your no-spend rule with a no-send rule: the bot drafts messages and shows you the recipient, channel, and full text, then waits for your OK."
+        }
+      ]
     }
-  }
+  ]
 }
   </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d142a0413ccb4758a2ffe4985924efc3"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
   <header>
-    <p class="crumb"><a href="/">Skills for Bots</a> › Guides</p>
+    <p class="crumb"><a href="/">Skills for Bots</a> › <a href="/guides/">Guides</a></p>
     <h1>How to stop your AI bot from spending money</h1>
     <p class="lede">A bot that can shop can also buy the wrong thing. Here's how to keep every purchase in your hands, in layers, starting with the ones that don't depend on the bot behaving.</p>
   </header>
@@ -207,11 +273,21 @@ then wait. My "yes" on one purchase is for that purchase only.</pre>
     <h2>Get the full rule set</h2>
     <p>The free <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a> has both rules (no spending, no sending without approval) as toggles, the one-time-approval wording, and a copy-paste bot description. It's also on <a href="https://www.agensi.io/skills/bot-safety-rules-starter">Agensi</a>.</p>
     <p>If you run more than one bot, the <a href="https://skillsforbots.gumroad.com/l/ergple">Bot Fleet Coordinator</a> pack ($12) builds the same rules into a primary bot that routes work to the others, plus a weekly read-only review of your bots.</p>
+    <h2>Related guides</h2>
+    <ul>
+      <li><a href="/safety/approval-rules/">Approval rules for AI bots: the full no-send, no-spend template</a></li>
+      <li><a href="/ai-bot-ask-before-acting/">How to make your AI bot ask before it acts</a></li>
+      <li><a href="/safety/check-a-skill-before-installing/">How to check a skill is safe before you install it</a></li>
+      <li>Free skill: <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a>, on GitHub</li>
+      <li>Pack: <a href="/grok-bot-fleet-coordinator-skill/">Bot Fleet Coordinator</a> ($12, the same rules across several bots)</li>
+      <li><a href="/guides/">All guides</a></li>
+    </ul>
     <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Provided as is, with no warranty.</p>
   </main>
   <footer>
-    <p><a href="/">Home</a> · <a href="https://github.com/skillsforbots/grok-bot-skills">GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
+    <p><a href="/">Home</a> · <a href="/guides/">Guides</a> · <a href="https://github.com/skillsforbots/grok-bot-skills">GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
   </footer>
 </body>
 </html>
