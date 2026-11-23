@@ -127,35 +127,95 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How to make your AI bot use its remaining usage before the limit resets",
-  "description": "Have an AI agent or Grok Bot check remaining usage, finish the highest-value chunk that fits, and leave a handoff so work continues after the limit resets, without buying more credits.",
-  "url": "https://skillsforbots.com/ai-bot-use-remaining-usage-before-reset/",
-  "mainEntityOfPage": "https://skillsforbots.com/ai-bot-use-remaining-usage-before-reset/",
-  "datePublished": "2026-11-22",
-  "dateModified": "2026-11-22",
-  "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
-  "author": {
-    "@type": "Organization",
-    "name": "Skills for Bots",
-    "url": "https://skillsforbots.com/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://skillsforbots.com/#organization",
-    "name": "Skills for Bots",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://skillsforbots.com/skillsforbots-logo.jpg"
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to make your AI bot use its remaining usage before the limit resets",
+      "description": "Have an AI agent or Grok Bot check remaining usage, finish the highest-value chunk that fits, and leave a handoff so work continues after the limit resets, without buying more credits.",
+      "url": "https://skillsforbots.com/ai-bot-use-remaining-usage-before-reset/",
+      "mainEntityOfPage": "https://skillsforbots.com/ai-bot-use-remaining-usage-before-reset/",
+      "datePublished": "2026-11-22",
+      "dateModified": "2026-11-23",
+      "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Skills for Bots",
+        "url": "https://skillsforbots.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://skillsforbots.com/#organization",
+        "name": "Skills for Bots",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://skillsforbots.com/skillsforbots-logo.jpg"
+        }
+      },
+      "@id": "https://skillsforbots.com/ai-bot-use-remaining-usage-before-reset/#article",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Skills for Bots",
+          "item": "https://skillsforbots.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://skillsforbots.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to make your AI bot use its remaining usage before the limit resets",
+          "item": "https://skillsforbots.com/ai-bot-use-remaining-usage-before-reset/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to make your AI bot use its remaining usage before the limit resets",
+      "description": "Have an AI agent or Grok Bot check remaining usage, finish the highest-value chunk that fits, and leave a handoff so work continues after the limit resets, without buying more credits.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Check remaining usage and the reset time",
+          "text": "Don't guess, and don't open a checkout or upgrade page to find the answer. Use the platform's usage page, settings, or status view if you have one. If the bot can't see a number or a time, have it ask you. Write both into the plan: how much is left, and when the window resets in your timezone."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Pick a finishable chunk, not the whole project",
+          "text": "The goal is useful finished work, not using every last unit of usage. Ask the bot for a short list of what's left, then choose the highest-value piece that can be completed and saved before the reset, with a buffer: A last section, a saved file, or a written decision is better than a wide rewrite that won't finish; Work that unblocks the next session is better than starting something new; If nothing can finish, spend what's left saving current work and writing a thorough handoff, then stop."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Save as you go, then leave a handoff",
+          "text": "Don't leave the only copy of the work inside an unsaved reply. Have the bot write files or paste drafts into the chat as it goes. When usage is running low, it should stop starting new work, finish the current sentence or file if it can, and write a handoff with: What was finished this sprint, and where it's saved; What's left, in order; Anything that should not be redone; A one-line resume prompt you can paste after the reset."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Don't buy more usage, and don't send messages to get it",
+          "text": "\"Use the rest of my usage\" is not permission to spend money, buy credits, upgrade a plan, start a trial, or email anyone for more access. If a step would send or cost money, or go outside the agreed plan, the bot should stop and ask. There's a separate guide on stopping a bot from spending money if you want that rule in writing too."
+        }
+      ]
     }
-  }
+  ]
 }
   </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d142a0413ccb4758a2ffe4985924efc3"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
   <header>
-    <p class="crumb"><a href="/">Skills for Bots</a> › Guides</p>
+    <p class="crumb"><a href="/">Skills for Bots</a> › <a href="/guides/">Guides</a></p>
     <h1>How to make your AI bot use its remaining usage before the limit resets</h1>
     <p class="lede">Usage windows run out mid-task. Here's how to have your bot check what's left, finish the most useful chunk that fits, and leave a handoff so you can pick up after the reset.</p>
   </header>
@@ -208,11 +268,21 @@ spend money, or send messages to get more usage.</pre>
     <h2>Get the full skill</h2>
     <p>The free <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/usage-reset-sprint">Usage Reset Sprint</a> skill has the sprint steps, a copy-paste bot description, a start-sprint prompt, and a blank handoff note. It's also on <a href="https://www.agensi.io/skills/usage-reset-sprint">Agensi</a>. If you need help installing it, see <a href="/how-to-add-a-skill-to-your-ai-bot/">how to add a skill to your AI bot</a>.</p>
     <p>The <a href="https://skillsforbots.gumroad.com/l/project-sprint">Project Sprint</a> pack ($19) adds multi-day planning across usage windows, handoff and progress-note templates, a resume-after-reset routine, a weekly read-only project review, and a usage budget check that never buys credits or spends money.</p>
+    <h2>Related guides</h2>
+    <ul>
+      <li><a href="/routines/skills-vs-scheduled-tasks/">Skills vs scheduled tasks: the how and the when</a></li>
+      <li><a href="/install/grok-bot/">How to install Grok Bot skills from GitHub</a></li>
+      <li><a href="/how-to-stop-ai-bot-spending-money/">How to stop your AI bot from spending money</a></li>
+      <li>Free skill: <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/usage-reset-sprint">Usage Reset Sprint</a>, on GitHub</li>
+      <li>Pack: <a href="/grok-bot-project-sprint-skill/">Project Sprint</a> ($19, a project across several usage windows)</li>
+      <li><a href="/guides/">All guides</a></li>
+    </ul>
     <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still misread remaining usage, start a job that does not finish, or get cut off mid-reply, so test before you rely on them. This does not add credits or extend a limit. Provided as is, with no warranty.</p>
   </main>
   <footer>
-    <p><a href="/">Home</a> · <a href="https://github.com/skillsforbots/grok-bot-skills">GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
+    <p><a href="/">Home</a> · <a href="/guides/">Guides</a> · <a href="https://github.com/skillsforbots/grok-bot-skills">GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
   </footer>
 </body>
 </html>
