@@ -4,11 +4,13 @@
 
 A skill is an instruction file a Grok Bot or similar AI assistant follows. The free skills in https://github.com/skillsforbots/grok-bot-skills are MIT-licensed. Paid packs are sold separately on Gumroad under their own terms.
 
-## Skills for any AI bot
+## Start here
+
+- [Grok Bot Skills: The Complete Guide](https://skillsforbots.com/grok-bot-skills/): What a Grok Bot skill is, skills vs routines, where skills live and how a bot finds them, three ways to get a skill into Grok Bot, how to write one, the safety rules every skill should carry, free skills, paid packs, fixes, and an FAQ. Checked against the Grok Bot docs on November 24, 2026.
 
 - [What are agent skills? A plain-English guide for bot owners](https://skillsforbots.com/agent-skills/): What a SKILL.md skill is, what's inside one, how bots load skills, how skills differ from prompts, routines, MCP and AGENTS.md, which tools read them, and a five-step safety check before installing one.
-- [SKILL.md template you can copy](https://skillsforbots.com/skill-md/template/): An annotated SKILL.md template with frontmatter name and description, when to use it, steps, output format, an ask-before-acting section, and a disclaimer, plus a filled-in example and a compatibility table by kind of tool.
-- [Free SKILL.md checker](https://skillsforbots.com/tools/skill-md-checker/): Paste a SKILL.md to check frontmatter, name and description rules, length, a safety or approval section, a disclaimer, risky actions (send, spend, delete, payments, passwords, API keys), hidden text, remote code, and links. Runs in the browser; nothing is uploaded. A helper, not a guarantee.
+- [Grok Bot Skill Template: Annotated SKILL.md You Can Copy](https://skillsforbots.com/skill-md/template/): A free, annotated SKILL.md template for Grok Bot skills: name and description, when to use it, steps, an ask-before-acting section, and a disclaimer. Copy it and fill the brackets.
+- [Free Grok Bot Skill Checker: SKILL.md Format and Safety](https://skillsforbots.com/tools/skill-md-checker/): Paste a Grok Bot SKILL.md and check its frontmatter, name, description, length, safety rules, disclaimer, risky wording, hidden text, and links. Runs in your browser. Nothing is uploaded.
 
 ## Free skills
 
@@ -45,38 +47,32 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 
 ## Guides
 
-- [All guides](https://skillsforbots.com/guides/): Every guide on the site, grouped by install, safety, routines, and comparisons.
+- [Grok Bot Skills Guides: Install, Write, Safety, Routines](https://skillsforbots.com/guides/): Every Skills for Bots guide in one place: what Grok Bot skills are, how to install and write them, safety and approval rules, routines, reminders, and usage.
 
-- [How to stop your AI bot from spending money](https://skillsforbots.com/how-to-stop-ai-bot-spending-money/): Platform limits, keeping payment details away from bots, a standing no-spend rule, and hidden costs like trials that bill later.
-- [How to make AI bot reminders that don't stop until you're done](https://skillsforbots.com/ai-bot-reminders-that-dont-stop/): Defining what counts as done, a two-line reminder message, and a daily routine setup.
-- [How to coordinate multiple AI bots](https://skillsforbots.com/coordinate-multiple-ai-bots/): One lane per bot, a single coordinator, a written handoff note, shared safety rules, and a weekly read-only review.
-- [How to make your AI bot ask before it acts](https://skillsforbots.com/ai-bot-ask-before-acting/): A standing approval rule for sending, posting, or spending, with one-time yes staying one-time, plus a test and platform settings.
-- [How to get a daily credit action plan from an AI bot](https://skillsforbots.com/ai-bot-daily-credit-action-plan/): A short daily or on-demand brief with today's top 3 actions, figures labeled as estimates, and letter drafts you send yourself. Educational only; not financial or legal advice; no results promised.
-- [How to add a skill to your AI bot](https://skillsforbots.com/how-to-add-a-skill-to-your-ai-bot/): What a SKILL.md file is, how to fill placeholders and add it as standing instructions, and how to test that it loaded.
-- [How to make your AI bot use its remaining usage before the limit resets](https://skillsforbots.com/ai-bot-use-remaining-usage-before-reset/): Check remaining usage and the reset time, finish the highest-value chunk that fits, leave a handoff, and resume after reset, without buying more credits.
+- [How to Stop Grok Bot From Spending Money (Without Breaking It)](https://skillsforbots.com/how-to-stop-ai-bot-spending-money/): Practical steps to keep your Grok Bot from buying, subscribing, or paying without your OK: platform limits, card hygiene, and a no-spend rule it follows.
+- [Grok Bot Reminders That Repeat Until You’re Done](https://skillsforbots.com/ai-bot-reminders-that-dont-stop/): Set up a Grok Bot reminder that repeats until you clearly say a task is done, not when a date passes or you reply ok. Rules, wording, and routine setup.
+- [How to Coordinate Multiple Grok Bots Without Losing Track](https://skillsforbots.com/coordinate-multiple-ai-bots/): Running several Grok Bots? Give each one a lane, route work through one coordinator, and use a handoff note so context and approvals don’t get lost.
+- [How to Make Grok Bot Ask Before It Acts](https://skillsforbots.com/ai-bot-ask-before-acting/): Set a standing rule so your Grok Bot drafts emails, posts, and purchases, then waits for a clear yes. One-time approval stays one-time.
+- [How to Get a Daily Credit Action Plan From Grok Bot](https://skillsforbots.com/ai-bot-daily-credit-action-plan/): Use Grok Bot for a short daily credit brief: today’s top 3 actions, figures labeled as estimates, and letter drafts you send yourself. Educational only; no results promised.
+- [How to Add a Skill to Grok Bot (and Make It Stick)](https://skillsforbots.com/how-to-add-a-skill-to-your-ai-bot/): A skill is a SKILL.md file of standing instructions your Grok Bot follows on later runs. Fill in the placeholders, save it as a private skill, and test it.
+- [How to Make Grok Bot Use Remaining Usage Before It Resets](https://skillsforbots.com/ai-bot-use-remaining-usage-before-reset/): Have your Grok Bot check remaining usage, finish the highest-value chunk that fits, and leave a handoff so work continues after the limit resets, without buying more credits.
 
 ## Install a skill
 
 - [How to Add a Skill to Any AI Bot](https://skillsforbots.com/install/): How to install an agent skill in any AI bot: five steps that work everywhere, and where Grok Bot, Claude, ChatGPT, Codex, and Cursor take skills.
 - [How to Install Grok Bot Skills From GitHub (3 Ways)](https://skillsforbots.com/install/grok-bot/): Three ways to install a Grok Bot skill from GitHub: paste the SKILL.md, give the bot the repo link, or copy the folder. Plus how to check it loaded.
-- [How to Add a Skill to Claude and Claude Code](https://skillsforbots.com/install/claude/): Add a custom skill to Claude: upload a ZIP in Customize, Skills on claude.ai, or put a SKILL.md folder in ~/.claude/skills for Claude Code. Plus fixes.
-- [ChatGPT Skills: How to Add One, With Everyday Examples](https://skillsforbots.com/install/chatgpt/): How to add a skill in ChatGPT: create with chat, the editor, or an upload. Who has access, how the scan works, using @, and four everyday skill ideas.
-- [Codex Skills Location: Where to Put SKILL.md](https://skillsforbots.com/install/codex/): Where Codex looks for skills: .agents/skills up to the repo root, $HOME/.agents/skills, /etc/codex/skills, and built-ins. How to add, use, and disable one.
-- [Cursor Skills Folder: Where Skills Go and How to Add One](https://skillsforbots.com/install/cursor/): Where Cursor looks for skills (.cursor/skills, .agents/skills, and your home folder), how to add a SKILL.md, invoke it, and sync it to Cloud Agents.
-- [Which AI Bots Read SKILL.md (and Where Each One Looks)](https://skillsforbots.com/skill-md/which-bots-support-it/): Which AI tools read SKILL.md skills and the folder each checks: Claude, ChatGPT, Codex, Cursor, GitHub Copilot, Gemini CLI, OpenClaw, Grok Bot, more.
 
 ## Safety and approvals
 
-- [How to Check an AI Skill Is Safe Before You Install It](https://skillsforbots.com/safety/check-a-skill-before-installing/): An 8-step check before you install an agent skill in Grok Bot, Claude, ChatGPT, or any AI bot: risky actions, hidden text, scripts, and a safe test.
-- [Approval Rules for AI Bots: A No-Send, No-Spend Template](https://skillsforbots.com/safety/approval-rules/): A copy-paste approval rules template for AI bots and agents: what needs a yes, what the bot must show you, what counts as approval, and how to test it.
+- [How to Check a Grok Bot Skill Is Safe Before You Install It](https://skillsforbots.com/safety/check-a-skill-before-installing/): An 8-step check before you install a skill in Grok Bot: risky actions, hidden text, scripts, data access, and a safe first test.
+- [Grok Bot Approval Rules: A No-Send, No-Spend Template](https://skillsforbots.com/safety/approval-rules/): A copy-paste approval rules template for Grok Bot: what needs a yes, what the bot must show you, what counts as approval, and how to test it.
 
 ## Compare
 
-- [SKILL.md vs AGENTS.md vs CLAUDE.md: Which File Does What](https://skillsforbots.com/compare/skill-md-vs-agents-md/): SKILL.md, AGENTS.md, and CLAUDE.md all hold instructions for AI agents, but they load at different times and do different jobs. When to use each.
 - [Agent Skills vs MCP Servers: What Each One Does](https://skillsforbots.com/compare/skills-vs-mcp/): Agent skills teach an AI bot how to do a job. MCP servers connect it to tools and data. A plain comparison, when you need each, and how they work together.
-- [Skills vs Scheduled Tasks (Routines): The How and the When](https://skillsforbots.com/routines/skills-vs-scheduled-tasks/): A skill tells an AI bot how to do a job. A routine or scheduled task tells it when. How they differ in Grok Bot, ChatGPT, and Claude, with two worked examples.
+- [Grok Bot Skills vs Routines: The How and the When](https://skillsforbots.com/routines/skills-vs-scheduled-tasks/): A skill tells your Grok Bot how to do a job. A routine tells it when. How the two fit together in Grok Bot, with two worked examples.
 
 ## Roundups
 
 - [Grok Bot Skills on GitHub: The Free Repos Worth Knowing](https://skillsforbots.com/skills/grok-bot-skills-github/): An honest list of free Grok Bot skill repos on GitHub: what each one is for, how it installs, and its license, read from each repo on Nov 23, 2026.
-- [Best Agent Skills for Everyday Life Admin (Free and Paid)](https://skillsforbots.com/skills/everyday/): Agent skills for everyday life admin, not code: safety rules, reminders, daily plans, usage resets, and shopping decisions. Free and paid, mine and others’.
+- [Best Grok Bot Skills for Everyday Life Admin (Free and Paid)](https://skillsforbots.com/skills/everyday/): Grok Bot skills for everyday life admin, not code: safety rules, reminders, daily plans, usage resets, and shopping decisions. Free and paid, mine and others’.
