@@ -207,7 +207,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Skills vs scheduled tasks",
+          "name": "Skills vs routines",
           "item": "https://skillsforbots.com/routines/skills-vs-scheduled-tasks/"
         }
       ]
@@ -262,7 +262,7 @@
           "name": "What is the difference between a skill and a routine?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A skill is saved instructions for how to do a task. A routine, called a scheduled task in ChatGPT and Claude, tells a bot when to start it, at a time or when an event happens."
+            "text": "A skill is saved instructions for how to do a task. A routine tells one bot when to start it, at a time or when an event happens."
           }
         },
         {
@@ -270,7 +270,7 @@
           "name": "Do I need a skill to use a routine?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No, but it helps. A routine can run a short prompt on its own. Putting the method in a skill keeps the routine short, makes the steps reusable, and lets other bots and tools use the same instructions."
+            "text": "No, but it helps. A routine can run a short prompt on its own. Putting the method in a skill keeps the routine short, makes the steps reusable, and lets your other Bots use the same instructions."
           }
         },
         {
@@ -283,10 +283,10 @@
         },
         {
           "@type": "Question",
-          "name": "Can one skill work with routines in different apps?",
+          "name": "Can one skill run on routines for different Bots?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Usually. The SKILL.md format is shared across many tools, while each app has its own scheduler. Keep the logic in the skill and set up the schedule in each app."
+            "text": "Yes. Private skills are one library shared by all your Bots, while each routine belongs to one Bot. Keep the logic in the skill and give each Bot its own short routine."
           }
         }
       ]
@@ -298,9 +298,9 @@
 </head>
 <body>
   <header>
-    <p class="crumb"><a href="/">Skills for Bots</a> › <a href="/guides/">Guides</a> › Skills vs scheduled tasks</p>
+    <p class="crumb"><a href="/">Skills for Bots</a> › <a href="/guides/">Guides</a> › Skills vs routines</p>
     <h1>Grok Bot skills vs routines: the how and the when</h1>
-    <p class="lede">A skill is the method. A routine, or scheduled task, is the alarm clock. Most beginner confusion comes from expecting one to do the other’s job. Here’s how they fit together, with two setups I use.</p>
+    <p class="lede">A skill is the method. A routine is the alarm clock. Most beginner confusion comes from expecting one to do the other’s job. Here’s how they fit together, with two setups I use.</p>
     <p class="updated">Last updated: <time datetime="2026-11-24">November 24, 2026</time></p>
   </header>
   <main>
@@ -309,7 +309,7 @@
       <ol>
         <li><a href="#short">The difference in one line</a></li>
         <li><a href="#table">Side by side</a></li>
-        <li><a href="#names">What each platform calls them</a></li>
+        <li><a href="#names">How Grok Bot handles each</a></li>
         <li><a href="#steps">How to pair a skill with a routine</a></li>
         <li><a href="#ex1">Example 1: a reminder that nags until done</a></li>
         <li><a href="#ex2">Example 2: a sprint before a usage reset</a></li>
@@ -321,35 +321,34 @@
     </nav>
 
     <h2 id="short">The difference in one line</h2>
-    <p>A <strong>skill</strong> is saved instructions for how to do a task. A <strong>routine</strong> (ChatGPT and Claude call it a <strong>scheduled task</strong>) tells a bot when to start, either at a time or when something happens. The Grok Bot docs put it this way: a skill describes how to perform a task, and a routine assigns a workflow to one bot and tells it when to run.</p>
+    <p>A <strong>skill</strong> is saved instructions for how to do a task. A <strong>routine</strong> tells a bot when to start, either at a time or when something happens. The Grok Bot docs put it this way: a skill describes how to perform a task, and a routine assigns a workflow to one bot and tells it when to run.</p>
     <p>You often need both. A routine without a skill runs a vague one-line prompt every morning. A skill without a routine waits until you remember to ask.</p>
 
     <h2 id="table">Side by side</h2>
     <div class="table-wrap">
       <table>
-        <thead><tr><th scope="col"></th><th scope="col">Skill</th><th scope="col">Routine / scheduled task</th></tr></thead>
+        <thead><tr><th scope="col"></th><th scope="col">Skill</th><th scope="col">Routine</th></tr></thead>
         <tbody>
           <tr><td>Answers</td><td>How should this be done?</td><td>When should this start?</td></tr>
           <tr><td>Lives as</td><td>A <code>SKILL.md</code> file or saved instructions</td><td>A schedule or trigger in the app</td></tr>
           <tr><td>Starts when</td><td>Your request matches its description, or you name it</td><td>The time arrives, or a matching event happens</td></tr>
           <tr><td>Spends usage</td><td>Only when used</td><td>On every run, even quiet ones</td></tr>
-          <tr><td>Portable?</td><td>Mostly. The format is shared across many tools</td><td>No. Each app has its own scheduler</td></tr>
+          <tr><td>Shared across your Bots?</td><td>Yes. Private skills are one library for all your Bots</td><td>No. Each routine belongs to one Bot</td></tr>
           <tr><td>Holds the rules?</td><td>Yes: steps, output, approvals</td><td>Only a short instruction, ideally “use this skill”</td></tr>
         </tbody>
       </table>
     </div>
 
-    <h2 id="names">What each platform calls them</h2>
+    <h2 id="names">How Grok Bot handles each</h2>
     <ul>
-      <li><strong>Grok Bot:</strong> skills and routines. A routine can run on a schedule or start from an event, such as a Slack message, a GitHub event, an email to the bot’s own address, or a webhook call. Routines run in the cloud while your laptop is closed. A bot can own up to 50 routines, and schedules must be at least five minutes apart.</li>
-      <li><strong>ChatGPT:</strong> skills and scheduled tasks, found under Scheduled. Tasks can be one-time or recurring, and some plans support event-triggered tasks. OpenAI’s help page lists active task limits by plan: 3 on Free and Go, 5 on Plus, 10 on Business and Edu, and 15 on Pro and Enterprise.</li>
-      <li><strong>Claude Code:</strong> skills and cloud scheduled tasks, which were called routines until recently. They can run on a schedule, from an API call, or on GitHub events. Desktop scheduled tasks and <code>/loop</code> run on your own machine instead.</li>
-      <li><strong>Cursor:</strong> skills plus Automations, which a built-in <code>/automate</code> skill can create from schedules, Slack messages, and GitHub events.</li>
+      <li><strong>Skills:</strong> private skills are one library shared by all your Bots. A Bot may still need the right app or login to use one. If a Bot can’t find a skill, enable it for that Bot under Private skills in Connect apps.</li>
+      <li><strong>Routines:</strong> a routine belongs to one Bot. It can run on a schedule or start from an event, such as a Slack message, a GitHub, Linear, Sentry, or PagerDuty event, an email to the Bot’s own address, or a webhook call. Routines run in the cloud while your laptop is closed.</li>
+      <li><strong>Limits:</strong> a Bot can own up to 50 routines, and schedules must be at least five minutes apart. The docs list a limit of 300 runs an hour across all your routines and 200 an hour for any one routine, and the app keeps the 20 most recent run records for each routine.</li>
     </ul>
-    <p>The skill side travels well between these tools. The schedule side doesn’t, so keep the logic in the skill and the routine instruction short.</p>
+    <p>Because one skill serves every Bot, keep the logic in the skill and the routine instruction short. Several Bots can then run the same skill on their own schedules.</p>
 
     <h2 id="steps">How to pair a skill with a routine</h2>
-    <p>This is the order the Grok Bot docs recommend, and it matches what works for me in other tools.</p>
+    <p>This is the order the Grok Bot docs recommend, and it’s the order I use.</p>
     <ol>
       <li><strong>Do the task once, by hand, in chat.</strong> Get one good result first. Fix the steps until the output is what you want.</li>
       <li><strong>Save the method as a skill.</strong> Write the steps, the rules, the output format, and what needs your approval. Give it a clear name and description.</li>
@@ -375,7 +374,7 @@ Post the result in this chat. Don't send anything to anyone else.</pre>
 
     <h2 id="mistakes">Common mistakes</h2>
     <ul>
-      <li><strong>Putting the whole method in the routine.</strong> Long routine prompts are hard to edit and don’t carry over to other tools. Move the steps into a skill.</li>
+      <li><strong>Putting the whole method in the routine.</strong> Long routine prompts are hard to edit and can’t be reused by your other Bots. Move the steps into a skill.</li>
       <li><strong>Broad triggers.</strong> A trigger on every message in a busy channel runs often. The Grok Bot docs warn that an hourly schedule or a busy Slack trigger can use a week of usage in a day.</li>
       <li><strong>No missing-data rule.</strong> Tell the bot what to do when a source is down. “Report the failure, don’t use old data” is a good default.</li>
       <li><strong>Skipping approval rules.</strong> Routines run while you’re away, so the skill should say what needs your yes. See my <a href="/safety/approval-rules/">approval rules template</a>.</li>
@@ -383,22 +382,19 @@ Post the result in this chat. Don't send anything to anyone else.</pre>
     </ul>
     <h2 id="faq">FAQ</h2>
     <h3>What is the difference between a skill and a routine?</h3>
-    <p>A skill is saved instructions for how to do a task. A routine, called a scheduled task in ChatGPT and Claude, tells a bot when to start it, at a time or when an event happens.</p>
+    <p>A skill is saved instructions for how to do a task. A routine tells one bot when to start it, at a time or when an event happens.</p>
     <h3>Do I need a skill to use a routine?</h3>
-    <p>No, but it helps. A routine can run a short prompt on its own. Putting the method in a skill keeps the routine short, makes the steps reusable, and lets other bots and tools use the same instructions.</p>
+    <p>No, but it helps. A routine can run a short prompt on its own. Putting the method in a skill keeps the routine short, makes the steps reusable, and lets your other Bots use the same instructions.</p>
     <h3>Do routines use up my usage?</h3>
     <p>Yes. Each run spends usage, even when nothing changes. Widen schedules and narrow triggers for routines that don’t need to run often.</p>
-    <h3>Can one skill work with routines in different apps?</h3>
-    <p>Usually. The SKILL.md format is shared across many tools, while each app has its own scheduler. Keep the logic in the skill and set up the schedule in each app.</p>
+    <h3>Can one skill run on routines for different Bots?</h3>
+    <p>Yes. Private skills are one library shared by all your Bots, while each routine belongs to one Bot. Keep the logic in the skill and give each Bot its own short routine.</p>
 
     <h2 id="sources">Sources</h2>
-    <p>I read each source on November 23, 2026. Products change often, so check the vendor page before you rely on a detail.</p>
+    <p>I read each source on November 24, 2026. Products change often, so check the vendor page before you rely on a detail.</p>
     <ul class="sources">
       <li>Grok Bot docs, skills and routines: <a href="https://docs.x.ai/grok-bot/skills-routines-and-automations">docs.x.ai</a></li>
       <li>Grok Bot docs, FAQ (skill vs routine): <a href="https://docs.x.ai/grok-bot/faq">docs.x.ai/grok-bot/faq</a></li>
-      <li>Scheduled tasks in ChatGPT: <a href="https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt">help.openai.com</a></li>
-      <li>Claude Code docs, cloud scheduled tasks: <a href="https://code.claude.com/docs/en/routines">code.claude.com</a></li>
-      <li>Cursor docs, Agent Skills (built-in skills): <a href="https://cursor.com/docs/context/skills">cursor.com/docs</a></li>
     </ul>
 
     <h2 id="related">Related</h2>
@@ -414,7 +410,7 @@ Post the result in this chat. Don't send anything to anyone else.</pre>
     <p><a href="/">Home</a> · <a href="/grok-bot-skills/">Grok Bot skills guide</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
     <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
-    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by xAI, GitHub, or any other company named on this site. Product names are used only to describe compatibility.</p>
   </footer>
 </body>
 </html>
