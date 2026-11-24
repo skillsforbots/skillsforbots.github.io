@@ -283,10 +283,10 @@
         },
         {
           "@type": "Question",
-          "name": "Can I use this template in any AI bot?",
+          "name": "How do I add this template to Grok Bot?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. It’s plain text. Paste it into standing instructions or add it to a SKILL.md under an Ask before acting heading, then test each category."
+            "text": "It’s plain text. Add it to a SKILL.md under an Ask before acting heading and ask your Bot to save it as a private skill, or ask the Bot to remember it as a standing rule. Then test each category."
           }
         }
       ]
@@ -310,7 +310,7 @@
         <li><a href="#template">The template</a></li>
         <li><a href="#lines">Why each line is there</a></li>
         <li><a href="#steps">Set it up in five steps</a></li>
-        <li><a href="#platform">Pair it with your platform’s settings</a></li>
+        <li><a href="#platform">Pair it with Grok Bot’s settings</a></li>
         <li><a href="#loopholes">Loopholes to close</a></li>
         <li><a href="#examples">Example guardrails for common jobs</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -377,7 +377,7 @@ to get the same result.</pre>
       <li><strong>Re-test after one yes.</strong> Approve one item, then ask for a second. The rule should still be on.</li>
     </ol>
 
-    <h2 id="platform">Pair it with your platform’s settings</h2>
+    <h2 id="platform">Pair it with Grok Bot’s settings</h2>
     <p>Written rules can be ignored or misread. Settings are harder to get around. Use both.</p>
     <div class="table-wrap">
       <table>
@@ -385,8 +385,6 @@ to get the same result.</pre>
         <tbody>
           <tr><td>Grok Bot</td><td>Settings, General, Auto-review, then Custom Rules</td><td>Add a rule under “When Grok Bot wants to,” choose <strong>Ask first</strong>. Ask first rules always stop matching actions, and win if both kinds of rule match. You can have up to 20 of each.</td></tr>
           <tr><td>Grok Bot payments</td><td>Vault</td><td>A card saved in Vault fills in at checkout without a separate approval each time. To approve every payment, don’t save the card.</td></tr>
-          <tr><td>ChatGPT scheduled tasks</td><td>Task approvals</td><td>An action that sends a message or changes outside data may need approval, and the task pauses until you review it.</td></tr>
-          <tr><td>Claude Code</td><td>Hooks</td><td>Instruction files are context, not enforced settings. A PreToolUse hook can block an action no matter what Claude decides.</td></tr>
         </tbody>
       </table>
     </div>
@@ -421,15 +419,13 @@ to get the same result.</pre>
     <p>Not with this template. A yes covers that one item, once. The next send or purchase needs a new yes. Test this after your first approval.</p>
     <h3>Is a written rule enough on its own?</h3>
     <p>No. A bot can still ignore or misread instructions. Pair the rule with your platform’s approval settings, such as Ask first rules in Grok Bot, and keep payment details out of bots you don’t fully trust.</p>
-    <h3>Can I use this template in any AI bot?</h3>
-    <p>Yes. It’s plain text. Paste it into standing instructions or add it to a SKILL.md under an Ask before acting heading, then test each category.</p>
+    <h3>How do I add this template to Grok Bot?</h3>
+    <p>It’s plain text. Add it to a SKILL.md under an Ask before acting heading and ask your Bot to save it as a private skill, or ask the Bot to remember it as a standing rule. Then test each category.</p>
 
     <h2 id="sources">Sources</h2>
     <p>I read each source on November 23, 2026. Products change often, so check the vendor page before you rely on a detail.</p>
     <ul class="sources">
       <li>Grok Bot docs, approvals, security, and privacy (Auto Review, Ask first rules, Vault, card expiry): <a href="https://docs.x.ai/grok-bot/approvals-security-and-privacy">docs.x.ai</a></li>
-      <li>Scheduled tasks in ChatGPT (approvals pause tasks): <a href="https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt">help.openai.com</a></li>
-      <li>Claude Code docs, memory and instruction files (hooks to block actions): <a href="https://code.claude.com/docs/en/memory">code.claude.com</a></li>
     </ul>
 
     <h2 id="related">Related</h2>
@@ -446,7 +442,7 @@ to get the same result.</pre>
     <p><a href="/">Home</a> · <a href="/grok-bot-skills/">Grok Bot skills guide</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
     <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
-    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by xAI, GitHub, or any other company named on this site. Product names are used only to describe compatibility.</p>
   </footer>
 </body>
 </html>
