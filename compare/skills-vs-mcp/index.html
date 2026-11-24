@@ -170,7 +170,7 @@
       "url": "https://skillsforbots.com/compare/skills-vs-mcp/",
       "mainEntityOfPage": "https://skillsforbots.com/compare/skills-vs-mcp/",
       "datePublished": "2026-11-23",
-      "dateModified": "2026-11-23",
+      "dateModified": "2026-11-24",
       "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
       "inLanguage": "en",
       "author": {
@@ -236,7 +236,7 @@
           "name": "Can a skill tell a bot to use an MCP tool?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. A skill can name the tools or apps to use and how. Some platforms also let a skill declare tool dependencies, but support varies."
+            "text": "Yes. A skill can name the tools or apps to use and how. The open format also has an experimental allowed-tools field, but I don’t rely on it in Grok Bot."
           }
         },
         {
@@ -259,7 +259,7 @@
     <p class="crumb"><a href="/">Skills for Bots</a> › <a href="/guides/">Guides</a> › Agent skills vs MCP</p>
     <h1>Agent skills vs MCP servers: what each one does</h1>
     <p class="lede">Skills and MCP both “give your bot new abilities,” which is why they get confused. A skill is knowledge: steps and rules. MCP is plumbing: a standard way to plug a bot into apps and data. Most useful setups use both.</p>
-    <p class="updated">Last updated: <time datetime="2026-11-23">November 23, 2026</time></p>
+    <p class="updated">Last updated: <time datetime="2026-11-24">November 24, 2026</time></p>
   </header>
   <main>
     <nav class="toc" aria-labelledby="toc-title">
@@ -304,8 +304,8 @@
     <p>What a skill can’t do on its own is reach a system the bot has no access to. A “weekly budget review” skill is useless if the bot can’t see the spreadsheet.</p>
 
     <h2 id="mcp">What an MCP server adds</h2>
-    <p>MCP servers connect an AI app to data sources, tools, and workflows. The MCP docs give examples such as an agent reading your calendar and notes, or a coding assistant building an app from a design file. Many AI tools support MCP, including Claude, ChatGPT, VS Code, and Cursor, according to the MCP site.</p>
-    <p>In consumer apps you often don’t see the letters MCP at all. Grok Bot calls these connected apps, under Connect apps in the sidebar. In ChatGPT, a plugin can include skills, apps, or both.</p>
+    <p>MCP servers connect an AI app to data sources, tools, and workflows. The MCP docs give examples such as an agent reading your calendar and notes, or a coding assistant building an app from a design file.</p>
+    <p>In consumer apps you often don’t see the letters MCP at all. Grok Bot calls these connected apps, under Connect apps in the sidebar. The same panel is where you discover and install packaged skills.</p>
     <p>An MCP server doesn’t know your preferences. It offers tools like “create event” or “send message” and leaves the judgment to the bot. That’s where skills come in.</p>
 
     <h2 id="together">How they work together</h2>
@@ -316,7 +316,7 @@
       <li>A routine runs the skill every morning.</li>
     </ol>
     <p>Take away the connection and the skill can’t see anything. Take away the skill and the bot has access but no rules. That second case is the risky one.</p>
-    <p>Some tools let a skill name the tools it needs. OpenAI’s skills docs describe an optional <code>agents/openai.yaml</code> that can list MCP tool dependencies, and the Agent Skills spec has an experimental <code>allowed-tools</code> field. Support varies by app.</p>
+    <p>A skill can also name the apps it needs in plain words, such as “use the calendar connection.” The Agent Skills spec has an experimental <code>allowed-tools</code> field for this, but the Grok Bot docs I read don’t describe it, so I write the requirement into the instructions instead.</p>
 
     <h2 id="which">Which do I need?</h2>
     <ul>
@@ -335,7 +335,7 @@
     <h3>Do I need MCP to use skills?</h3>
     <p>No. Many skills are plain instructions that work with whatever your bot can already do. You need a connection, through MCP or your platform’s apps, only when the skill depends on a system the bot can’t reach yet.</p>
     <h3>Can a skill tell a bot to use an MCP tool?</h3>
-    <p>Yes. A skill can name the tools or apps to use and how. Some platforms also let a skill declare tool dependencies, but support varies.</p>
+    <p>Yes. A skill can name the tools or apps to use and how. The open format also has an experimental allowed-tools field, but I don’t rely on it in Grok Bot.</p>
     <h3>Which is riskier, a skill or an MCP server?</h3>
     <p>They carry different risks. A skill can contain bad instructions; a connection can grant broad access. Read skills before installing, grant the narrowest access, and keep approval settings on.</p>
 
@@ -346,7 +346,6 @@
       <li>Agent Skills specification: <a href="https://agentskills.io/specification">agentskills.io/specification</a></li>
       <li>Grok Bot docs, skills and routines: <a href="https://docs.x.ai/grok-bot/skills-routines-and-automations">docs.x.ai</a></li>
       <li>Grok Bot docs, approvals, security, and privacy: <a href="https://docs.x.ai/grok-bot/approvals-security-and-privacy">docs.x.ai</a></li>
-      <li>OpenAI, build skills for ChatGPT and Codex (openai.yaml dependencies): <a href="https://developers.openai.com/codex/skills">developers.openai.com/codex/skills</a></li>
     </ul>
 
     <h2 id="related">Related</h2>
@@ -362,7 +361,7 @@
     <p><a href="/">Home</a> · <a href="/grok-bot-skills/">Grok Bot skills guide</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
     <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
-    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by xAI, GitHub, or any other company named on this site. Product names are used only to describe compatibility.</p>
   </footer>
 </body>
 </html>
