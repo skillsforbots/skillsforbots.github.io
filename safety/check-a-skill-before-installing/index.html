@@ -331,7 +331,7 @@
         <li><a href="#why">Are agent skills safe?</a></li>
         <li><a href="#steps">The 8-step check</a></li>
         <li><a href="#flags">Red flags and what they look like</a></li>
-        <li><a href="#platform">What each platform checks for you</a></li>
+        <li><a href="#platform">What Grok Bot checks for you</a></li>
         <li><a href="#grok">Checking a Grok Bot skill specifically</a></li>
         <li><a href="#after">After you install it</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -341,7 +341,7 @@
     </nav>
 
     <h2 id="why">Are agent skills safe?</h2>
-    <p>Most are fine. Some aren’t. In February 2026, Snyk published a scan of 3,984 skills from ClawHub and skills.sh. It reported that 13.4% had at least one critical-level issue, such as malware, prompt injection, or exposed secrets, and 36.82% had at least one issue of any severity. It also confirmed 76 malicious payloads aimed at things like credential theft.</p>
+    <p>Most are fine. Some aren’t. In February 2026, Snyk published a scan of 3,984 skills from two public skill directories. It reported that 13.4% had at least one critical-level issue, such as malware, prompt injection, or exposed secrets, and 36.82% had at least one issue of any severity. It also confirmed 76 malicious payloads aimed at things like credential theft.</p>
     <p>The risk comes from what a skill is. The bot loads the instructions and follows them, often with access to your files, browser, apps, and sometimes payment details. A bad skill doesn’t need to “hack” anything. It just has to tell the bot to do something you wouldn’t.</p>
     <p>The good news is that most problems are visible if you read the file. Skills are plain text. The check below takes about five minutes for a normal skill.</p>
 
@@ -374,15 +374,13 @@
     </div>
     <p>One more: a skill that tells the bot to keep its instructions secret from you. A skill you can’t ask about is one you can’t trust. My own rule is that nothing in a skill is hidden from the person using it.</p>
 
-    <h2 id="platform">What each platform checks for you</h2>
-    <p>Platforms add their own guardrails, and they help, but none of them replace reading the file.</p>
+    <h2 id="platform">What Grok Bot checks for you</h2>
+    <p>Grok Bot adds its own guardrails, and they help, but they don’t replace reading the file.</p>
     <ul>
       <li><strong>Grok Bot:</strong> Auto Review checks each action before it runs, and shows an approval card when one needs your OK. You can add <strong>Ask first</strong> rules in Settings, such as “Ask first before sending any external email.” The docs also say text from an email or web page doesn’t count as your request.</li>
-      <li><strong>ChatGPT:</strong> uploaded skills are scanned before they’re available. Some get marked Needs Review, and risky ones can be Blocked. OpenAI’s help page says the scan shouldn’t replace your own review.</li>
-      <li><strong>Gemini CLI:</strong> per a compatibility survey of vendor docs, it shows a consent prompt naming the skill and the folder it will access before the skill activates.</li>
-      <li><strong>Claude Code:</strong> its docs describe instruction files as context, not enforced settings. To block an action no matter what, they point to hooks.</li>
+      <li><strong>Background work:</strong> an approval card raised by a routine or other background work expires after 30 minutes if you don’t answer, so the action doesn’t happen.</li>
     </ul>
-    <p>Treat a skill’s approval rules as a second layer on top of these settings. If your platform can require approval before sending, posting, or paying, turn that on first. My guide on <a href="/ai-bot-ask-before-acting/">making Grok Bot ask before it acts</a> walks through both layers.</p>
+    <p>Treat a skill’s approval rules as a second layer on top of these settings. Add Ask first rules for sending, posting, and paying before you install anything that can do those. My guide on <a href="/ai-bot-ask-before-acting/">making Grok Bot ask before it acts</a> walks through both layers.</p>
 
     <h2 id="grok">Checking a Grok Bot skill specifically</h2>
     <p>Grok Bot shares private skills across all your bots, so a skill you install for one bot can be used by the others. That makes the check more important, not less. Three extra things I look at:</p>
@@ -416,9 +414,6 @@
       <li>Snyk, ToxicSkills study (3,984 skills; 13.4% critical; 36.82% any issue; 76 malicious payloads): <a href="https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/">snyk.io</a></li>
       <li>Grok Bot docs, approvals, security, and privacy: <a href="https://docs.x.ai/grok-bot/approvals-security-and-privacy">docs.x.ai</a></li>
       <li>Grok Bot docs, skills and routines (routines and usage): <a href="https://docs.x.ai/grok-bot/skills-routines-and-automations">docs.x.ai</a></li>
-      <li>Skills in ChatGPT (upload scan, Needs Review, Blocked): <a href="https://help.openai.com/en/articles/20001066-skills-in-chatgpt">help.openai.com</a></li>
-      <li>Agent Skills support survey (Gemini CLI consent prompt): <a href="https://www.skillsboard.sh/agent-skills-support">skillsboard.sh</a></li>
-      <li>Claude Code docs, memory and instruction files: <a href="https://code.claude.com/docs/en/memory">code.claude.com</a></li>
     </ul>
 
     <h2 id="related">Related</h2>
@@ -436,7 +431,7 @@
     <p><a href="/">Home</a> · <a href="/grok-bot-skills/">Grok Bot skills guide</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
     <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
-    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by xAI, GitHub, or any other company named on this site. Product names are used only to describe compatibility.</p>
   </footer>
 </body>
 </html>
