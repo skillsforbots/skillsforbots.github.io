@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
   <title>How to Add a Skill to Claude and Claude Code | Skills for Bots</title>
   <meta name="description" content="Add a custom skill to Claude: upload a ZIP in Customize, Skills on claude.ai, or put a SKILL.md folder in ~/.claude/skills for Claude Code. Plus fixes.">
   <link rel="canonical" href="https://skillsforbots.com/install/claude/">
@@ -381,7 +382,7 @@ cp SKILL.md ~/.claude/skills/reminder-basics/SKILL.md</pre>
     </div>
     <h2 id="faq">FAQ</h2>
     <h3>Where do Claude Code skills go?</h3>
-    <p>Personal skills go in ~/.claude/skills/<name>/SKILL.md and work in all your projects on that machine. Project skills go in .claude/skills/<name>/SKILL.md inside the repository.</p>
+    <p>Personal skills go in ~/.claude/skills/&lt;name&gt;/SKILL.md and work in all your projects on that machine. Project skills go in .claude/skills/&lt;name&gt;/SKILL.md inside the repository.</p>
     <h3>How do I upload a skill to claude.ai?</h3>
     <p>Zip the skill folder, then go to Customize, Skills, click +, choose Create skill, then Upload a skill. Code execution must be on in Settings, Capabilities.</p>
     <h3>Do my Claude Code skills show up on claude.ai?</h3>
@@ -403,14 +404,14 @@ cp SKILL.md ~/.claude/skills/reminder-basics/SKILL.md</pre>
       <li><a href="/install/">How to add a skill to any AI bot</a></li>
       <li><a href="/install/cursor/">Cursor skills folder: where skills go</a></li>
       <li><a href="/install/codex/">Codex skills location: where to put SKILL.md</a></li>
-      <li><a href="/skill-md/template/">SKILL.md template you can copy</a></li>
+      <li><a href="/skill-md/template/">Grok Bot skill template you can copy</a></li>
       <li><a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/reminder-basics">Reminder Basics</a>: a free skill to try it with</li>
       <li><a href="/grok-bot-reminder-skill/">Nag-Until-Cleared Reminders</a> ($9), written in the same portable format</li>
     </ul>
     <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Nothing on this page is legal, financial, or professional advice. Provided as is, with no warranty.</p>
   </main>
   <footer>
-    <p><a href="/">Home</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
+    <p><a href="/">Home</a> · <a href="/grok-bot-skills/">Grok Bot skills guide</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
     <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
     <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
