@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
   <title>Which AI Bots Read SKILL.md (and Where Each One Looks) | Skills for Bots</title>
   <meta name="description" content="Which AI tools read SKILL.md skills and the folder each checks: Claude, ChatGPT, Codex, Cursor, GitHub Copilot, Gemini CLI, OpenClaw, Grok Bot, more.">
   <link rel="canonical" href="https://skillsforbots.com/skill-md/which-bots-support-it/">
@@ -343,7 +344,7 @@
     <h3>Which AI tools support SKILL.md?</h3>
     <p>Tools whose own docs describe reading SKILL.md include Claude Code, the Claude apps, ChatGPT, Codex, Cursor, GitHub Copilot, VS Code, Gemini CLI, OpenCode, goose, Amp, and OpenClaw. Grok Bot supports skills in a private library, and community repos install SKILL.md folders into it.</p>
     <h3>Where should I put a SKILL.md so the most tools find it?</h3>
-    <p>In .agents/skills/<name>/SKILL.md in a project, or ~/.agents/skills/<name>/SKILL.md in your home folder. Claude Code is the main exception and reads .claude/skills/ instead.</p>
+    <p>In .agents/skills/&lt;name&gt;/SKILL.md in a project, or ~/.agents/skills/&lt;name&gt;/SKILL.md in your home folder. Claude Code is the main exception and reads .claude/skills/ instead.</p>
     <h3>Will one skill behave the same in every tool?</h3>
     <p>Not guaranteed. The name, description, and plain instructions travel well, but there’s no conformance test, and extra header fields and invocation differ. Test in each tool you rely on.</p>
     <h3>Does Grok Bot read SKILL.md files?</h3>
@@ -369,14 +370,14 @@
       <li><a href="/install/">How to add a skill to any AI bot</a></li>
       <li><a href="/agent-skills/">What are agent skills? A plain-English guide</a></li>
       <li><a href="/compare/skill-md-vs-agents-md/">SKILL.md vs AGENTS.md vs CLAUDE.md</a></li>
-      <li><a href="/skill-md/template/">SKILL.md template you can copy</a></li>
+      <li><a href="/skill-md/template/">Grok Bot skill template you can copy</a></li>
       <li><a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a>: free on GitHub</li>
       <li><a href="/grok-bot-skills-bundle/">Bot Owner Starter Bundle</a> ($19)</li>
     </ul>
     <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Nothing on this page is legal, financial, or professional advice. Provided as is, with no warranty.</p>
   </main>
   <footer>
-    <p><a href="/">Home</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
+    <p><a href="/">Home</a> · <a href="/grok-bot-skills/">Grok Bot skills guide</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
     <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
     <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
