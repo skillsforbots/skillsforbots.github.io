@@ -222,7 +222,7 @@
           "name": "Does the file have to be called SKILL.md?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Name the file SKILL.md, in capitals, and put it in a folder with the same name as the skill's name field. Tools that load skills from a folder look for that exact file name."
+            "text": "Yes. Name the file SKILL.md, in capitals, and put it in a folder with the same name as the skill’s name field. That’s the layout the open format uses, and the one Grok Bot skill repos on GitHub follow. When you paste a skill into a chat, ask the Bot to save it under the same name as the name field."
           }
         },
         {
@@ -230,7 +230,7 @@
           "name": "Can I add more fields to the frontmatter?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The open format allows a few optional fields (license, compatibility, metadata, and an experimental allowed-tools). Support for them varies by tool. If you want one file that works in the most places, keep the frontmatter to name and description."
+            "text": "The open format allows a few optional fields (license, compatibility, metadata, and an experimental allowed-tools). The Grok Bot docs I read don’t describe them, so I keep the frontmatter to name and description and put everything else in the body."
           }
         },
         {
@@ -246,15 +246,15 @@
           "name": "Do I need the ask-before-acting section if my skill never sends anything?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "I keep it in every skill. It costs a few lines, and it covers the case where a later edit, a linked page, or another skill nudges the bot toward sending, spending, or deleting. If your skill truly can't do any of those, the section can be one line that says so."
+            "text": "I keep it in every skill. It costs a few lines, and it covers the case where a later edit, a linked page, or another skill nudges the bot toward sending, spending, or deleting. If your skill truly can’t do any of those, the section can be one line that says so."
           }
         },
         {
           "@type": "Question",
-          "name": "Will one SKILL.md work in several different bots?",
+          "name": "Do I need to add the skill to each of my Grok Bots?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Usually, if you keep to the two required fields and plain instructions. What changes between tools is where the file goes and how you turn it on, not the file itself. Test it in each tool you use."
+            "text": "No. The Grok Bot docs say private skills are one library shared by all your Bots. If one Bot can’t find the skill, open Connect apps, select the connected count next to the title, and enable it for that Bot under Private skills."
           }
         }
       ]
@@ -268,7 +268,7 @@
   <header>
     <p class="crumb"><a href="/">Skills for Bots</a> › <a href="/agent-skills/">Agent skills</a> › SKILL.md template</p>
     <h1>Grok Bot skill template: an annotated SKILL.md you can copy</h1>
-    <p class="lede">I use this same skeleton for every skill I write. Copy it, fill the brackets, and you have a skill file that tools which read <code>SKILL.md</code> can load. Every part is explained below.</p>
+    <p class="lede">I use this same skeleton for every skill I write. Copy it, fill the brackets, and you have a skill file you can save in Grok Bot as a private skill. Every part is explained below.</p>
     <p class="updated">Last updated: <time datetime="2026-11-24">November 24, 2026</time></p>
   </header>
   <main>
@@ -279,7 +279,7 @@
         <li><a href="#template">The copy-paste SKILL.md template</a></li>
         <li><a href="#parts">What does each part do?</a></li>
         <li><a href="#example">What does a filled-in skill look like?</a></li>
-        <li><a href="#works-in">Does it work in Claude, ChatGPT, Cursor, Codex, and Grok Bot?</a></li>
+        <li><a href="#works-in">How do I add this template to Grok Bot?</a></li>
         <li><a href="#tips">How do I make a bot actually use my skill?</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#sources">Sources</a></li>
@@ -289,7 +289,7 @@
     <h2 id="what">What is a SKILL.md file?</h2>
     <p>A <code>SKILL.md</code> file is a plain text file of standing instructions for an AI bot. It starts with a short header, called frontmatter, that gives the skill a <code>name</code> and a <code>description</code>. Below that is ordinary Markdown: when to use the skill, the steps, and the rules.</p>
     <p>The bot reads the name and description of every skill it has. When a request matches a description, it loads the full file and follows it. That’s why the description matters more than any other line. There is more on how this works in my guide <a href="/agent-skills/">What are agent skills?</a></p>
-    <p>The format started with one company and is now an open specification that many AI tools read. A skill is still just text the bot is told to follow. It is not a hard technical lock, so the last step is always a test.</p>
+    <p>The format is an open specification, published at agentskills.io. A skill is still just text the bot is told to follow. It is not a hard technical lock, so the last step is always a test.</p>
 
     <h2 id="template">The copy-paste SKILL.md template</h2>
     <p>Copy the block, or save it as a file named <code>SKILL.md</code>. Replace every <code>[BRACKET]</code>, rename <code>your-skill-name</code>, and delete any line that doesn’t apply.</p>
@@ -428,21 +428,21 @@ This skill is instructions to a bot, not a hard technical block. A bot can still
 </code></pre>
     <p>It passes every check in the <a href="/tools/skill-md-checker/">SKILL.md checker</a>. You can load it there with one click.</p>
 
-    <h2 id="works-in">Does it work in Claude, ChatGPT, Cursor, Codex, and Grok Bot?</h2>
-    <p>The template sticks to the two required fields and plain instructions, which is the part of the format that travels well. What differs between tools is where the file goes and how you turn it on. This table is a general guide, based on each tool’s public documentation as of November 23, 2026. Folder names and menus change, so check your tool’s current docs.</p>
+    <h2 id="works-in">How do I add this template to Grok Bot?</h2>
+    <p>The template sticks to the two required fields and plain instructions. In Grok Bot, a finished skill goes into your private skill library, which the Grok Bot docs describe as one library shared by all your Bots. There are a few ways to get it there:</p>
     <div class="table-wrap">
       <table>
-        <thead><tr><th scope="col">Kind of tool</th><th scope="col">Examples</th><th scope="col">How a skill gets added</th></tr></thead>
+        <thead><tr><th scope="col">Method</th><th scope="col">How</th><th scope="col">Where it comes from</th></tr></thead>
         <tbody>
-          <tr><td>Coding agents that load skills from a folder</td><td>Claude Code, Codex, Cursor, GitHub Copilot, VS Code, Gemini CLI, OpenCode, goose, Amp</td><td>Put the skill’s folder, with <code>SKILL.md</code> inside, in the tool’s skills folder. Many scan a shared <code>.agents/skills</code> folder. Claude Code uses <code>.claude/skills</code>.</td></tr>
-          <tr><td>Chat apps with a skills feature</td><td>Claude apps, ChatGPT</td><td>Add the skill in the app’s skills settings. Access can depend on your plan, and a skill added in one app may not show up in another app from the same company.</td></tr>
-          <tr><td>Personal assistant bots that save skills</td><td>Grok Bot</td><td>Paste the skill or ask the bot to save it. Grok Bot stores saved skills as <code>SKILL.md</code> files.</td></tr>
-          <tr><td>Assistants without skill support</td><td>Any chat assistant with custom or standing instructions</td><td>Paste the body of the file into the standing instructions. You lose automatic loading, but the rules still apply.</td></tr>
+          <tr><td>Paste and save</td><td>Fill the brackets, paste the file into a one-to-one chat, and ask the Bot to save it as a private skill.</td><td>Common practice in Grok Bot skill repos. The docs describe saving skills, not this exact step.</td></tr>
+          <tr><td>Save a finished task</td><td>Do the job once in chat, then ask the Bot to save the process as a skill. Use the template’s headings as your checklist.</td><td>Grok Bot docs</td></tr>
+          <tr><td>Turn it on for a Bot</td><td>If a Bot can’t find the skill, open Connect apps in the sidebar, select the connected count next to the title, and enable it under Private skills.</td><td>Grok Bot docs</td></tr>
+          <tr><td>Share with a team</td><td>Open the skill from Connect apps on desktop and choose Publish. It needs a description first.</td><td>Grok Bot docs</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Whatever the tool, test it the same way. Ask a question that should trigger the skill, then ask “What rules are you following right now?” If the bot can’t recap the ask-before-acting rules, the skill didn’t load. My guide <a href="/how-to-add-a-skill-to-your-ai-bot/">How to add a skill to Grok Bot</a> walks through this.</p>
-
+    <p>The docs list six things a useful skill states: when to use it, required inputs and access, the sequence of work, how to validate the result, what to return, and what requires approval. The template covers all six.</p>
+    <p>Test it the same way every time. Ask a question that should trigger the skill, then ask “What rules are you following right now?” If the Bot can’t recap the ask-before-acting rules, the skill didn’t load. My guide <a href="/how-to-add-a-skill-to-your-ai-bot/">How to add a skill to Grok Bot</a> walks through this, and the <a href="/install/">Grok Bot skill install hub</a> lists every method.</p>
     <h2 id="tips">How do I make a bot actually use my skill?</h2>
     <ul>
       <li><strong>Put trigger words in the description.</strong> If people say “refund,” write “refund,” not just “returns.”</li>
@@ -455,22 +455,20 @@ This skill is instructions to a bot, not a hard technical block. A bot can still
 
     <h2 id="faq">FAQ</h2>
     <h3>Does the file have to be called SKILL.md?</h3>
-    <p>Yes. Name the file <code>SKILL.md</code>, in capitals, and put it in a folder with the same name as the skill’s <code>name</code> field. Tools that load skills from a folder look for that exact file name.</p>
+    <p>Yes. Name the file <code>SKILL.md</code>, in capitals, and put it in a folder with the same name as the skill’s <code>name</code> field. That’s the layout the open format uses, and the one Grok Bot skill repos on GitHub follow. When you paste a skill into a chat, ask the Bot to save it under the same name as the <code>name</code> field.</p>
     <h3>Can I add more fields to the frontmatter?</h3>
-    <p>The open format allows a few optional fields (<code>license</code>, <code>compatibility</code>, <code>metadata</code>, and an experimental <code>allowed-tools</code>). Support for them varies by tool. If you want one file that works in the most places, keep the frontmatter to <code>name</code> and <code>description</code>.</p>
+    <p>The open format allows a few optional fields (<code>license</code>, <code>compatibility</code>, <code>metadata</code>, and an experimental <code>allowed-tools</code>). The Grok Bot docs I read don’t describe them, so I keep the frontmatter to <code>name</code> and <code>description</code> and put everything else in the body.</p>
     <h3>How long should a SKILL.md be?</h3>
     <p>As short as the job allows. The open specification suggests keeping <code>SKILL.md</code> under 500 lines and moving long reference material into separate files in the same folder. Most everyday skills fit in 30 to 150 lines.</p>
     <h3>Do I need the ask-before-acting section if my skill never sends anything?</h3>
     <p>I keep it in every skill. It costs a few lines, and it covers the case where a later edit, a linked page, or another skill nudges the bot toward sending, spending, or deleting. If your skill truly can’t do any of those, the section can be one line that says so.</p>
-    <h3>Will one SKILL.md work in several different bots?</h3>
-    <p>Usually, if you keep to the two required fields and plain instructions. What changes between tools is where the file goes and how you turn it on, not the file itself. Test it in each tool you use.</p>
+    <h3>Do I need to add the skill to each of my Grok Bots?</h3>
+    <p>No. The Grok Bot docs say private skills are one library shared by all your Bots. If one Bot can’t find the skill, open Connect apps, select the connected count next to the title, and enable it for that Bot under Private skills.</p>
 
     <h2 id="sources">Sources</h2>
     <ul class="sources">
       <li>Agent Skills specification (frontmatter fields, name and description limits, the 500-line suggestion): <a href="https://agentskills.io/specification">agentskills.io/specification</a></li>
-      <li>Which tools document reading SKILL.md, and the folders they scan: <a href="https://www.skillsboard.sh/agent-skills-support">skillsboard.sh/agent-skills-support</a></li>
-      <li>Skills in ChatGPT: <a href="https://help.openai.com/en/articles/20001066-skills-in-chatgpt">help.openai.com</a></li>
-      <li>Grok Bot skills and routines: <a href="https://docs.x.ai/grok-bot/skills-routines-and-automations">docs.x.ai</a></li>
+      <li>Grok Bot docs, skills and routines (private skills, saving, publishing, the six parts of a useful skill): <a href="https://docs.x.ai/grok-bot/skills-routines-and-automations">docs.x.ai</a></li>
     </ul>
 
     <h2>Related</h2>
@@ -478,7 +476,7 @@ This skill is instructions to a bot, not a hard technical block. A bot can still
       <li><a href="/agent-skills/">What are agent skills? A plain-English guide</a></li>
       <li><a href="/tools/skill-md-checker/">Free Grok Bot skill checker</a></li>
       <li><a href="/how-to-add-a-skill-to-your-ai-bot/">How to add a skill to Grok Bot</a></li>
-      <li><a href="/install/">How to add a skill to any AI bot</a>, tool by tool</li>
+      <li><a href="/install/">Grok Bot skill install hub</a>: every way to add, enable, and share a skill</li>
       <li><a href="/safety/approval-rules/">Approval rules template</a> for the ask-before-acting section</li>
       <li><a href="https://github.com/skillsforbots/grok-bot-skills">My free skills on GitHub</a>, which all follow this template</li>
     </ul>
@@ -518,7 +516,7 @@ This skill is instructions to a bot, not a hard technical block. A bot can still
     <p><a href="/">Home</a> · <a href="/grok-bot-skills/">Grok Bot skills guide</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
     <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
-    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by xAI, GitHub, or any other company named on this site. Product names are used only to describe compatibility.</p>
   </footer>
 </body>
 </html>
