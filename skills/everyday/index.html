@@ -236,15 +236,15 @@
           "name": "Do I need to code to use them?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. They’re plain instructions. You paste or upload the file, or copy it into a folder, depending on your tool."
+            "text": "No. They’re plain instructions. Paste the file into a Grok Bot chat and ask the Bot to save it as a private skill."
           }
         },
         {
           "@type": "Question",
-          "name": "Do everyday skills work in ChatGPT and Claude, not just Grok Bot?",
+          "name": "Do I need a routine for everyday skills in Grok Bot?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "They use the shared SKILL.md format, so they can be added to ChatGPT, Claude, and other tools. Reminders and daily plans also need a scheduler in that tool. Test before you rely on one."
+            "text": "Only for skills that should run on their own. A skill says how to do the job. A routine tells one Bot when to run it, on a schedule or when something happens. Reminders and daily plans need one. Test the skill in chat before you schedule it."
           }
         }
       ]
@@ -269,7 +269,7 @@
         <li><a href="#list">The list, by job</a></li>
         <li><a href="#start">If you only install three</a></li>
         <li><a href="#write">Write your own in ten minutes</a></li>
-        <li><a href="#works">Which bots these work in</a></li>
+        <li><a href="#works">How to use these in Grok Bot</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#sources">Sources</a></li>
         <li><a href="#related">Related</a></li>
@@ -334,19 +334,19 @@ description: Every Sunday, summarize what got done this week, what slipped, and 
 
 Ask before acting: don't send, post, or book anything.
 Show me the summary only.</pre>
-    <p>My <a href="/skill-md/template/">SKILL.md template</a> explains each part, and the <a href="/tools/skill-md-checker/">SKILL.md checker</a> flags missing pieces. To run it every Sunday, pair it with a routine or scheduled task. See <a href="/routines/skills-vs-scheduled-tasks/">skills vs scheduled tasks</a>.</p>
+    <p>My <a href="/skill-md/template/">SKILL.md template</a> explains each part, and the <a href="/tools/skill-md-checker/">SKILL.md checker</a> flags missing pieces. To run it every Sunday, pair it with a Grok Bot routine. See <a href="/routines/skills-vs-scheduled-tasks/">skills vs routines</a>.</p>
 
-    <h2 id="works">Which bots these work in</h2>
-    <p>All the skills above use the shared <code>SKILL.md</code> format, so they can be added to Grok Bot, Claude, ChatGPT, Codex, Cursor, and other tools that read it. My skills were written and tested in Grok Bot first. Reminders and daily plans also need a scheduler in your tool, and some skills assume access to a calendar or notes. My <a href="/install/">install hub</a> has the steps for each tool, and which AI bots read SKILL.md lists the folders.</p>
+    <h2 id="works">How to use these in Grok Bot</h2>
+    <p>All the skills above use the plain <code>SKILL.md</code> format, and mine were written and tested in Grok Bot. Paste one into a chat and ask your Bot to save it as a private skill. Private skills are one library shared by all your Bots, so you add each skill once. Skills that should run on their own, like reminders and daily plans, also need a Grok Bot routine, and some assume your Bot can reach a calendar or notes. My <a href="/install/grok-bot/">guide to installing Grok Bot skills from GitHub</a> has the steps, and the <a href="/install/">Grok Bot skill install hub</a> lists every method.</p>
     <h2 id="faq">FAQ</h2>
     <h3>What are the best agent skills for everyday life?</h3>
     <p>Start with a safety skill that stops the bot sending or spending without you, a reminder that repeats until you say done, and one skill for the chore you repeat most, such as a daily plan or a weekly review.</p>
     <h3>Are these skills free?</h3>
     <p>Most are. My Bot Safety Rules Starter, Reminder Basics, and Usage Reset Sprint are free and MIT-licensed, as are the ofershap and botkits skills listed. My larger packs are paid, with prices shown.</p>
     <h3>Do I need to code to use them?</h3>
-    <p>No. They’re plain instructions. You paste or upload the file, or copy it into a folder, depending on your tool.</p>
-    <h3>Do everyday skills work in ChatGPT and Claude, not just Grok Bot?</h3>
-    <p>They use the shared SKILL.md format, so they can be added to ChatGPT, Claude, and other tools. Reminders and daily plans also need a scheduler in that tool. Test before you rely on one.</p>
+    <p>No. They’re plain instructions. Paste the file into a Grok Bot chat and ask the Bot to save it as a private skill.</p>
+    <h3>Do I need a routine for everyday skills in Grok Bot?</h3>
+    <p>Only for skills that should run on their own. A skill says how to do the job. A routine tells one Bot when to run it, on a schedule or when something happens. Reminders and daily plans need one. Test the skill in chat before you schedule it.</p>
 
     <h2 id="sources">Sources</h2>
     <p>I read each source on November 23, 2026. Products change often, so check the vendor page before you rely on a detail.</p>
@@ -354,7 +354,7 @@ Show me the summary only.</pre>
       <li>ofershap/grok-bot-skills (catalog): <a href="https://github.com/ofershap/grok-bot-skills">github.com/ofershap/grok-bot-skills</a></li>
       <li>d-gangz/grokbot-skills (bot-audit, bot-retro): <a href="https://github.com/d-gangz/grokbot-skills">github.com/d-gangz/grokbot-skills</a></li>
       <li>botkitsdev/botkits (routine-healthcheck): <a href="https://github.com/botkitsdev/botkits">github.com/botkitsdev/botkits</a></li>
-      <li>Claude Help Center, use skills in Claude (built-in document skills): <a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude">support.claude.com</a></li>
+      <li>Grok Bot docs, skills and routines: <a href="https://docs.x.ai/grok-bot/skills-routines-and-automations">docs.x.ai</a></li>
       <li>Agent Skills specification: <a href="https://agentskills.io/specification">agentskills.io/specification</a></li>
     </ul>
 
@@ -363,7 +363,7 @@ Show me the summary only.</pre>
       <li><a href="/skills/grok-bot-skills-github/">Grok Bot skills on GitHub: the free repos worth knowing</a></li>
       <li><a href="/ai-bot-reminders-that-dont-stop/">Reminders that don’t stop until you’re done</a></li>
       <li><a href="/how-to-stop-ai-bot-spending-money/">How to stop Grok Bot from spending money</a></li>
-      <li><a href="/install/">How to add a skill to any AI bot</a></li>
+      <li><a href="/install/">Grok Bot skill install hub</a></li>
       <li><a href="/grok-bot-skills-bundle/">Bot Owner Starter Bundle</a> ($19)</li>
     </ul>
     <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Nothing on this page is legal, financial, or professional advice. Provided as is, with no warranty.</p>
@@ -372,7 +372,7 @@ Show me the summary only.</pre>
     <p><a href="/">Home</a> · <a href="/grok-bot-skills/">Grok Bot skills guide</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
     <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
-    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by xAI, GitHub, or any other company named on this site. Product names are used only to describe compatibility.</p>
   </footer>
 </body>
 </html>
