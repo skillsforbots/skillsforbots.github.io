@@ -170,7 +170,7 @@
       "url": "https://skillsforbots.com/agent-skills/",
       "mainEntityOfPage": "https://skillsforbots.com/agent-skills/",
       "datePublished": "2026-11-23",
-      "dateModified": "2026-11-23",
+      "dateModified": "2026-11-24",
       "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
       "inLanguage": "en",
       "author": {
@@ -230,15 +230,15 @@
           "name": "Can a skill make my bot do something I didn't ask for?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It can try. A skill is instructions the bot follows, so a badly written or malicious skill can push a bot to send, spend, or share things. Read a skill before you install it, run it through a checker, and keep your platform's own approval settings on."
+            "text": "It can try. A skill is instructions the bot follows, so a badly written or malicious skill can push a bot to send, spend, or share things. Read a skill before you install it, run it through a checker, and keep your platform’s own approval settings on."
           }
         },
         {
           "@type": "Question",
-          "name": "Will a skill I write for one AI tool work in another?",
+          "name": "Do skills from GitHub work in Grok Bot?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Often, yes, if it sticks to the name and description fields and plain instructions. The file format is shared. Where the file goes and how you switch it on differ by tool."
+            "text": "Often, if the skill sticks to the name and description fields and plain instructions. Paste it into a chat, ask your Bot to save it as a private skill, and test it on something harmless. Read any scripts before you let a Bot run them."
           }
         },
         {
@@ -260,8 +260,8 @@
   <header>
     <p class="crumb"><a href="/">Skills for Bots</a> › Agent skills</p>
     <h1>What are agent skills? A plain-English guide for bot owners</h1>
-    <p class="lede">An agent skill is a small file that teaches an AI bot how to do one job your way, every time. Here is what’s inside one, how bots use them, which tools read them, and how I check a skill before I trust it.</p>
-    <p class="updated">Last updated: <time datetime="2026-11-23">November 23, 2026</time></p>
+    <p class="lede">An agent skill is a small file that teaches an AI bot how to do one job your way, every time. Here is what’s inside one, how bots use them, how Grok Bot keeps them, and how I check a skill before I trust it.</p>
+    <p class="updated">Last updated: <time datetime="2026-11-24">November 24, 2026</time></p>
   </header>
   <main>
     <nav class="toc" aria-labelledby="toc-title">
@@ -271,7 +271,7 @@
         <li><a href="#inside">What’s inside a skill?</a></li>
         <li><a href="#how">How does a bot use a skill?</a></li>
         <li><a href="#vs">How are skills different from prompts, instructions, and MCP?</a></li>
-        <li><a href="#which">Which AI tools read agent skills?</a></li>
+        <li><a href="#which">How does Grok Bot use agent skills?</a></li>
         <li><a href="#safe">Are agent skills safe?</a></li>
         <li><a href="#everyday">What can skills do for everyday life?</a></li>
         <li><a href="#start">How do I start?</a></li>
@@ -283,7 +283,7 @@
 
     <h2 id="short">What is an agent skill, in one paragraph?</h2>
     <p>An agent skill is a folder with a <code>SKILL.md</code> file in it. The file has a short header with a <code>name</code> and a <code>description</code>, then plain instructions: when to use the skill, the steps, and the rules. An AI bot keeps the descriptions of all its skills in mind. When your request matches one, it loads the full file and follows it. You write the instructions once, and the bot reuses them in every later chat.</p>
-    <p>The format was published by Anthropic in October 2025, made an open standard that December, and in October 2026 handed to the Agentic AI Foundation under the Linux Foundation. Anthropic says more than 70 agent platforms have built it in. That shared format is why one skill can work across many bots, and it’s why I write every skill I publish to it.</p>
+    <p>The format is an open specification, published at agentskills.io, so a skill isn’t locked to one app. It’s the format I write every skill I publish in, and each one is written and tested in Grok Bot.</p>
 
     <h2 id="inside">What’s inside a skill?</h2>
     <div class="table-wrap">
@@ -317,17 +317,16 @@
           <tr><td>Prompt</td><td>A message you type</td><td>That one chat</td></tr>
           <tr><td>Custom or standing instructions</td><td>A block of text saved in the bot’s settings</td><td>Every chat, always</td></tr>
           <tr><td>Agent skill (<code>SKILL.md</code>)</td><td>A file of instructions for one job</td><td>When a request matches its description</td></tr>
-          <tr><td>Routine or scheduled task</td><td>A saved job that runs at a set time</td><td>On a schedule, often using a skill for the “how”</td></tr>
+          <tr><td>Routine</td><td>A saved job one bot runs on a schedule or when something happens</td><td>On a schedule, often using a skill for the “how”</td></tr>
           <tr><td>MCP server or connector</td><td>A bridge that gives the bot access to another app or data source</td><td>Whenever the bot needs that app</td></tr>
-          <tr><td><code>AGENTS.md</code> or <code>CLAUDE.md</code></td><td>A file of project instructions for coding agents</td><td>When the agent works in that project</td></tr>
         </tbody>
       </table>
     </div>
     <p>A simple way to remember it: a connector gives a bot <em>access</em>, a skill gives it <em>know-how</em>, and a routine gives it a <em>schedule</em>. They work together. A daily reminder, for example, is a routine that runs a reminder skill.</p>
 
-    <h2 id="which">Which AI tools read agent skills?</h2>
-    <p>Tools whose own documentation, as of November 23, 2026, says they read <code>SKILL.md</code> skills include Claude Code, the Claude apps and API, Codex, Cursor, GitHub Copilot, VS Code, Gemini CLI, OpenCode, goose, and Amp. ChatGPT has a skills feature, with access depending on your plan. Grok Bot saves skills in the app and stores them as <code>SKILL.md</code> files. OpenClaw has its own skill registry.</p>
-    <p>The shared part is the file: the two header fields and the instructions. The parts that differ are where the folder goes (many tools scan <code>.agents/skills</code>, and Claude Code uses <code>.claude/skills</code>), how you switch a skill on, and what permissions a skill gets. Support changes often, so check your tool’s current docs. My <a href="/skill-md/template/#works-in">compatibility table</a> sums up the main kinds of tool.</p>
+    <h2 id="which">How does Grok Bot use agent skills?</h2>
+    <p>Grok Bot keeps your skills in a private library that all your Bots share. You can add to it by doing a task once and asking the Bot to save the process as a skill, by using Teach a task to show it a browser workflow, or by pasting a <code>SKILL.md</code> and asking the Bot to save it. Packaged skills for supported apps are in Connect apps in the sidebar. To use a skill, ask the Bot for it by name.</p>
+    <p>If one Bot can’t find a skill, enable it for that Bot under Private skills in Connect apps. A skill may also need the right app or login before a Bot can use it. My <a href="/install/">Grok Bot skill install hub</a> lists every method, and the <a href="/skill-md/template/#works-in">SKILL.md template</a> shows how to add a new skill.</p>
 
     <h2 id="safe">Are agent skills safe?</h2>
     <p>A skill is safe as long as its instructions are, and you can’t tell that from the name. Skills are instructions a bot follows, so a careless or malicious one can tell a bot to send messages, spend money, run code from the internet, or follow orders hidden in a web page. In an early-2026 study, Snyk scanned 3,984 skills from two public skill directories and found at least one critical security issue in 13.4% of them.</p>
@@ -337,7 +336,7 @@
       <li><strong>Look for an ask-before-acting section.</strong> Anything that sends, spends, deletes, or handles passwords should need your OK first.</li>
       <li><strong>Look for hidden text.</strong> Invisible characters, comments, or lines like “don’t tell the user” are red flags.</li>
       <li><strong>Check scripts and links.</strong> Know what any script does and where every link goes.</li>
-      <li><strong>Keep your platform’s controls on.</strong> Approval prompts and spending limits in your AI tool are the real safeguard. A skill only adds to them.</li>
+      <li><strong>Keep your platform’s controls on.</strong> In Grok Bot, Auto Review and Ask first rules are the real safeguard. A skill only adds to them.</li>
     </ol>
     <p>My free <a href="/tools/skill-md-checker/">SKILL.md checker</a> automates the pattern-based parts of this in your browser. It’s a helper, not a guarantee. My guides on <a href="/ai-bot-ask-before-acting/">making a bot ask before it acts</a> and <a href="/how-to-stop-ai-bot-spending-money/">stopping a bot from spending money</a> cover the rules in more depth.</p>
 
@@ -350,7 +349,7 @@
       <li><strong>Running more than one bot:</strong> the <a href="/grok-bot-fleet-coordinator-skill/">Bot Fleet Coordinator</a> pack routes tasks and writes handoff notes.</li>
       <li><strong>A daily credit to-do list:</strong> the <a href="/grok-bot-credit-coach-skill/">Credit Repair Coach</a> pack is educational only, not financial or legal advice, with no results promised.</li>
     </ul>
-    <p>Three of those packs come together in the <a href="/grok-bot-skills-bundle/">Bot Owner Starter Bundle</a>. My packs were written and tested in Grok Bot first. They use the plain <code>SKILL.md</code> format, but test them in your own tool before you rely on them.</p>
+    <p>Three of those packs come together in the <a href="/grok-bot-skills-bundle/">Bot Owner Starter Bundle</a>. My packs were written and tested in Grok Bot first. They use the plain <code>SKILL.md</code> format, but test them with your own Bot before you rely on them.</p>
 
     <h2 id="start">How do I start?</h2>
     <ol>
@@ -379,7 +378,7 @@
     </ul>
     <h3>Install, compare, and stay safe</h3>
     <ul>
-      <li><a href="/install/">How to add a skill to any AI bot</a>, and the full guide for <a href="/install/grok-bot/">Grok Bot</a></li>
+      <li><a href="/install/">Grok Bot skill install hub</a>, and how to <a href="/install/grok-bot/">install Grok Bot skills from GitHub</a></li>
       <li><a href="/compare/skills-vs-mcp/">Agent skills vs MCP servers</a></li>
       <li><a href="/safety/check-a-skill-before-installing/">How to check a Grok Bot skill is safe before you install it</a> and the <a href="/safety/approval-rules/">approval rules template</a></li>
       <li><a href="/routines/skills-vs-scheduled-tasks/">Grok Bot skills vs routines</a></li>
@@ -402,17 +401,14 @@
     <p>No. Most everyday skills are plain English instructions. Some skills include scripts, which is where coding knowledge helps, mainly so you can check what a script does before a bot runs it.</p>
     <h3>Can a skill make my bot do something I didn&#x27;t ask for?</h3>
     <p>It can try. A skill is instructions the bot follows, so a badly written or malicious skill can push a bot to send, spend, or share things. Read a skill before you install it, run it through a <a href="/tools/skill-md-checker/">checker</a>, and keep your platform’s own approval settings on.</p>
-    <h3>Will a skill I write for one AI tool work in another?</h3>
-    <p>Often, yes, if it sticks to the <code>name</code> and <code>description</code> fields and plain instructions. The file format is shared. Where the file goes and how you switch it on differ by tool.</p>
+    <h3>Do skills from GitHub work in Grok Bot?</h3>
+    <p>Often, if the skill sticks to the <code>name</code> and <code>description</code> fields and plain instructions. Paste it into a chat, ask your Bot to save it as a private skill, and test it on something harmless. Read any scripts before you let a Bot run them.</p>
     <h3>Are your skills free?</h3>
     <p>Some are. My starter skills for safety rules, reminders, and usage resets are <a href="https://github.com/skillsforbots/grok-bot-skills">free on GitHub</a> under the MIT license. Bigger packs are paid and sold on Gumroad and Agensi.</p>
 
     <h2 id="sources">Sources</h2>
     <ul class="sources">
       <li>Agent Skills specification: <a href="https://agentskills.io/specification">agentskills.io/specification</a></li>
-      <li>Anthropic, donating Agent Skills to the Agentic AI Foundation (the “more than 70 agent platforms” figure): <a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation">anthropic.com</a></li>
-      <li>Which tools document SKILL.md support, and their folders: <a href="https://www.skillsboard.sh/agent-skills-support">skillsboard.sh/agent-skills-support</a></li>
-      <li>Skills in ChatGPT: <a href="https://help.openai.com/en/articles/20001066-skills-in-chatgpt">help.openai.com</a></li>
       <li>Grok Bot skills and routines: <a href="https://docs.x.ai/grok-bot/skills-routines-and-automations">docs.x.ai</a></li>
       <li>Snyk, ToxicSkills study of published agent skills (3,984 skills, 13.4% with critical issues): <a href="https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/">snyk.io</a></li>
     </ul>
@@ -422,7 +418,7 @@
     <p><a href="/">Home</a> · <a href="/grok-bot-skills/">Grok Bot skills guide</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
     <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
-    <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
+    <p>Skills for Bots is independent and is not affiliated with or endorsed by xAI, GitHub, or any other company named on this site. Product names are used only to describe compatibility.</p>
   </footer>
 </body>
 </html>
