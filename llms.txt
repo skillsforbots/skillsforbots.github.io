@@ -8,7 +8,7 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 
 - [Grok Bot Skills: The Complete Guide](https://skillsforbots.com/grok-bot-skills/): What a Grok Bot skill is, skills vs routines, where skills live and how a bot finds them, three ways to get a skill into Grok Bot, how to write one, the safety rules every skill should carry, free skills, paid packs, fixes, and an FAQ. Checked against the Grok Bot docs on November 24, 2026.
 
-- [What are agent skills? A plain-English guide for bot owners](https://skillsforbots.com/agent-skills/): What a SKILL.md skill is, what's inside one, how bots load skills, how skills differ from prompts, routines, MCP and AGENTS.md, which tools read them, and a five-step safety check before installing one.
+- [What are agent skills? A plain-English guide for bot owners](https://skillsforbots.com/agent-skills/): What a SKILL.md skill is, what's inside one, how bots load skills, how skills differ from prompts, routines and MCP, how Grok Bot keeps them, and a five-step safety check before installing one.
 - [Grok Bot Skill Template: Annotated SKILL.md You Can Copy](https://skillsforbots.com/skill-md/template/): A free, annotated SKILL.md template for Grok Bot skills: name and description, when to use it, steps, an ask-before-acting section, and a disclaimer. Copy it and fill the brackets.
 - [Free Grok Bot Skill Checker: SKILL.md Format and Safety](https://skillsforbots.com/tools/skill-md-checker/): Paste a Grok Bot SKILL.md and check its frontmatter, name, description, length, safety rules, disclaimer, risky wording, hidden text, and links. Runs in your browser. Nothing is uploaded.
 
@@ -59,7 +59,7 @@ A skill is an instruction file a Grok Bot or similar AI assistant follows. The f
 
 ## Install a skill
 
-- [How to Add a Skill to Any AI Bot](https://skillsforbots.com/install/): How to install an agent skill in any AI bot: five steps that work everywhere, and where Grok Bot, Claude, ChatGPT, Codex, and Cursor take skills.
+- [Grok Bot Skill Install Hub: Save, Teach, Paste, Enable, Share](https://skillsforbots.com/install/): Every way to add a skill to Grok Bot: save a finished task, teach one, paste a SKILL.md, or add a packaged skill. Then turn it on for a Bot and share it with a team.
 - [How to Install Grok Bot Skills From GitHub (3 Ways)](https://skillsforbots.com/install/grok-bot/): Three ways to install a Grok Bot skill from GitHub: paste the SKILL.md, give the bot the repo link, or copy the folder. Plus how to check it loaded.
 
 ## Safety and approvals
