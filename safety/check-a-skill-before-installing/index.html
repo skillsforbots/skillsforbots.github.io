@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>How to Check an AI Skill Is Safe Before You Install It | Skills for Bots</title>
-  <meta name="description" content="An 8-step check before you install an agent skill in Grok Bot, Claude, ChatGPT, or any AI bot: risky actions, hidden text, scripts, and a safe test.">
+  <title>How to Check a Grok Bot Skill Is Safe Before You Install It | Skills for Bots</title>
+  <meta name="description" content="An 8-step check before you install a skill in Grok Bot: risky actions, hidden text, scripts, data access, and a safe first test.">
   <link rel="canonical" href="https://skillsforbots.com/safety/check-a-skill-before-installing/">
   <link rel="alternate" type="text/plain" href="https://skillsforbots.com/llms.txt" title="llms.txt">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Skills for Bots">
-  <meta property="og:title" content="How to Check an AI Skill Is Safe Before You Install It | Skills for Bots">
-  <meta property="og:description" content="An 8-step check before you install an agent skill in Grok Bot, Claude, ChatGPT, or any AI bot: risky actions, hidden text, scripts, and a safe test.">
+  <meta property="og:title" content="How to Check a Grok Bot Skill Is Safe Before You Install It | Skills for Bots">
+  <meta property="og:description" content="An 8-step check before you install a skill in Grok Bot: risky actions, hidden text, scripts, data access, and a safe first test.">
   <meta property="og:url" content="https://skillsforbots.com/safety/check-a-skill-before-installing/">
   <meta property="og:image" content="https://skillsforbots.com/skillsforbots-logo.jpg">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="How to Check an AI Skill Is Safe Before You Install It | Skills for Bots">
-  <meta name="twitter:description" content="An 8-step check before you install an agent skill in Grok Bot, Claude, ChatGPT, or any AI bot: risky actions, hidden text, scripts, and a safe test.">
+  <meta name="twitter:title" content="How to Check a Grok Bot Skill Is Safe Before You Install It | Skills for Bots">
+  <meta name="twitter:description" content="An 8-step check before you install a skill in Grok Bot: risky actions, hidden text, scripts, data access, and a safe first test.">
   <style>
     :root {
       --bg: #f4f1ea;
@@ -165,12 +165,12 @@
     {
       "@type": "Article",
       "@id": "https://skillsforbots.com/safety/check-a-skill-before-installing/#article",
-      "headline": "How to check an AI skill is safe before you install it",
-      "description": "An 8-step check before you install an agent skill in Grok Bot, Claude, ChatGPT, or any AI bot: risky actions, hidden text, scripts, and a safe test.",
+      "headline": "How to check a Grok Bot skill is safe before you install it",
+      "description": "An 8-step check before you install a skill in Grok Bot: risky actions, hidden text, scripts, data access, and a safe first test.",
       "url": "https://skillsforbots.com/safety/check-a-skill-before-installing/",
       "mainEntityOfPage": "https://skillsforbots.com/safety/check-a-skill-before-installing/",
       "datePublished": "2026-11-23",
-      "dateModified": "2026-11-23",
+      "dateModified": "2026-11-24",
       "image": "https://skillsforbots.com/skillsforbots-logo.jpg",
       "inLanguage": "en",
       "author": {
@@ -320,9 +320,9 @@
 <body>
   <header>
     <p class="crumb"><a href="/">Skills for Bots</a> › <a href="/guides/">Guides</a> › Check a skill before installing</p>
-    <h1>How to check an AI skill is safe before you install it</h1>
+    <h1>How to check a Grok Bot skill is safe before you install it</h1>
     <p class="lede">A skill is text your bot will follow, so installing one is closer to hiring help than downloading a file. This is the check I run on every skill, mine included, before it goes near a bot that can send, spend, or read my accounts.</p>
-    <p class="updated">Last updated: <time datetime="2026-11-23">November 23, 2026</time></p>
+    <p class="updated">Last updated: <time datetime="2026-11-24">November 24, 2026</time></p>
   </header>
   <main>
     <nav class="toc" aria-labelledby="toc-title">
@@ -382,7 +382,7 @@
       <li><strong>Gemini CLI:</strong> per a compatibility survey of vendor docs, it shows a consent prompt naming the skill and the folder it will access before the skill activates.</li>
       <li><strong>Claude Code:</strong> its docs describe instruction files as context, not enforced settings. To block an action no matter what, they point to hooks.</li>
     </ul>
-    <p>Treat a skill’s approval rules as a second layer on top of these settings. If your platform can require approval before sending, posting, or paying, turn that on first. My guide on <a href="/ai-bot-ask-before-acting/">making your AI bot ask before it acts</a> walks through both layers.</p>
+    <p>Treat a skill’s approval rules as a second layer on top of these settings. If your platform can require approval before sending, posting, or paying, turn that on first. My guide on <a href="/ai-bot-ask-before-acting/">making Grok Bot ask before it acts</a> walks through both layers.</p>
 
     <h2 id="grok">Checking a Grok Bot skill specifically</h2>
     <p>Grok Bot shares private skills across all your bots, so a skill you install for one bot can be used by the others. That makes the check more important, not less. Three extra things I look at:</p>
@@ -397,7 +397,7 @@
       <li>Ask the bot to explain the skill’s rules back to you in its own words.</li>
       <li>Watch the first few real runs. Check that it stops where it should.</li>
       <li>Re-check when the skill updates. A changed file is a new skill.</li>
-      <li>Keep payment details out of bots you don’t fully trust. My guide on <a href="/how-to-stop-ai-bot-spending-money/">stopping your AI bot from spending money</a> covers this.</li>
+      <li>Keep payment details out of bots you don’t fully trust. My guide on <a href="/how-to-stop-ai-bot-spending-money/">stopping Grok Bot from spending money</a> covers this.</li>
     </ul>
     <p>If you’d like a starting point that already has these rules, my free <a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a> has no-send and no-spend rules, a one-time-approval rule, and a line telling the bot to treat outside content as information. Read it with this same checklist.</p>
     <h2 id="faq">FAQ</h2>
@@ -423,9 +423,9 @@
 
     <h2 id="related">Related</h2>
     <ul>
-      <li><a href="/tools/skill-md-checker/">Free SKILL.md checker</a>: format and safety, in your browser</li>
-      <li><a href="/safety/approval-rules/">Approval rules for AI bots: a no-send, no-spend template</a></li>
-      <li><a href="/ai-bot-ask-before-acting/">How to make your AI bot ask before it acts</a></li>
+      <li><a href="/tools/skill-md-checker/">Free Grok Bot skill checker</a>: format and safety, in your browser</li>
+      <li><a href="/safety/approval-rules/">Grok Bot approval rules: a no-send, no-spend template</a></li>
+      <li><a href="/ai-bot-ask-before-acting/">How to make Grok Bot ask before it acts</a></li>
       <li><a href="/install/grok-bot/">How to install Grok Bot skills from GitHub</a></li>
       <li><a href="https://github.com/skillsforbots/grok-bot-skills/tree/main/skills/bot-safety-rules-starter">Bot Safety Rules Starter</a>: free on GitHub</li>
       <li><a href="/grok-bot-fleet-coordinator-skill/">Bot Fleet Coordinator</a>: the same rules across several bots ($12)</li>
@@ -433,7 +433,7 @@
     <p class="disclaimer">Skill files are instructions to the bot, not a hard technical block. A bot can still ignore or misread them, so test before you rely on them. Nothing on this page is legal, financial, or professional advice. Provided as is, with no warranty.</p>
   </main>
   <footer>
-    <p><a href="/">Home</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
+    <p><a href="/">Home</a> · <a href="/grok-bot-skills/">Grok Bot skills guide</a> · <a href="/guides/">Guides</a> · <a href="/agent-skills/">What are agent skills?</a> · <a href="/skill-md/template/">SKILL.md template</a> · <a href="/tools/skill-md-checker/">SKILL.md checker</a></p>
     <p><a href="https://github.com/skillsforbots/grok-bot-skills">Free skills on GitHub</a> · <a href="https://skillsforbots.gumroad.com">Gumroad store</a> · <a href="https://skillsforbots.com/llms.txt">llms.txt</a></p>
     <p>Skills for Bots. Guides and packs are templates, not a managed service and not professional advice.</p>
     <p>Skills for Bots is independent and is not affiliated with or endorsed by Anthropic, OpenAI, xAI, Cursor, GitHub, Microsoft, Google, OpenClaw, or any other company named on this site. Product names are used only to describe compatibility.</p>
